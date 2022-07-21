@@ -40,7 +40,9 @@ const Alerts = () => {
                 <br />
               </form>
               <CAlert color="dark">Hizmet Seçimi</CAlert>
-              <label for="hizmet">İSTEDİĞİNİZ HİZMETLERİ SEÇİNİZ:</label>
+              <label class="form-control" for="hizmet">
+                İSTEDİĞİNİZ HİZMETLERİ SEÇİNİZ:
+              </label>
               <br />
               <br />
               <select name="hizmet" id="hizmet">
