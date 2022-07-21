@@ -62,24 +62,23 @@ const Cards = () => {
                         />
                       </label>
                       <label>
-                        Birimilllllllll
+                        Birimi
                         <input class="form-control" type="text" name="birim" />
                       </label>
                       <br></br>
 
                       <br></br>
-                      <form action="" method="post" enctype="multipart/form-data">
-                  <input type="file" name="dosya" />
-                  <br>
-                  </br>
+                      <form
+                        action=""
+                        method="post"
+                        enctype="multipart/form-data"
+                      >
+                        <input type="file" name="dosya" />
+                        <br></br>
 
-                  
-                  <br></br>
+                        <br></br>
+                      </form>
 
-              </form>
-
-                
-                      
                       <input type="submit" value="Ekle" />
                     </div>
                   </form>
