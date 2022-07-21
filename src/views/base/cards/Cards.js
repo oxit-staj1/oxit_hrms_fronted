@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import {
   CButton,
   CCard,
@@ -18,10 +18,10 @@ import {
   CNavLink,
   CCol,
   CRow,
-} from '@coreui/react'
-import { DocsExample } from 'src/components'
+} from "@coreui/react";
+import { DocsExample } from "src/components";
 
-import ReactImg from 'src/assets/images/react.gif'
+import ReactImg from "src/assets/images/react.gif";
 
 const Cards = () => {
   return (
@@ -32,26 +32,24 @@ const Cards = () => {
             <strong>Hizmet</strong> <small>Ekleme</small>
           </CCardHeader>
           <CCardBody>
-            
-            
             <DocsExample href="components/card">
-              <CCard style={{ width: '18rem' }}>
+              <CCard style={{ width: "18rem" }}>
                 <CCardImage orientation="top" src={ReactImg} />
                 <CCardBody>
-                  <CCardTitle>Eklemek İstediğiniz Hizmet Türünü Giriniz</CCardTitle>
-                  <CCardText>
-                    
-                  </CCardText>
+                  <CCardTitle>
+                    Eklemek İstediğiniz Hizmet Türünü Giriniz
+                  </CCardTitle>
+                  <CCardText></CCardText>
                   <form>
                     Hizmet Türü : <br />
-                    <input type="text" name="adi" /><br />
-                    
-                    
-                  </form>               
-               </CCardBody>
+                    <input type="text" class="form-control" name="adi" />
+                    <br />
+                  </form>
+                </CCardBody>
                 <CCardBody>
-                  
-                  <CButton href="#" color='black'>Onayla</CButton>
+                  <CButton href="#" color="black">
+                    Onayla
+                  </CButton>
                 </CCardBody>
               </CCard>
             </DocsExample>
@@ -59,7 +57,7 @@ const Cards = () => {
         </CCard>
       </CCol>
     </CRow>
-  )
-}
+  );
+};
 
-export default Cards
+export default Cards;
