@@ -5,6 +5,7 @@ import {
   CCard,
   CCardBody,
   CCardGroup,
+  CCardImage,
   CCol,
   CContainer,
   CForm,
@@ -59,13 +60,17 @@ const Login = () => {
                   </CForm>
                 </CCardBody>
               </CCard>
-              <CCard className="text-white bg-primary py-5" style={{ width: '44%' }}>
-                <CCardBody className="text-center">
+              <CCard className="text-white bg-black py-5 " style={{ width: '44%'  }}
+              
+              
+              
+              
+              >
+                <CCardBody className="text-center" >
                   <div>
-                    <h2>Kayıt Olun</h2>
-                    <p>Kaliteli ve profesyonel bir hizmet mi arıyorsunuz?</p>
-                    <p>Aramıza katılmayı unutmayın.</p>
-                    <Link to="/register">
+                                        
+                     <p>Aramıza katılmayı unutmayın.</p>
+                    <Link to="/register">      
                       <CButton color="primary" className="mt-3" active tabIndex={-1}>
                         Şimdi Kaydolun!
                       </CButton>
