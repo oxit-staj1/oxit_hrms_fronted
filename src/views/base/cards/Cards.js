@@ -74,6 +74,7 @@ const Cards = () => {
                         onChange={handleChange}
                       />
                     </label>
+
                     <button class="btn btn-light" type="submit">
                       Ekle
                     </button>
