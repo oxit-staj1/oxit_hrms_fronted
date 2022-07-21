@@ -54,7 +54,7 @@ const Cards = () => {
                         />
                       </label>
                       <label>
-                        Doğum Günüaaaaaaaaaaaaa
+                        Doğum Günü
                         <input
                           class="form-control"
                           type="date"
