@@ -62,7 +62,11 @@ const Cards = () => {
                         />
                       </label>
                       <label>
+<<<<<<< HEAD
                         Birimiiiiiiiiiiiiii4444444
+=======
+                        Birimiiiiiiiiiiiiii55555555555
+>>>>>>> 4e3720af43b7f12daaacebb3754fa6365b7364f0
                         <input class="form-control" type="text" name="birim" />
                       </label>
                       <br></br>
