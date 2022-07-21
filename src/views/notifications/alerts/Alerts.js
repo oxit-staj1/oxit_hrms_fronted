@@ -43,14 +43,52 @@ const Alerts = () => {
               <label class="form-control" for="hizmet">
                 İSTEDİĞİNİZ HİZMETLERİ SEÇİNİZ:
               </label>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox1"
+                  value="option1"
+                ></input>
+                <label class="form-check-label" for="inlineCheckbox1">
+                  DİNAMİK WEB SİTESİ
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox2"
+                  value="option2"
+                ></input>
+                <label class="form-check-label" for="inlineCheckbox2">
+                  REKLAM PAKETİ
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox2"
+                  value="option2"
+                ></input>
+                <label class="form-check-label" for="inlineCheckbox2">
+                  E-TİCARET
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox2"
+                  value="option2"
+                ></input>
+                <label class="form-check-label" for="inlineCheckbox2">
+                  YENİLEME
+                </label>
+              </div>
               <br />
               <br />
-              <select name="hizmet" id="hizmet">
-                <option value="DWB">DİNAMİK WEB SİTESİ</option>
-                <option value="RP">REKLAM PAKETİ</option>
-                <option value="Y">YENİLEME</option>
-                <option value="ET">E-TİCARET</option>
-              </select>
               <br />
               <br />
               <CAlert color="secondary">Sözleşme Tarihi</CAlert>
@@ -75,7 +113,7 @@ const Alerts = () => {
               <form>
                 Firma Adını Giriniz:
                 <br />
-                <input type="text" name="firmaadi :" />
+                <input class="form-control" type="text" name="firmaadi :" />
                 <br />
                 <br />
               </form>
