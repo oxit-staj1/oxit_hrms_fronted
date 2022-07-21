@@ -78,10 +78,7 @@ const Cards = () => {
                     <button type="submit">add</button>
                   </form>
                 </CCardBody>
-                <CCardBody>
-
-                  <CButton href="#" color='black'>Onayla</CButton>
-                </CCardBody>
+               
               </CCard>
             </DocsExample>
           </CCardBody>
