@@ -40,7 +40,7 @@ const _nav = [
   },
   {
     component: CNavItem,
-    name: 'Firma Ekleme',
+    name: 'Firma İstatistikleri',
     to: '/charts',
     icon: <CIcon icon={cilChartPie} customClassName="nav-icon" />,
   },
