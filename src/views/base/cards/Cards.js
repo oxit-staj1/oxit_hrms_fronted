@@ -1,4 +1,6 @@
-import React from "react";
+import React ,{useState,useEffect} from 'react'
+import axios from "axios"
+
 import {
   CButton,
   CCard,
@@ -18,12 +20,34 @@ import {
   CNavLink,
   CCol,
   CRow,
-} from "@coreui/react";
-import { DocsExample } from "src/components";
+} from '@coreui/react'
+import { DocsExample } from 'src/components'
 
-import ReactImg from "src/assets/images/react.gif";
+import ReactImg from 'src/assets/images/react.gif'
+import HizmetService from 'src/service/hizmetService'
 
 const Cards = () => {
+  
+  const [hizmets, setHizmets] = useState({})
+
+  useEffect(() => {
+    const hizmetService = new HizmetService();
+    hizmetService.getHizmet().then((result) => setHizmets(result.data.data))
+  },[])
+
+
+  const handleChange = e => {
+    const value = e.target.value;
+    setHizmets({hizmet_ad:value});
+  };
+
+
+  const handleSubmit  = (e) => {
+    e.preventDefault();
+    axios.post("http://localhost:8080/api/hizmet/add", hizmets).then((response) => {
+      console.log(response.status);
+    });
+  };
   return (
     <CRow>
       <CCol xs={12}>
@@ -32,24 +56,31 @@ const Cards = () => {
             <strong>Hizmet</strong> <small>Ekleme</small>
           </CCardHeader>
           <CCardBody>
+
             <DocsExample href="components/card">
-              <CCard style={{ width: "18rem" }}>
+              <CCard style={{ width: '18rem' }}>
                 <CCardImage orientation="top" src={ReactImg} />
                 <CCardBody>
-                  <CCardTitle>
-                    Eklemek İstediğiniz Hizmet Türünü Giriniz
-                  </CCardTitle>
-                  <CCardText></CCardText>
-                  <form>
-                    Hizmet Türü : <br />
-                    <input type="text" class="form-control" name="adi" />
-                    <br />
+                  <CCardTitle>Eklemek İstediğiniz Hizmet Türünü Giriniz</CCardTitle>
+                  <CCardText>
+
+                  </CCardText>
+                  <form onSubmit={handleSubmit}>
+                    <label htmlFor="hizmet ad ">
+                      Hizmet Ad :
+                      <input
+                        type="text"
+                        name="hizmetAd"
+                        value={hizmets.hizmet_ad}
+                        onChange={handleChange}
+                      />
+                    </label>
+                    <button type="submit">add</button>
                   </form>
                 </CCardBody>
                 <CCardBody>
-                  <CButton href="#" color="black">
-                    Onayla
-                  </CButton>
+
+                  <CButton href="#" color='black'>Onayla</CButton>
                 </CCardBody>
               </CCard>
             </DocsExample>
@@ -57,7 +88,7 @@ const Cards = () => {
         </CCard>
       </CCol>
     </CRow>
-  );
-};
+  )
+}
 
-export default Cards;
+export default Cards
