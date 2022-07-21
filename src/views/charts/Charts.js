@@ -19,12 +19,12 @@ const Charts = () => {
         <DocsCallout
           name="Chart"
           href="components/chart"
-          content="Bu sayfada çubuk grafik üzerinden hizmet alan firma sayılarını aylık olarak, çizgi grafik üzerinden hizmetlerini yenileyen ve yenilemeyen firmaların aylık olarak artış ve azalışlarını, donut grafik üzerinden firmaların hangi hizmetten ne kadar yararlandığını, yuvarlak grafik üzerinden hangi hizmet paketlerinin ne kadar kullanıldığınını, kutup alanı grafik üzerinden hangi hizmet seviyelerinden ne kadar kullanıldığını, radar grafik üzerinden firamaların sitelerinde kullanmayı tercih ettiği yabancı dillerin ne kadar kullanıldığını görebilirsiniz."
+          content="Bu sayfada çubuk grafik üzerinden hizmet alan firma sayılarını aylık olarak, çizgi grafik üzerinden hizmetlerini yenileyen ve yenilemeyen firmaların aylık olarak artış ve azalışlarını, kutup alanı grafik üzerinden hangi hizmet seviyelerinden ne kadar kullanıldığını, radar grafik üzerinden firamaların sitelerinde kullanmayı tercih ettiği yabancı dillerin ne kadar kullanıldığını görebilirsiniz."
         />
       </CCol>
       <CCol xs={6}>
         <CCard className="mb-4">
-          <CCardHeader>Çubuk Grafik</CCardHeader>
+          <CCardHeader>Firmaların Tercih Ettiği Yabancı Diller Grafiği</CCardHeader>
           <CCardBody>
             <CChartBar
               data={{
@@ -44,7 +44,7 @@ const Charts = () => {
       </CCol>
       <CCol xs={6}>
         <CCard className="mb-4">
-          <CCardHeader>Çizgi Grafik</CCardHeader>
+          <CCardHeader>Hizmetleri Yenileyen/Yenilenmeyen Firma Sayısı Grafiği</CCardHeader>
           <CCardBody>
             <CChartLine
               data={{
@@ -74,7 +74,7 @@ const Charts = () => {
       </CCol>
       <CCol xs={6}>
         <CCard className="mb-4">
-          <CCardHeader>Donut Grafik</CCardHeader>
+          <CCardHeader>Alınan Hizmet Sayısı Grafiği</CCardHeader>
           <CCardBody>
             <CChartDoughnut
               data={{
@@ -83,43 +83,6 @@ const Charts = () => {
                   {
                     backgroundColor: ['#41B883', '#E46651', '#00D8FF', '#DD1B16'],
                     data: [30, 20, 40, 10],
-                  },
-                ],
-              }}
-            />
-          </CCardBody>
-        </CCard>
-      </CCol>
-      <CCol xs={6}>
-        <CCard className="mb-4">
-          <CCardHeader>Yuvarlak Grafik</CCardHeader>
-          <CCardBody>
-            <CChartPie
-              data={{
-                labels: ['Ekonomik', 'Standart', 'Profesyonel'],
-                datasets: [
-                  {
-                    data: [300, 50, 100],
-                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
-                    hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
-                  },
-                ],
-              }}
-            />
-          </CCardBody>
-        </CCard>
-      </CCol>
-      <CCol xs={6}>
-        <CCard className="mb-4">
-          <CCardHeader>Kutup Alanı Grafik</CCardHeader>
-          <CCardBody>
-            <CChartPolarArea
-              data={{
-                labels: ['Bronz', 'Silver', 'Gold'],
-                datasets: [
-                  {
-                    data: [11, 16, 7],
-                    backgroundColor: ['#cd7f32', '#C0C0C0', '#FFD700'],
                   },
                 ],
               }}

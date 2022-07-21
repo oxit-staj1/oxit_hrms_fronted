@@ -68,17 +68,18 @@ const Cards = () => {
                       <br></br>
 
                       <br></br>
-                      <form
-                        action=""
-                        method="post"
-                        enctype="multipart/form-data"
-                      >
-                        <input type="file" name="dosya" />
-                        <br></br>
+                      <form action="" method="post" enctype="multipart/form-data">
+                  <input type="file" name="dosya" />
+                  <br>
+                  </br>
 
-                        <br></br>
-                      </form>
+                  
+                  <br></br>
 
+              </form>
+
+                
+                      
                       <input type="submit" value="Ekle" />
                     </div>
                   </form>
