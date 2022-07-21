@@ -62,7 +62,7 @@ const Cards = () => {
                         />
                       </label>
                       <label>
-                        Birimiiii
+                        Birimi
                         <input class="form-control" type="text" name="birim" />
                       </label>
                       <br></br>
