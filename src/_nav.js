@@ -23,7 +23,7 @@ const _nav = [
     icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
     badge: {
       color: 'info',
-      text: 'NEW',
+      text: '',
     },
   },
  
@@ -55,7 +55,7 @@ const _nav = [
         to: '/icons/coreui-icons',
         badge: {
           color: 'success',
-          text: 'NEW',
+          text: '',
         },
       },
       {
@@ -73,7 +73,7 @@ const _nav = [
     items: [
       {
         component: CNavItem,
-        name: 'Sözleşme Ekleme',
+        name: 'Sözleşme Ekle',
         to: '/notifications/alerts',
       },
       {

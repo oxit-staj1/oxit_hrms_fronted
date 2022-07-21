@@ -15,6 +15,7 @@ import {
   cilCommentSquare,
   cilEnvelopeOpen,
   cilFile,
+  cilPowerStandby,
   cilLockLocked,
   cilSettings,
   cilTask,
@@ -31,35 +32,6 @@ const AppHeaderDropdown = () => {
         <CAvatar src={avatar8} size="md" />
       </CDropdownToggle>
       <CDropdownMenu className="pt-0" placement="bottom-end">
-        <CDropdownHeader className="bg-light fw-semibold py-2">Hesap</CDropdownHeader>
-        <CDropdownItem href="#">
-          <CIcon icon={cilBell} className="me-2" />
-          Güncellemeler
-          <CBadge color="info" className="ms-2">
-            42
-          </CBadge>
-        </CDropdownItem>
-        <CDropdownItem href="#">
-          <CIcon icon={cilEnvelopeOpen} className="me-2" />
-          Mesajlar
-          <CBadge color="success" className="ms-2">
-            42
-          </CBadge>
-        </CDropdownItem>
-        <CDropdownItem href="#">
-          <CIcon icon={cilTask} className="me-2" />
-          Görevler
-          <CBadge color="danger" className="ms-2">
-            42
-          </CBadge>
-        </CDropdownItem>
-        <CDropdownItem href="#">
-          <CIcon icon={cilCommentSquare} className="me-2" />
-          Yorumlar
-          <CBadge color="warning" className="ms-2">
-            42
-          </CBadge>
-        </CDropdownItem>
         <CDropdownHeader className="bg-light fw-semibold py-2">Ayarlar</CDropdownHeader>
         <CDropdownItem href="#">
           <CIcon icon={cilUser} className="me-2" />
@@ -71,7 +43,7 @@ const AppHeaderDropdown = () => {
         </CDropdownItem>
         <CDropdownItem href="#">
           <CIcon icon={cilCreditCard} className="me-2" />
-          Ödemeler
+          Ödeme Yöntemleri
           <CBadge color="secondary" className="ms-2">
             42
           </CBadge>
@@ -84,9 +56,9 @@ const AppHeaderDropdown = () => {
           </CBadge>
         </CDropdownItem>
         <CDropdownDivider />
-        <CDropdownItem href="#">
-          <CIcon icon={cilLockLocked} className="me-2" />
-          Kilitli Hesap
+        <CDropdownItem href="http://www.oxityazilim.com">
+          <CIcon icon={cilPowerStandby} className="me-2" />
+          Çıkış Yap
         </CDropdownItem>
       </CDropdownMenu>
     </CDropdown>

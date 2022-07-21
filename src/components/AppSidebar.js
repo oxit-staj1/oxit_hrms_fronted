@@ -30,7 +30,9 @@ const AppSidebar = () => {
       }}
     >
       <CSidebarBrand className="d-none d-md-flex" to="/">
-      <img src="https://s1.gifyu.com/images/oxit-yaz-l-m-logo-unscreen.gif" height="114" width="500"/>
+      <img src="https://s1.gifyu.com/images/oxit-yaz-l-m-logo-unscreen.gif" 
+      bgcolor="white"
+      height="114" width="500"/>
       <CIcon className="sidebar-brand-narrow" icon={sygnet} height={35} />
       </CSidebarBrand>
       <CSidebarNav>

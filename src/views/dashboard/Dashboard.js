@@ -191,23 +191,6 @@ const Dashboard = () => {
               </h4>
               <div className="small text-medium-emphasis">Ocak 2016 - Ağustos 2022</div>
             </CCol>
-            <CCol sm={7} className="d-none d-md-block">
-              <CButton color="primary" className="float-end">
-                <CIcon icon={cilCloudDownload} />
-              </CButton>
-              <CButtonGroup className="float-end me-3">
-                {['Gün', 'Ay', 'Yıl'].map((value) => (
-                  <CButton
-                    color="outline-secondary"
-                    key={value}
-                    className="mx-0"
-                    active={value === 'Month'}
-                  >
-                    {value}
-                  </CButton>
-                ))}
-              </CButtonGroup>
-            </CCol>
           </CRow>
           <CChartLine
             style={{ height: '300px', marginTop: '40px' }}
@@ -406,7 +389,7 @@ const Dashboard = () => {
                     <CTableHeaderCell className="text-center">
                       <CIcon icon={cilPeople} />
                     </CTableHeaderCell>
-                    <CTableHeaderCell>Kullanıcı</CTableHeaderCell>
+                    <CTableHeaderCell>Firma</CTableHeaderCell>
                     <CTableHeaderCell className="text-center">Ülke</CTableHeaderCell>
                     <CTableHeaderCell>Kullanım</CTableHeaderCell>
                     <CTableHeaderCell className="text-center">Ödeme yöntemi</CTableHeaderCell>

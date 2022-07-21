@@ -1,25 +1,97 @@
-import React from 'react'
-import { CCard, CCardBody, CCardHeader, CRow } from '@coreui/react'
-import { getIconsView } from '../brands/Brands.js'
-import { flagSet } from '@coreui/icons'
-import { DocsCallout } from 'src/components'
+import React from "react";
+import {
+  CButton,
+  CCard,
+  CCardBody,
+  CCardFooter,
+  CCardGroup,
+  CCardHeader,
+  CCardImage,
+  CCardLink,
+  CCardSubtitle,
+  CCardText,
+  CCardTitle,
+  CListGroup,
+  CListGroupItem,
+  CNav,
+  CNavItem,
+  CNavLink,
+  CCol,
+  CRow,
+} from "@coreui/react";
+import { DocsExample } from "src/components";
 
-const CoreUIIcons = () => {
+import ReactImg from "src/assets/images/react.gif";
+
+const Cards = () => {
   return (
-    <>
-      <DocsCallout
-        name="CoreUI Flag Icons"
-        href="components/chart"
-        content="CoreUI Flag Icons. CoreUI Icons package is delivered with more than 1500 icons in multiple formats SVG, PNG, and Webfonts. CoreUI Icons are beautifully crafted symbols for common actions and items. You can use them in your digital products for web or mobile app."
-      />
-      <CCard className="mb-4">
-        <CCardHeader>Flag Icons</CCardHeader>
-        <CCardBody>
-          <CRow className="text-center">{getIconsView(flagSet)}</CRow>
-        </CCardBody>
-      </CCard>
-    </>
-  )
-}
+    <CRow>
+      <CCol xs={12}>
+        <CCard className="mb-4">
+          <CCardBody>
+            <DocsExample href="components/card">
+              <CCard style={{ width: "18rem" }}>
+                <CCardImage orientation="top" src={ReactImg} />
+                <CCardBody>
+                  <CCardTitle>Personel Ekle</CCardTitle>
+                  <CCardText></CCardText>
+                  <form>
+                    <div class="form-group">
+                      <label>
+                        Ad
+                        <input class="form-control" type="text" name="ad" />
+                      </label>
+                      <label>
+                        Soyad
+                        <input class="form-control" type="text" name="soyad" />
+                      </label>
+                      <label>
+                        Başlama Tarihi
+                        <input
+                          class="form-control"
+                          type="date"
+                          name="baslama"
+                        />
+                      </label>
+                      <label>
+                        Doğum Günü
+                        <input
+                          class="form-control"
+                          type="date"
+                          name="birthday"
+                        />
+                      </label>
+                      <label>
+                        Birimi
+                        <input class="form-control" type="text" name="birim" />
+                      </label>
+                      <br></br>
 
-export default CoreUIIcons
+                      <br></br>
+                      <form action="" method="post" enctype="multipart/form-data">
+                  <input type="file" name="dosya" />
+                  <br>
+                  </br>
+
+                  
+                  <br></br>
+
+              </form>
+
+                
+                      
+                      <input type="submit" value="Ekle" />
+                    </div>
+                  </form>
+                </CCardBody>
+                <CCardBody></CCardBody>
+              </CCard>
+            </DocsExample>
+          </CCardBody>
+        </CCard>
+      </CCol>
+    </CRow>
+  );
+};
+
+export default Cards;

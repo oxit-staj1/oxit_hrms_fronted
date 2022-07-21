@@ -36,7 +36,7 @@ const Cards = () => {
       <CCol xs={12}>
         <CCard className="mb-4">
           <CCardHeader>
-            <strong>Personeller</strong>
+            <strong>Personel</strong>
           </CCardHeader>
           <CCardBody>
             <DocsExample href="components/card/#card-groups">
@@ -155,7 +155,7 @@ const Cards = () => {
                   {
                     label: 'Personellerin satış yaptığı firma sayısı',
                     backgroundColor: '#f87979',
-                    data: [60, 20, 32, 39, 15, 45],
+                    data: [60, 20, -3, 39, 52, 45],
                   },
                 ],
               }}
