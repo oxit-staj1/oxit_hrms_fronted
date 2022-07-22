@@ -72,7 +72,7 @@ const Login = () => {
                      <p>Aramıza katılmayı unutmayın.</p>
                     <Link to="/register">      
                       <CButton color="primary" className="mt-3" active tabIndex={-1}>
-                        Şimdi Kaydolun!
+                        Şimdi Kaydolun
                       </CButton>
                     </Link>
                   </div>
