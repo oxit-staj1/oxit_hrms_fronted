@@ -160,9 +160,7 @@ const Cards = () => {
                     <CCardText>Bildiği diller C#, C++, ...</CCardText>
                     <CCardText>
                       <small className="text-medium-emphasis">
-                        İşe
-                        GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGaaaaaaaaaaaGGGGGGGGGGGGGGGGGgiriş
-                        tarihi = 16.04.2019
+                        İşe giriş tarihi = 16.04.2019
                       </small>
                     </CCardText>
                     <CCardText>
