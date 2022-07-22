@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
 import {
   CButton,
   CCard,
@@ -13,9 +13,9 @@ import {
   CInputGroup,
   CInputGroupText,
   CRow,
-} from "@coreui/react";
-import CIcon from "@coreui/icons-react";
-import { cilLockLocked, cilUser } from "@coreui/icons";
+} from '@coreui/react'
+import CIcon from '@coreui/icons-react'
+import { cilLockLocked, cilUser } from '@coreui/icons'
 
 const Login = () => {
   return (
@@ -33,10 +33,7 @@ const Login = () => {
                       <CInputGroupText>
                         <CIcon icon={cilUser} />
                       </CInputGroupText>
-                      <CFormInput
-                        placeholder="Kullanıcı Adı"
-                        autoComplete="username"
-                      />
+                      <CFormInput placeholder="Kullanıcı Adı" autoComplete="username" />
                     </CInputGroup>
                     <CInputGroup className="mb-4">
                       <CInputGroupText>
@@ -56,36 +53,26 @@ const Login = () => {
                       </CCol>
                       <CCol xs={6} className="text-right">
                         <CButton color="link" className="px-0">
-                          Şifreni mi unuttun?fhjykdfıjd8ı9xhdyıuoesco8cw
+                          Şifreni mi unuttun?
                         </CButton>
                       </CCol>
                     </CRow>
                   </CForm>
                 </CCardBody>
               </CCard>
-              <CCard
-                className="text-white bg-black py-5 "
-                style={{ width: "44%" }}
+              <CCard className="text-white bg-black py-5 " style={{ width: '44%'  }}
+              
+              
+              
+              
               >
-                <CCardBody className="text-center">
+                <CCardBody className="text-center" >
                   <div>
-<<<<<<< HEAD
-                    <p>Aramıza katılmayı unutmayın.</p>
-                    <Link to="/register">
-                      <CButton
-                        color="primary"
-                        className="mt-3"
-                        active
-                        tabIndex={-1}
-                      >
-                        Şimdi Kaydolun!
-=======
                                         
                      <p>Aramıza katılmayı unutmayın.</p>
                     <Link to="/register">      
                       <CButton color="primary" className="mt-3" active tabIndex={-1}>
                         Şimdi Kaydolun
->>>>>>> 8f45a559d9208928316009f8aa59ec1ecdc1c70c
                       </CButton>
                     </Link>
                   </div>
@@ -96,7 +83,7 @@ const Login = () => {
         </CRow>
       </CContainer>
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login
