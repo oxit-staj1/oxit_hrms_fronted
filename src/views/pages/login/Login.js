@@ -18,8 +18,11 @@ import CIcon from '@coreui/icons-react'
 import { cilLockLocked, cilUser } from '@coreui/icons'
 
 const Login = () => {
-  return (
+  return (  
     <div className="bg-light min-vh-100 d-flex flex-row align-items-center">
+      <audio controls autoplay="autoplay">
+  <source src="kv.mp3" type="audio/mpeg" />
+</audio>
       <CContainer>
         <CRow className="justify-content-center">
           <CCol md={8}>
