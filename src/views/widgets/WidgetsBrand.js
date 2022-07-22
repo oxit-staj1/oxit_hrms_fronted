@@ -4,6 +4,7 @@ import { CWidgetStatsD, CRow, CCol, } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 import { cibFacebook, cibLinkedin, cibTwitter, cibInstagram } from '@coreui/icons'
 import { CChart } from '@coreui/react-chartjs'
+import {Link} from 'react-router-dom';
 
 const WidgetsBrand = ({ withCharts }) => {
   const chartOptions = {
@@ -45,23 +46,15 @@ const WidgetsBrand = ({ withCharts }) => {
                 className="position-absolute w-100 h-100"
                 type="line"
                 data={{
-                  labels: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz'],
-                  datasets: [
-                    {
-                      backgroundColor: 'rgba(255,255,255,.1)',
-                      borderColor: 'rgba(255,255,255,.55)',
-                      pointHoverBackgroundColor: '#fff',
-                      borderWidth: 2,
-                      data: [65, 59, 84, 84, 51, 55, 40],
-                      fill: true,
-                    },
-                  ],
+                  
+            
+                  
                 }}
                 options={chartOptions}
               />
             ),
           })}
-          icon={<CIcon icon={cibFacebook} height={52} className="my-4 text-white" />}
+          icon={<a> <CIcon icon={cibFacebook} height={52} className="my-4 text-white" /></a>}
           values={[
             { title: 'arkadaşlar', value: '235' },
             { title: 'beğeniler', value: '235' },
@@ -81,17 +74,8 @@ const WidgetsBrand = ({ withCharts }) => {
                 className="position-absolute w-100 h-100"
                 type="line"
                 data={{
-                  labels: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz'],
-                  datasets: [
-                    {
-                      backgroundColor: 'rgba(255,255,255,.1)',
-                      borderColor: 'rgba(255,255,255,.55)',
-                      pointHoverBackgroundColor: '#fff',
-                      borderWidth: 2,
-                      data: [1, 13, 9, 17, 34, 41, 38],
-                      fill: true,
-                    },
-                  ],
+                  
+                    
                 }}
                 options={chartOptions}
               />
@@ -105,7 +89,9 @@ const WidgetsBrand = ({ withCharts }) => {
           style={{
             '--cui-card-cap-bg': '#00aced',
           }}
-        />
+        >
+          
+        </CWidgetStatsD>
       </CCol>
 
       <CCol sm={6} lg={3}>
@@ -117,26 +103,23 @@ const WidgetsBrand = ({ withCharts }) => {
                 className="position-absolute w-100 h-100"
                 type="line"
                 data={{
-                  labels: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz'],
-                  datasets: [
-                    {
-                      backgroundColor: 'rgba(255,255,255,.1)',
-                      borderColor: 'rgba(255,255,255,.55)',
-                      pointHoverBackgroundColor: '#fff',
-                      borderWidth: 2,
-                      data: [78, 81, 80, 45, 34, 12, 40],
-                      fill: true,
-                    },
-                  ],
+                  
                 }}
                 options={chartOptions}
               />
             ),
           })}
+
+
+
           icon={<CIcon icon={cibLinkedin} height={52} className="my-4 text-white" />}
           values={[
             { title: 'takipçiler', value: '253' },
             { title: 'gönderiler', value: '3' },
+            
+
+
+
           ]}
           style={{
             '--cui-card-cap-bg': '#4875b4',
@@ -154,23 +137,15 @@ const WidgetsBrand = ({ withCharts }) => {
                 className="position-absolute w-100 h-100"
                 type="line"
                 data={{
-                  labels: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz'],
-                  datasets: [
-                    {
-                      backgroundColor: 'rgba(255,255,255,.1)',
-                      borderColor: 'rgba(255,255,255,.55)',
-                      pointHoverBackgroundColor: '#fff',
-                      borderWidth: 2,
-                      data: [35, 23, 56, 22, 97, 23, 64],
-                      fill: true,
-                    },
-                  ],
+                  
                 }}
                 options={chartOptions}
               />
             ),
           })}
-          icon={<CIcon icon={cibInstagram} height={52} className="my-4 text-white"/>}
+          icon={<CIcon icon={cibInstagram} height={52} 
+          className="my-4 text-white"/>
+        }
           values={[
             { title: 'takipçiler', value: '310' },
             { title: 'gönderiler', value: '1' },
