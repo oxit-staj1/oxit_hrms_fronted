@@ -148,6 +148,17 @@ const Alerts = () => {
               <br />
               <br />
               <CAlert color="dark">KDV'siz Fiyat</CAlert>
+             <div class="col-md-3">
+             <label for="validationCustom04" class="form-label">Para Türü</label>
+             <select class="form-select" id="validationCustom04" required>
+               <option>₺</option>
+               <option>$</option>
+               <option>€</option>
+             </select>
+             <div class="invalid-feedback">
+               Please select a valid state.
+             </div>
+            </div>
               <form>
                 KDV'siz Fiyatı Giriniz:
                 <br />
@@ -155,7 +166,17 @@ const Alerts = () => {
                 <br />
                 <br />
               </form>
-              <CAlert color="secondary">KDV'li Fiyat</CAlert>
+              <CAlert color="secondary">KDV'li Fiyat</CAlert><div class="col-md-3">
+             <label for="validationCustom04" class="form-label">Para Türü</label>
+             <select class="form-select" id="validationCustom04" required>
+               <option>₺</option>
+               <option>$</option>
+               <option>€</option>
+             </select>
+             <div class="invalid-feedback">
+               Please select a valid state.
+             </div>
+            </div>
               <form>
                 KDV'li Fiyatı Giriniz
                 <br />
@@ -164,6 +185,17 @@ const Alerts = () => {
                 <br />
               </form>
               <CAlert color="dark">Kapora</CAlert>
+              <div class="col-md-3">
+             <label for="validationCustom04" class="form-label">Para Türü</label>
+             <select class="form-select" id="validationCustom04" required>
+               <option>₺</option>
+               <option>$</option>
+               <option>€</option>
+             </select>
+             <div class="invalid-feedback">
+               Please select a valid state.
+             </div>
+            </div>
               <form>
                 Ödemeniz Gereken Kapora Miktarı :<br />
                 <input class="form-control" type="text" name="firmaadi :" />
@@ -171,6 +203,17 @@ const Alerts = () => {
                 <br />
               </form>
               <CAlert color="secondary">Yıllık Yenileme Tutarı</CAlert>
+              <div class="col-md-3">
+             <label for="validationCustom04" class="form-label">Para Türü</label>
+             <select class="form-select" id="validationCustom04" required>
+               <option>₺</option>
+               <option>$</option>
+               <option>€</option>
+             </select>
+             <div class="invalid-feedback">
+               Please select a valid state.
+             </div>
+            </div>
               <form>
                 Yıllık Yenileme Tutarı:
                 <br />
