@@ -12,6 +12,12 @@ import {
   cilPuzzle,
   cilSpeedometer,
   cilStar,
+  cilGroup,
+  cilHome,
+  cilBarChart,
+  cilUserPlus,
+  cilWrapText,
+  cilPenAlt,
 } from '@coreui/icons'
 import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
 
@@ -20,7 +26,7 @@ const _nav = [
     component: CNavItem,
     name: 'Ana Sayfa',
     to: '/dashboard',
-    icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilHome} customClassName="nav-icon" />,
     badge: {
       color: 'info',
       text: '',
@@ -35,19 +41,19 @@ const _nav = [
     component: CNavItem,
     name: 'Hizmet Ekleme',
     to: '/base',
-    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilWrapText} customClassName="nav-icon" />,
     
   },
   {
     component: CNavItem,
     name: 'Firma İstatistikleri',
     to: '/charts',
-    icon: <CIcon icon={cilChartPie} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilBarChart} customClassName="nav-icon" />,
   },
   {
     component: CNavGroup,
     name: 'Personeller',
-    icon: <CIcon icon={cilStar} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilGroup} customClassName="nav-icon" />,
     items: [
       {
         component: CNavItem,
@@ -69,7 +75,7 @@ const _nav = [
   {
     component: CNavGroup,
     name: 'Sözleşmeler',
-    icon: <CIcon icon={cilBell} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilPenAlt} customClassName="nav-icon" />,
     items: [
       {
         component: CNavItem,
