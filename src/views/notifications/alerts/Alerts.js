@@ -89,8 +89,18 @@ const Alerts = () => {
               </div>
               <br />
               <br />
-              <br />
-              <br />
+              <CAlert color="dark">Dİl Seçimi</CAlert>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox1"
+                  value="option1"
+                ></input>
+                <label class="form-check-label" for="inlineCheckbox1">
+                  Evet
+                </label>
+              </div>
               <CAlert color="secondary">Sözleşme Tarihi</CAlert>
               <label for="birthday">Başlangıç Tarihi:</label>
               <input
