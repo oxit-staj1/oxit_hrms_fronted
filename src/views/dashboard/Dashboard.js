@@ -126,7 +126,7 @@ const Dashboard = () => {
       user: { name: 'Eren', new: true, registered: 'Ocak 1, 2021' },
       country: { name: 'Türkiye', flag: cifTr },
       usage: {
-        value: 74,
+        value: 94,
         period: 'Haziran 11, 2021 -  10, 2021',
         color: 'warning',
       },
