@@ -34,6 +34,7 @@ const WidgetsBrand = ({ withCharts }) => {
       },
     },
   }
+  
 }
 
 WidgetsBrand.propTypes = {

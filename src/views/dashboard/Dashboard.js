@@ -70,7 +70,6 @@ const Dashboard = () => {
     { title: 'Pazar', value1: 9, value2: 69 },
   ]
   
-
   const tableExample = [
     {
       avatar: { src: avatar1},

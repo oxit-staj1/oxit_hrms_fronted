@@ -102,7 +102,7 @@ const WidgetsDropdown = () => {
               </span>
             </>
           }
-          title="Gelir"
+          title="Tahmini Gelir"
           chart={
             <CChartLine
               className="mt-3 mx-3"
