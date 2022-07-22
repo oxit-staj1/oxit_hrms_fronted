@@ -161,7 +161,7 @@ const Cards = () => {
                     <CCardText>
                       <small className="text-medium-emphasis">
                         İşe
-                        GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGgiriş
+                        GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGaaaaaaaaaaaGGGGGGGGGGGGGGGGGgiriş
                         tarihi = 16.04.2019
                       </small>
                     </CCardText>
