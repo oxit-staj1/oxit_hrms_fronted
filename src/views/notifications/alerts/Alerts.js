@@ -100,6 +100,16 @@ const Alerts = () => {
                 <label class="form-check-label" for="inlineCheckbox1">
                   Evet
                 </label>
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Example select</label>
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
               </div>
               <CAlert color="secondary">Sözleşme Tarihi</CAlert>
               <label for="birthday">Başlangıç Tarihi:</label>
@@ -121,7 +131,7 @@ const Alerts = () => {
               <br />
               <CAlert color="dark">KDV'siz Fiyat</CAlert>
               <form>
-                Firma Adını Giriniz:
+                KDV'siz Fiyatı Giriniz:
                 <br />
                 <input class="form-control" type="text" name="firmaadi :" />
                 <br />
@@ -129,7 +139,7 @@ const Alerts = () => {
               </form>
               <CAlert color="secondary">KDV'li Fiyat</CAlert>
               <form>
-                Firma Adını Giriniz:
+                KDV'li Fiyatı Giriniz
                 <br />
                 <input class="form-control" type="text" name="firmaadi :" />
                 <br />
@@ -144,7 +154,7 @@ const Alerts = () => {
               </form>
               <CAlert color="secondary">Yıllık Yenileme Tutarı</CAlert>
               <form>
-                Yıllık Yenileme Tutatı:
+                Yıllık Yenileme Tutarı:
                 <br />
                 <input class="form-control" type="text" name="firmaadi :" />
                 <br />
