@@ -41,6 +41,7 @@ import {
   cibTwitter,
   cilCloudDownload,
   cilPeople,
+  cilBuilding,
   cilUser,
   cilUserFemale,
 } from '@coreui/icons'
@@ -174,7 +175,7 @@ const Dashboard = () => {
                 <CTableHead color="light">
                   <CTableRow>
                     <CTableHeaderCell className="text-center">
-                      <CIcon icon={cilPeople} />
+                      <CIcon icon={cilBuilding} />
                     </CTableHeaderCell>
                     <CTableHeaderCell>Firma</CTableHeaderCell>
                     <CTableHeaderCell className="text-center">Ülke</CTableHeaderCell>
