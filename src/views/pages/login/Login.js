@@ -20,9 +20,6 @@ import { cilLockLocked, cilUser } from '@coreui/icons'
 const Login = () => {
   return (  
     <div className="bg-light min-vh-100 d-flex flex-row align-items-center">
-      <audio controls autoplay="autoplay">
-  <source src="kv.mp3" type="audio/mpeg" />
-</audio>
       <CContainer>
         <CRow className="justify-content-center">
           <CCol md={8}>
@@ -65,7 +62,7 @@ const Login = () => {
               </CCard>
               <CCard className="text-white bg-black py-5 " style={{ width: '44%'  }}>
                 <CCardBody className="text-center" >
-                <img src="/a.png" class="img-thumbnail" width="640" height="480"></img>
+                <img src="/logo.jpeg" class="img-thumbnail" width="640" height="480"></img>
                   <div>
                   <br></br>
                   <font color="white">OXIT BİLİŞİM</font> 
