@@ -69,6 +69,7 @@ const Login = () => {
               >
                 <CCardBody className="text-center">
                   <div>
+<<<<<<< HEAD
                     <p>Aramıza katılmayı unutmayın.</p>
                     <Link to="/register">
                       <CButton
@@ -78,6 +79,13 @@ const Login = () => {
                         tabIndex={-1}
                       >
                         Şimdi Kaydolun!
+=======
+                                        
+                     <p>Aramıza katılmayı unutmayın.</p>
+                    <Link to="/register">      
+                      <CButton color="primary" className="mt-3" active tabIndex={-1}>
+                        Şimdi Kaydolun
+>>>>>>> 8f45a559d9208928316009f8aa59ec1ecdc1c70c
                       </CButton>
                     </Link>
                   </div>
