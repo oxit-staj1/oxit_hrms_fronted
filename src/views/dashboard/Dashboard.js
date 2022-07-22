@@ -1,5 +1,5 @@
 import React from 'react'
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"></link>
 import {
   CAvatar,
   CButton,
@@ -56,6 +56,7 @@ import avatar6 from 'src/assets/images/avatars/6.jpg'
 import WidgetsBrand from '../widgets/WidgetsBrand'
 import WidgetsDropdown from '../widgets/WidgetsDropdown'
 
+
 const Dashboard = () => {
   const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
 
@@ -68,6 +69,7 @@ const Dashboard = () => {
     { title: 'Cumartesi', value1: 53, value2: 82 },
     { title: 'Pazar', value1: 9, value2: 69 },
   ]
+  
 
   const tableExample = [
     {
@@ -164,7 +166,6 @@ const Dashboard = () => {
     <>
       <WidgetsDropdown />
       <WidgetsBrand withCharts />
-
       <CRow>
         <CCol xs>
           <CCard className="mb-4">
