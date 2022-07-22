@@ -60,20 +60,13 @@ const Login = () => {
                   </CForm>
                 </CCardBody>
               </CCard>
-              <CCard className="text-white bg-black py-5 " style={{ width: '44%'  }}
-              
-              
-              
-              
-              >
+              <CCard className="text-white bg-black py-5 " style={{ width: '44%'  }}>
                 <CCardBody className="text-center" >
+                <img src="/logo.jpeg" class="img-thumbnail" width="640" height="480"></img>
                   <div>
-                                        
-                     <p>Aramıza katılmayı unutmayın.</p>
-                    <Link to="/register">      
-                      <CButton color="primary" className="mt-3" active tabIndex={-1}>
-                        Şimdi Kaydolun
-                      </CButton>
+                  <br></br>
+                  <font color="white">OXIT BİLİŞİM</font> 
+                    <Link to="/register">
                     </Link>
                   </div>
                 </CCardBody>
