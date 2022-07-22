@@ -70,7 +70,7 @@ const Dashboard = () => {
 
   const tableExample = [
     {
-      avatar: { src: avatar1, status: 'başarılı' },
+      avatar: { src: avatar1},
       user: {
         name: 'Çağrı',
         new: true,
@@ -86,7 +86,7 @@ const Dashboard = () => {
       activity: '200$',
     },
     {
-      avatar: { src: avatar2, status: 'danger' },
+      avatar: { src: avatar2},
       user: {
         name: 'Ömer',
         new: false,
@@ -102,7 +102,7 @@ const Dashboard = () => {
       activity: '50€',
     },
     {
-      avatar: { src: avatar3, status: 'warning' },
+      avatar: { src: avatar3},
       user: { name: 'Eren', new: true, registered: 'Ocak 1, 2021' },
       country: { name: 'Türkiye', flag: cifTr },
       usage: {
@@ -114,7 +114,7 @@ const Dashboard = () => {
       activity: '100$',
     },
     {
-      avatar: { src: avatar4, status: 'secondary' },
+      avatar: { src: avatar4},
       user: { name: 'Doğa', new: true, registered: 'Ocak 1, 2021' },
       country: { name: 'Türkiye', flag: cifTr },
       usage: {
@@ -126,7 +126,7 @@ const Dashboard = () => {
       activity: '500₺',
     },
     {
-      avatar: { src: avatar5, status: 'success' },
+      avatar: { src: avatar5},
       user: {
         name: 'Tuğba',
         new: true,
@@ -142,7 +142,7 @@ const Dashboard = () => {
       activity: '250₺',
     },
     {
-      avatar: { src: avatar6, status: 'danger' },
+      avatar: { src: avatar6},
       user: {
         name: 'İbrahim',
         new: true,
