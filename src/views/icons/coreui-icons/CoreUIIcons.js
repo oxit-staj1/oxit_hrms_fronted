@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import {
   CButton,
   CCard,
@@ -18,10 +18,10 @@ import {
   CNavLink,
   CCol,
   CRow,
-} from '@coreui/react'
-import { DocsExample } from 'src/components'
+} from "@coreui/react";
+import { DocsExample } from "src/components";
 
-import ReactImg from 'src/assets/images/react.gif'
+import ReactImg from "src/assets/images/react.gif";
 import {
   CChartBar,
   CChartDoughnut,
@@ -29,7 +29,7 @@ import {
   CChartPie,
   CChartPolarArea,
   CChartRadar,
-} from '@coreui/react-chartjs'
+} from "@coreui/react-chartjs";
 const Cards = () => {
   return (
     <CRow>
@@ -47,29 +47,19 @@ const Cards = () => {
                     <CCardTitle>Gizem ***</CCardTitle>
                     <CCardText>Bildiği diller C#, C++, ...</CCardText>
                     <CCardText>
-                      <small className="text-medium-emphasis">İşe giriş tarihi = 16.04.2019</small>
+                      <small className="text-medium-emphasis">
+                        İşe giriş tarihi = 16.04.2019
+                      </small>
                     </CCardText>
                     <CCardText>
-                      <small className="text-medium-emphasis">Doğum tarihi = 05.07.1995</small>
+                      <small className="text-medium-emphasis">
+                        Doğum tarihi = 05.07.1995
+                      </small>
                     </CCardText>
                     <CCardText>
-                      <small className="text-medium-emphasis">Birimi = Web designer</small>
-                    </CCardText>
-                  </CCardBody>
-                </CCard>
-                <CCard>
-                  <CCardImage orientation="top" src={ReactImg} />
-                  <CCardBody>
-                    <CCardTitle>Gizem ***</CCardTitle>
-                    <CCardText>Bildiği diller C#, C++, ...</CCardText>
-                    <CCardText>
-                      <small className="text-medium-emphasis">İşe giriş tarihi = 16.04.2019</small>
-                    </CCardText>
-                    <CCardText>
-                      <small className="text-medium-emphasis">Doğum tarihi = 05.07.1995</small>
-                    </CCardText>
-                    <CCardText>
-                      <small className="text-medium-emphasis">Birimi = Web designer</small>
+                      <small className="text-medium-emphasis">
+                        Birimi = Web designer
+                      </small>
                     </CCardText>
                   </CCardBody>
                 </CCard>
@@ -79,13 +69,41 @@ const Cards = () => {
                     <CCardTitle>Gizem ***</CCardTitle>
                     <CCardText>Bildiği diller C#, C++, ...</CCardText>
                     <CCardText>
-                      <small className="text-medium-emphasis">İşe giriş tarihi = 16.04.2019</small>
+                      <small className="text-medium-emphasis">
+                        İşe giriş tarihi = 16.04.2019
+                      </small>
                     </CCardText>
                     <CCardText>
-                      <small className="text-medium-emphasis">Doğum tarihi = 05.07.1995</small>
+                      <small className="text-medium-emphasis">
+                        Doğum tarihi = 05.07.1995
+                      </small>
                     </CCardText>
                     <CCardText>
-                      <small className="text-medium-emphasis">Birimi = Web designer</small>
+                      <small className="text-medium-emphasis">
+                        Birimi = Web designer
+                      </small>
+                    </CCardText>
+                  </CCardBody>
+                </CCard>
+                <CCard>
+                  <CCardImage orientation="top" src={ReactImg} />
+                  <CCardBody>
+                    <CCardTitle>Gizem ***</CCardTitle>
+                    <CCardText>Bildiği diller C#, C++, ...</CCardText>
+                    <CCardText>
+                      <small className="text-medium-emphasis">
+                        İşe giriş tarihi = 16.04.2019
+                      </small>
+                    </CCardText>
+                    <CCardText>
+                      <small className="text-medium-emphasis">
+                        Doğum tarihi = 05.07.1995
+                      </small>
+                    </CCardText>
+                    <CCardText>
+                      <small className="text-medium-emphasis">
+                        Birimi = Web designer
+                      </small>
                     </CCardText>
                   </CCardBody>
                 </CCard>
@@ -97,29 +115,19 @@ const Cards = () => {
                     <CCardTitle>Gizem ***</CCardTitle>
                     <CCardText>Bildiği diller C#, C++, ...</CCardText>
                     <CCardText>
-                      <small className="text-medium-emphasis">İşe giriş tarihi = 16.04.2019</small>
+                      <small className="text-medium-emphasis">
+                        İşe giriş tarihi = 16.04.2019
+                      </small>
                     </CCardText>
                     <CCardText>
-                      <small className="text-medium-emphasis">Doğum tarihi = 05.07.1995</small>
+                      <small className="text-medium-emphasis">
+                        Doğum tarihi = 05.07.1995
+                      </small>
                     </CCardText>
                     <CCardText>
-                      <small className="text-medium-emphasis">Birimi = Web designer</small>
-                    </CCardText>
-                  </CCardBody>
-                </CCard>
-                <CCard>
-                  <CCardImage orientation="top" src={ReactImg} />
-                  <CCardBody>
-                    <CCardTitle>Gizem ***</CCardTitle>
-                    <CCardText>Bildiği diller C#, C++, ...</CCardText>
-                    <CCardText>
-                      <small className="text-medium-emphasis">İşe giriş tarihi = 16.04.2019</small>
-                    </CCardText>
-                    <CCardText>
-                      <small className="text-medium-emphasis">Doğum tarihi = 05.07.1995</small>
-                    </CCardText>
-                    <CCardText>
-                      <small className="text-medium-emphasis">Birimi = Web designer</small>
+                      <small className="text-medium-emphasis">
+                        Birimi = Web designer
+                      </small>
                     </CCardText>
                   </CCardBody>
                 </CCard>
@@ -129,13 +137,43 @@ const Cards = () => {
                     <CCardTitle>Gizem ***</CCardTitle>
                     <CCardText>Bildiği diller C#, C++, ...</CCardText>
                     <CCardText>
-                      <small className="text-medium-emphasis">İşe giriş tarihi = 16.04.2019</small>
+                      <small className="text-medium-emphasis">
+                        İşe giriş tarihi = 16.04.2019
+                      </small>
                     </CCardText>
                     <CCardText>
-                      <small className="text-medium-emphasis">Doğum tarihi = 05.07.1995</small>
+                      <small className="text-medium-emphasis">
+                        Doğum tarihi = 05.07.1995
+                      </small>
                     </CCardText>
                     <CCardText>
-                      <small className="text-medium-emphasis">Birimi = Web designer</small>
+                      <small className="text-medium-emphasis">
+                        Birimi = Web designer
+                      </small>
+                    </CCardText>
+                  </CCardBody>
+                </CCard>
+                <CCard>
+                  <CCardImage orientation="top" src={ReactImg} />
+                  <CCardBody>
+                    <CCardTitle>Gizem ***</CCardTitle>
+                    <CCardText>Bildiği diller C#, C++, ...</CCardText>
+                    <CCardText>
+                      <small className="text-medium-emphasis">
+                        İşe
+                        GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGgiriş
+                        tarihi = 16.04.2019
+                      </small>
+                    </CCardText>
+                    <CCardText>
+                      <small className="text-medium-emphasis">
+                        Doğum tarihi = 05.07.1995
+                      </small>
+                    </CCardText>
+                    <CCardText>
+                      <small className="text-medium-emphasis">
+                        Birimi = Web designer
+                      </small>
                     </CCardText>
                   </CCardBody>
                 </CCard>
@@ -150,11 +188,11 @@ const Cards = () => {
           <CCardBody>
             <CChartBar
               data={{
-                labels: ['Gizem', 'Hakkı', 'Ömer', 'Çağrı', 'Eren', 'Doğa'],
+                labels: ["Gizem", "Hakkı", "Ömer", "Çağrı", "Eren", "Doğa"],
                 datasets: [
                   {
-                    label: 'Personellerin satış yaptığı firma sayısı',
-                    backgroundColor: '#f87979',
+                    label: "Personellerin satış yaptığı firma sayısı",
+                    backgroundColor: "#f87979",
                     data: [60, 20, -3, 39, 52, 45],
                   },
                 ],
@@ -165,7 +203,7 @@ const Cards = () => {
         </CCard>
       </CCol>
     </CRow>
-  )
-}
+  );
+};
 
-export default Cards
+export default Cards;
