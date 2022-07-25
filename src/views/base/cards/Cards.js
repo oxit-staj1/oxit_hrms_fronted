@@ -46,7 +46,7 @@ const Cards = () => {
       <CCol xs={12}>
         <CCard className="mb-4">
           <CCardHeader>
-            <strong>Hizmetttttt</strong> <small>Ekleme</small>
+            <strong>Hizmet</strong> <small>Ekleme</small>
           </CCardHeader>
           <CCardBody>
             <DocsExample href="components/card">
