@@ -25,25 +25,28 @@ import { DocsExample } from "src/components";
 
 import ReactImg from "src/assets/images/react.gif";
 import HizmetService from "src/service/hizmetService";
+import { useNavigate } from "react-router-dom";
+import HizmetList from "./HizmetList";
 
 const Cards = () => {
+  const url = "http://localhost:8080/api/hizmet/add"
   let history = useNavigate();
-  const [hizmet_ad, setHizmet_ad] = useState([]);
-  
+  const [hizmet_ad, setHizmet_ad] = useState([])
+
   const postData = () => {
-      axios.post(`http://localhost:8080/api/hizmet/add`, {
-          hizmet_ad,
-      }).then(() => {
-          history.push('/read')
-      })
+    axios.post(url, {
+      hizmet_ad
+    }).then(() => { history.push('/read') })
   }
-  console.log(hizmet_ad)
+
+  
+
   return (
     <CRow>
       <CCol xs={12}>
         <CCard className="mb-4">
           <CCardHeader>
-            <strong>Hizmet</strong> <small>Ekleme</small>
+            <strong>Hizmetttttt</strong> <small>Ekleme</small>
           </CCardHeader>
           <CCardBody>
             <DocsExample href="components/card">
@@ -54,25 +57,15 @@ const Cards = () => {
                     Eklemek İstediğiniz Hizmet Türünü Giriniz
                   </CCardTitle>
                   <CCardText></CCardText>
-                  <form onSubmit={handleSubmit}>
-                    <label htmlFor="hizmet ad ">
-                      Hizmet Ad :
-                      <input
-                        class="form-control"
-                        type="text"
-                        name="hizmetAd"
-                        value={hizmets.hizmet_ad}
-                        onChange={handleChange}
-                      />
-                    </label>
-
-                    <button class="btn btn-light" type="submit">
-                      Ekle
-                    </button>
+                  <form className="create-form">
+                    <label>Hizmet AD </label>
+                    <input placeholder='hizmet adınnı giriniz' onChange={(e) => setHizmet_ad(e.target.value)} />
+                    <button onClick={postData} type='sumbit'> Ekle </button>
                   </form>
                 </CCardBody>
               </CCard>
             </DocsExample>
+            <HizmetList/>
           </CCardBody>
         </CCard>
       </CCol>
