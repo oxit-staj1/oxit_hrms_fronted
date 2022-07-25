@@ -41,7 +41,7 @@ const Alerts = () => {
               </form>
               <CAlert color="dark">Hizmet Seçimi</CAlert>
               <label class="form-control" for="hizmet">
-                İSTEDİĞİNİZ HİZMETLERİ SEÇİNİZ:
+                İstediğiniz Hizmetleri Seçiniz...
               </label>
               <div class="form-check form-check-inline">
                 <input
@@ -101,8 +101,9 @@ const Alerts = () => {
                   Evet
                 </label>
                 <div class="form-group">
-                  <label for="exampleFormControlSelect1">Example select</label>
+                  <label for="exampleFormControlSelect1">Yabancı Dil-1</label>
                   <select class="form-control" id="exampleFormControlSelect1">
+                    <option>Dil Seçiniz</option>
                     <option>'Are'are dili</option>
                     <option>Abazaca</option>
                     <option>Abhazca</option>
@@ -431,8 +432,9 @@ const Alerts = () => {
                     <option>Zuluca</option>
                     <option>Zunice</option>
                   </select>
-                  <label for="exampleFormControlSelect1">Example select</label>
+                  <label for="exampleFormControlSelect1">Yabancı Dil-2</label>
                   <select class="form-control" id="exampleFormControlSelect1">
+                    <option>Dil Seçiniz</option>
                     <option>'Are'are dili</option>
                     <option>Abazaca</option>
                     <option>Abhazca</option>
@@ -761,8 +763,9 @@ const Alerts = () => {
                     <option>Zuluca</option>
                     <option>Zunice</option>
                   </select>
-                  <label for="exampleFormControlSelect1">Example select</label>
+                  <label for="exampleFormControlSelect1">Yabancı Dil-3</label>
                   <select class="form-control" id="exampleFormControlSelect1">
+                    <option>Dil Seçiniz</option>
                     <option>'Are'are dili</option>
                     <option>Abazaca</option>
                     <option>Abhazca</option>
