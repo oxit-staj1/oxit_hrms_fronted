@@ -22,26 +22,13 @@ const WidgetsDropdown = () => {
           color="primary"
           value={
             <>
-              26K{' '}
+              600{' '}
               <span className="fs-6 fw-normal">
-                (-12.4% <CIcon icon={cilArrowBottom} />)
+                (+12.4%)
               </span>
             </>
           }
-          title="Kullanıcılar"
-          action={
-            <CDropdown alignment="end">
-              <CDropdownToggle color="transparent" caret={false} className="p-0">
-                <CIcon icon={cilOptions} className="text-high-emphasis-inverse" />
-              </CDropdownToggle>
-              <CDropdownMenu>
-                <CDropdownItem>Etkileşim</CDropdownItem>
-                <CDropdownItem>Diğer Etkileşimler</CDropdownItem>
-                <CDropdownItem>Başka Değerler...</CDropdownItem>
-                <CDropdownItem disabled>Kapalı Etkileşimler</CDropdownItem>
-              </CDropdownMenu>
-            </CDropdown>
-          }
+          title="Firmalar"
           chart={
             <CChartLine
               className="mt-3 mx-3"
@@ -108,27 +95,16 @@ const WidgetsDropdown = () => {
           className="mb-4"
           color="info"
           value={
+          
+
             <>
               $6.200{' '}
               <span className="fs-6 fw-normal">
-                (40.9% <CIcon icon={cilArrowTop} />)
+                (-40.9%)
               </span>
             </>
           }
-          title="Gelir"
-          action={
-            <CDropdown alignment="end">
-              <CDropdownToggle color="transparent" caret={false} className="p-0">
-                <CIcon icon={cilOptions} className="text-high-emphasis-inverse" />
-              </CDropdownToggle>
-              <CDropdownMenu>
-                <CDropdownItem>Etkileşim</CDropdownItem>
-                <CDropdownItem>Diğer Etkileşimler</CDropdownItem>
-                <CDropdownItem>Başka Değerler...</CDropdownItem>
-                <CDropdownItem disabled>Kapalı Etkileşimler</CDropdownItem>
-              </CDropdownMenu>
-            </CDropdown>
-          }
+          title="Tahmini Gelir"
           chart={
             <CChartLine
               className="mt-3 mx-3"
@@ -194,70 +170,21 @@ const WidgetsDropdown = () => {
           className="mb-4"
           color="warning"
           value={
+            
+
             <>
-              2.49{' '}
-              <span className="fs-6 fw-normal">
-                (84.7% <CIcon icon={cilArrowTop} />)
-              </span>
+              17.76{'$'}
             </>
           }
-          title="Değişim Değeri"
-          action={
-            <CDropdown alignment="end">
-              <CDropdownToggle color="transparent" caret={false} className="p-0">
-                <CIcon icon={cilOptions} className="text-high-emphasis-inverse" />
-              </CDropdownToggle>
-              <CDropdownMenu>
-                <CDropdownItem>Etkileşim</CDropdownItem>
-                <CDropdownItem>Diğer Etkileşimler</CDropdownItem>
-                <CDropdownItem>Başka Değerler...</CDropdownItem>
-                <CDropdownItem disabled>Kapalı Etkileşimler</CDropdownItem>
-              </CDropdownMenu>
-            </CDropdown>
-          }
+          title="Dolar Kuru"
           chart={
             <CChartLine
               className="mt-3"
               style={{ height: '70px' }}
               data={{
-                labels: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz'],
-                datasets: [
-                  {
-                    label: 'Veri kümesi',
-                    backgroundColor: 'rgba(255,255,255,.2)',
-                    borderColor: 'rgba(255,255,255,.55)',
-                    data: [78, 81, 80, 45, 34, 12, 40],
-                    fill: true,
-                  },
-                ],
+                
               }}
-              options={{
-                plugins: {
-                  legend: {
-                    display: false,
-                  },
-                },
-                maintainAspectRatio: false,
-                scales: {
-                  x: {
-                    display: false,
-                  },
-                  y: {
-                    display: false,
-                  },
-                },
-                elements: {
-                  line: {
-                    borderWidth: 2,
-                    tension: 0.4,
-                  },
-                  point: {
-                    radius: 0,
-                    hitRadius: 10,
-                    hoverRadius: 4,
-                  },
-                },
-              }}
+              
             />
           }
         />
@@ -268,26 +195,10 @@ const WidgetsDropdown = () => {
           color="danger"
           value={
             <>
-              44K{' '}
-              <span className="fs-6 fw-normal">
-                (-23.6% <CIcon icon={cilArrowBottom} />)
-              </span>
+              18.01{'€'}
             </>
           }
-          title="Oturumlar"
-          action={
-            <CDropdown alignment="end">
-              <CDropdownToggle color="transparent" caret={false} className="p-0">
-                <CIcon icon={cilOptions} className="text-high-emphasis-inverse" />
-              </CDropdownToggle>
-              <CDropdownMenu>
-                <CDropdownItem>Etkileşim</CDropdownItem>
-                <CDropdownItem>Diğer Etkileşimler</CDropdownItem>
-                <CDropdownItem>Başka Değerler...</CDropdownItem>
-                <CDropdownItem disabled>Kapalı Etkileşimler</CDropdownItem>
-              </CDropdownMenu>
-            </CDropdown>
-          }
+          title="Euro Kuru"
           chart={
             <CChartBar
               className="mt-3 mx-3"

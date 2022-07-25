@@ -5,6 +5,7 @@ import {
   CCard,
   CCardBody,
   CCardGroup,
+  CCardImage,
   CCol,
   CContainer,
   CForm,
@@ -17,7 +18,7 @@ import CIcon from '@coreui/icons-react'
 import { cilLockLocked, cilUser } from '@coreui/icons'
 
 const Login = () => {
-  return (
+  return (  
     <div className="bg-light min-vh-100 d-flex flex-row align-items-center">
       <CContainer>
         <CRow className="justify-content-center">
@@ -59,16 +60,13 @@ const Login = () => {
                   </CForm>
                 </CCardBody>
               </CCard>
-              <CCard className="text-white bg-primary py-5" style={{ width: '44%' }}>
-                <CCardBody className="text-center">
+              <CCard className="text-white bg-black py-5 " style={{ width: '44%'  }}>
+                <CCardBody className="text-center" >
+                <img src="/logo.jpeg" class="img-thumbnail" width="640" height="480"></img>
                   <div>
-                    <h2>Kayıt Olun</h2>
-                    <p>Kaliteli ve profesyonel bir hizmet mi arıyorsunuz?</p>
-                    <p>Aramıza katılmayı unutmayın.</p>
+                  <br></br>
+                  <font color="white">OXIT BİLİŞİM</font> 
                     <Link to="/register">
-                      <CButton color="primary" className="mt-3" active tabIndex={-1}>
-                        Şimdi Kaydolun!
-                      </CButton>
                     </Link>
                   </div>
                 </CCardBody>

@@ -43,16 +43,92 @@ const Alerts = () => {
               <label class="form-control" for="hizmet">
                 İSTEDİĞİNİZ HİZMETLERİ SEÇİNİZ:
               </label>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox1"
+                  value="option1"
+                ></input>
+                <label class="form-check-label" for="inlineCheckbox1">
+                  DİNAMİK WEB SİTESİ
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox2"
+                  value="option2"
+                ></input>
+                <label class="form-check-label" for="inlineCheckbox2">
+                  REKLAM PAKETİ
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox2"
+                  value="option2"
+                ></input>
+                <label class="form-check-label" for="inlineCheckbox2">
+                  E-TİCARET
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox2"
+                  value="option2"
+                ></input>
+                <label class="form-check-label" for="inlineCheckbox2">
+                  YENİLEME
+                </label>
+              </div>
               <br />
               <br />
-              <select name="hizmet" id="hizmet">
-                <option value="DWB">DİNAMİK WEB SİTESİ</option>
-                <option value="RP">REKLAM PAKETİ</option>
-                <option value="Y">YENİLEME</option>
-                <option value="ET">E-TİCARET</option>
-              </select>
-              <br />
-              <br />
+              <CAlert color="dark">Dİl Seçimi</CAlert>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox1"
+                  value="option1"
+                ></input>
+                <label class="form-check-label" for="inlineCheckbox1">
+                  Evet
+                </label>
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Example select</label>
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+
+                  <label for="exampleFormControlSelect1">Example select</label>
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+
+                  <label for="exampleFormControlSelect1">Example select</label>
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+              </div>
               <CAlert color="secondary">Sözleşme Tarihi</CAlert>
               <label for="birthday">Başlangıç Tarihi:</label>
               <input
@@ -72,22 +148,54 @@ const Alerts = () => {
               <br />
               <br />
               <CAlert color="dark">KDV'siz Fiyat</CAlert>
+             <div class="col-md-3">
+             <label for="validationCustom04" class="form-label">Para Türü</label>
+             <select class="form-select" id="validationCustom04" required>
+               <option>₺</option>
+               <option>$</option>
+               <option>€</option>
+             </select>
+             <div class="invalid-feedback">
+               Please select a valid state.
+             </div>
+            </div>
               <form>
-                Firma Adını Giriniz:
+                KDV'siz Fiyatı Giriniz:
                 <br />
-                <input type="text" name="firmaadi :" />
+                <input class="form-control" type="text" name="firmaadi :" />
                 <br />
                 <br />
               </form>
-              <CAlert color="secondary">KDV'li Fiyat</CAlert>
+              <CAlert color="secondary">KDV'li Fiyat</CAlert><div class="col-md-3">
+             <label for="validationCustom04" class="form-label">Para Türü</label>
+             <select class="form-select" id="validationCustom04" required>
+               <option>₺</option>
+               <option>$</option>
+               <option>€</option>
+             </select>
+             <div class="invalid-feedback">
+               Please select a valid state.
+             </div>
+            </div>
               <form>
-                Firma Adını Giriniz:
+                KDV'li Fiyatı Giriniz
                 <br />
                 <input class="form-control" type="text" name="firmaadi :" />
                 <br />
                 <br />
               </form>
               <CAlert color="dark">Kapora</CAlert>
+              <div class="col-md-3">
+             <label for="validationCustom04" class="form-label">Para Türü</label>
+             <select class="form-select" id="validationCustom04" required>
+               <option>₺</option>
+               <option>$</option>
+               <option>€</option>
+             </select>
+             <div class="invalid-feedback">
+               Please select a valid state.
+             </div>
+            </div>
               <form>
                 Ödemeniz Gereken Kapora Miktarı :<br />
                 <input class="form-control" type="text" name="firmaadi :" />
@@ -95,8 +203,19 @@ const Alerts = () => {
                 <br />
               </form>
               <CAlert color="secondary">Yıllık Yenileme Tutarı</CAlert>
+              <div class="col-md-3">
+             <label for="validationCustom04" class="form-label">Para Türü</label>
+             <select class="form-select" id="validationCustom04" required>
+               <option>₺</option>
+               <option>$</option>
+               <option>€</option>
+             </select>
+             <div class="invalid-feedback">
+               Please select a valid state.
+             </div>
+            </div>
               <form>
-                Yıllık Yenileme Tutatı:
+                Yıllık Yenileme Tutarı:
                 <br />
                 <input class="form-control" type="text" name="firmaadi :" />
                 <br />
