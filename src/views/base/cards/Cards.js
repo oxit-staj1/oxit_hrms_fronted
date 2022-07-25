@@ -27,26 +27,17 @@ import ReactImg from "src/assets/images/react.gif";
 import HizmetService from "src/service/hizmetService";
 
 const Cards = () => {
-  const [hizmets, setHizmets] = useState({});
-
-  useEffect(() => {
-    const hizmetService = new HizmetService();
-    hizmetService.getHizmet().then((result) => setHizmets(result.data.data));
-  }, []);
-
-  const handleChange = (e) => {
-    const value = e.target.value;
-    setHizmets({ hizmet_ad: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    axios
-      .post("http://localhost:8080/api/hizmet/add", hizmets)
-      .then((response) => {
-        console.log(response.status);
-      });
-  };
+  let history = useNavigate();
+  const [hizmet_ad, setHizmet_ad] = useState([]);
+  
+  const postData = () => {
+      axios.post(`http://localhost:8080/api/hizmet/add`, {
+          hizmet_ad,
+      }).then(() => {
+          history.push('/read')
+      })
+  }
+  console.log(hizmet_ad)
   return (
     <CRow>
       <CCol xs={12}>
