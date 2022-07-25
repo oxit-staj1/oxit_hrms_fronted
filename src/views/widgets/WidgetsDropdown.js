@@ -95,6 +95,8 @@ const WidgetsDropdown = () => {
           className="mb-4"
           color="info"
           value={
+          
+
             <>
               $6.200{' '}
               <span className="fs-6 fw-normal">
@@ -168,6 +170,8 @@ const WidgetsDropdown = () => {
           className="mb-4"
           color="warning"
           value={
+            
+
             <>
               17.76{'$'}
             </>
@@ -178,44 +182,9 @@ const WidgetsDropdown = () => {
               className="mt-3"
               style={{ height: '70px' }}
               data={{
-                labels: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz'],
-                datasets: [
-                  {
-                    label: 'Veri kümesi',
-                    backgroundColor: 'rgba(255,255,255,.2)',
-                    borderColor: 'rgba(255,255,255,.55)',
-                    data: [78, 81, 80, 45, 34, 12, 40],
-                    fill: true,
-                  },
-                ],
+                
               }}
-              options={{
-                plugins: {
-                  legend: {
-                    display: false,
-                  },
-                },
-                maintainAspectRatio: false,
-                scales: {
-                  x: {
-                    display: false,
-                  },
-                  y: {
-                    display: false,
-                  },
-                },
-                elements: {
-                  line: {
-                    borderWidth: 2,
-                    tension: 0.4,
-                  },
-                  point: {
-                    radius: 0,
-                    hitRadius: 10,
-                    hoverRadius: 4,
-                  },
-                },
-              }}
+              
             />
           }
         />
