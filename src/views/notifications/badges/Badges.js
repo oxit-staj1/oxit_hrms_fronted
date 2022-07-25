@@ -53,11 +53,8 @@ const Badges = () => {
 
           <CCardBody>
             <p className="text-medium-emphasis small">
-              <p>
-                <i>İndirmek için tıklayınız</i>
-              </p>
               <form method="get" action="file.doc" size="large">
-                <button type="submit">TIKLAYINIZ!</button>
+                <a href="/sözleşme.pdf" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" download>İndirmek İçin Tıklayınız</a>
               </form>
             </p>
           </CCardBody>
