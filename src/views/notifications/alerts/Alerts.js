@@ -91,15 +91,6 @@ const Alerts = () => {
               <br />
               <CAlert color="dark">Dİl Seçimi</CAlert>
               <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  id="inlineCheckbox1"
-                  value="option1"
-                ></input>
-                <label class="form-check-label" for="inlineCheckbox1">
-                  Evet
-                </label>
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Yabancı Dil-1</label>
                   <select class="form-control" id="exampleFormControlSelect1">
@@ -1094,8 +1085,8 @@ const Alerts = () => {
                     <option>Zuluca</option>
                     <option>Zunice</option>
                   </select>
-
-                  
+                  <br></br>
+                  <button type="submit" class="btn btn-primary mb-3">Seçilen Dil(ler)i Onayla</button>
                 </div>
               </div>
               <CAlert color="secondary">Sözleşme Tarihi</CAlert>
