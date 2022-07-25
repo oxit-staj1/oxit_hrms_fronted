@@ -51,7 +51,6 @@ const Cards = () => {
           <CCardBody>
             <DocsExample href="components/card">
               <CCard style={{ width: "18rem" }}>
-                <CCardImage orientation="top" src={ReactImg} />
                 <CCardBody>
                   <CCardTitle>
                     Eklemek İstediğiniz Hizmet Türünü Giriniz
