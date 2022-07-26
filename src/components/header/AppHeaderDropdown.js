@@ -32,31 +32,7 @@ const AppHeaderDropdown = () => {
         <CAvatar src={avatar8} size="md" />
       </CDropdownToggle>
       <CDropdownMenu className="pt-0" placement="bottom-end">
-        <CDropdownHeader className="bg-light fw-semibold py-2">Ayarlar</CDropdownHeader>
-        <CDropdownItem href="#">
-          <CIcon icon={cilUser} className="me-2" />
-          Profil
-        </CDropdownItem>
-        <CDropdownItem href="#">
-          <CIcon icon={cilSettings} className="me-2" />
-          Ayarlar
-        </CDropdownItem>
-        <CDropdownItem href="#">
-          <CIcon icon={cilCreditCard} className="me-2" />
-          Ödeme Yöntemleri
-          <CBadge color="secondary" className="ms-2">
-            42
-          </CBadge>
-        </CDropdownItem>
-        <CDropdownItem href="#">
-          <CIcon icon={cilFile} className="me-2" />
-          Projeler
-          <CBadge color="primary" className="ms-2">
-            42
-          </CBadge>
-        </CDropdownItem>
-        <CDropdownDivider />
-        <CDropdownItem href="http://www.oxityazilim.com">
+        <CDropdownItem href="https://img-s3.onedio.com/id-620e60c8f79d856f117ce918/rev-0/w-620/f-jpg/s-cc2566fd59bc7b41f73c5161210f98ab4cf0d4de.jpg">
           <CIcon icon={cilPowerStandby} className="me-2" />
           Çıkış Yap
         </CDropdownItem>
