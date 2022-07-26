@@ -90,7 +90,7 @@ const routes = [
   { path: '/icons/coreui-icons', name: 'Personel Kadrosu', element: CoreUIIcons },
   { path: '/icons/flags', name: 'Personel Ekle', element: Flags },
   { path: '/icons/brands', name: 'Brands', element: Brands },
-  { path: '/icons/firma/firmalist', name: 'Firma LİST', element: FirmaList },
+  { path: '/icons/firma/firmalist', name: 'Firma Ekle', element: FirmaList },
   { path: '/icons/firma/firmaekle', name: 'Firma Ekle', element: FirmaEkle },
   { path: '/notifications', name: 'Sözleşmeler', element: Alerts, exact: true },
   { path: '/notifications/alerts', name: 'Sözleşme Ekle', element: Alerts },

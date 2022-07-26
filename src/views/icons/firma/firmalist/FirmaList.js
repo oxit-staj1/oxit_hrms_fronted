@@ -55,7 +55,7 @@ const Cards = () => {
               href="#"
               role="button"
             >
-              Personeller
+              Firmalar
             </a>
             <DocsExample href="components/card">
               <CCard style={{ width: "18rem" }}>
