@@ -50,7 +50,7 @@ const HizmetList = () => {
                         return (
                             <Table.Row>
                                 <Table.Cell>{hizmet.hizmet_ad}</Table.Cell>
-                                <Link to='/update'>
+                                <Link to='/hizmetupdate'>
                                     <Table.Cell>
                                         <Button onClick={() => setData(hizmet)}>Update</Button>
                                     </Table.Cell>
