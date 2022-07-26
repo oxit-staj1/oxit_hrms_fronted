@@ -31,7 +31,7 @@ const Cards = () => {
           <CCardBody>
             <DocsExample href="components/card">
               <CCard style={{ width: "18rem" }}>
-                <CCardImage orientation="top" src={ReactImg} />
+                <a href="/#/icons/coreui-icons"><CCardImage orientation="top" src={ReactImg}/></a>
                 <CCardBody>
                   <CCardTitle>Personel Ekle</CCardTitle>
                   <CCardText></CCardText>
