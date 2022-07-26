@@ -52,7 +52,7 @@ const Cards = () => {
           <CCardBody>
             <a
               class="btn btn-primary"
-              href="http://localhost:3000/#/icons/coreui-icons"
+              href="/#/icons/coreui-icons"
               role="button"
             >
               Personeller
