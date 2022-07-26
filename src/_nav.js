@@ -52,6 +52,32 @@ const _nav = [
   },
   {
     component: CNavGroup,
+    name: 'Firma',
+    icon: <CIcon icon={cilGroup} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Firmalar',
+        to: '/icons/firma/firmalist',
+        badge: {
+          color: 'success',
+          text: '',
+        },
+      },
+      {
+        component: CNavItem,
+        name: 'Firma Ekle',
+        to: '/icons/firma/firmaekle',
+        badge: {
+          color: 'success',
+          text: '',
+        },
+      },
+      
+    ],
+  },
+  {
+    component: CNavGroup,
     name: 'Personeller',
     icon: <CIcon icon={cilGroup} customClassName="nav-icon" />,
     items: [
@@ -93,3 +119,4 @@ const _nav = [
 ]
 
 export default _nav
+  

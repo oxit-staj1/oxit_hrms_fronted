@@ -41,7 +41,8 @@ const Charts = React.lazy(() => import('./views/charts/Charts'))
 const CoreUIIcons = React.lazy(() => import('./views/icons/coreui-icons/CoreUIIcons'))
 const Flags = React.lazy(() => import('./views/icons/flags/Flags'))
 const Brands = React.lazy(() => import('./views/icons/brands/Brands'))
-
+const FirmaList = React.lazy(() => import ('./views/icons/firma/firmalist/FirmaList'))
+const FirmaEkle = React.lazy(() => import ('./views/icons/firma/firmaekle/FirmaEkle'))
 // Notifications
 const Alerts = React.lazy(() => import('./views/notifications/alerts/Alerts'))
 const Badges = React.lazy(() => import('./views/notifications/badges/Badges'))
@@ -89,6 +90,8 @@ const routes = [
   { path: '/icons/coreui-icons', name: 'Personel Kadrosu', element: CoreUIIcons },
   { path: '/icons/flags', name: 'Personel Ekle', element: Flags },
   { path: '/icons/brands', name: 'Brands', element: Brands },
+  { path: '/icons/firma/firmalist', name: 'Firma LİST', element: FirmaList },
+  { path: '/icons/firma/firmaekle', name: 'Firma Ekle', element: FirmaEkle },
   { path: '/notifications', name: 'Sözleşmeler', element: Alerts, exact: true },
   { path: '/notifications/alerts', name: 'Sözleşme Ekle', element: Alerts },
   { path: '/notifications/badges', name: 'Sözleşmeler', element: Badges },
