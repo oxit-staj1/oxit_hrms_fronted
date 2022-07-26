@@ -44,36 +44,26 @@ const _nav = [
     icon: <CIcon icon={cilWrapText} customClassName="nav-icon" />,
     
   },
-  {
-    component: CNavItem,
-    name: 'Firma İstatistikleri',
-    to: '/charts',
-    icon: <CIcon icon={cilBarChart} customClassName="nav-icon" />,
-  },
+  
   {
     component: CNavGroup,
     name: 'Firma',
-    icon: <CIcon icon={cilGroup} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilBarChart} customClassName="nav-icon" />,
     items: [
       {
         component: CNavItem,
-        name: 'Firmalar',
+        name: 'Firma İstatistikleri',
+        to: '/charts',
+      },
+      {
+        component: CNavItem,
+        name: 'Firma Ekle',
         to: '/icons/firma/firmalist',
         badge: {
           color: 'success',
           text: '',
         },
       },
-      {
-        component: CNavItem,
-        name: 'Firma Ekle',
-        to: '/icons/firma/firmaekle',
-        badge: {
-          color: 'success',
-          text: '',
-        },
-      },
-      
     ],
   },
   {
