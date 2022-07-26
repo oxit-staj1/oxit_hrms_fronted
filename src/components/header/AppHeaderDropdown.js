@@ -32,7 +32,7 @@ const AppHeaderDropdown = () => {
         <CAvatar src={avatar8} size="md" />
       </CDropdownToggle>
       <CDropdownMenu className="pt-0" placement="bottom-end">
-        <CDropdownItem href="https://img-s3.onedio.com/id-620e60c8f79d856f117ce918/rev-0/w-620/f-jpg/s-cc2566fd59bc7b41f73c5161210f98ab4cf0d4de.jpg">
+        <CDropdownItem href="http://www.oxityazilim.com">
           <CIcon icon={cilPowerStandby} className="me-2" />
           Çıkış Yap
         </CDropdownItem>
