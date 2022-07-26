@@ -32,23 +32,31 @@ const Cards = () => {
   const [is_baslangic_tarihi, setİs_baslangic_tarihi] = useState([]);
   const [dogum_tarihi, setDogum_tarihi] = useState([]);
 
-  
-const url = "http://localhost:8080/api/personel/add"
-const postData = () => {
-  axios.post(url, {
-    personel_ad,
-    personel_soyad,
-    is_baslangic_tarihi,
-    dogum_tarihi
-  }).then(() => {
-    history.push('icons/coreui-icons') })
-}
+  const url = "http://localhost:8080/api/personel/add";
+  const postData = () => {
+    axios
+      .post(url, {
+        personel_ad,
+        personel_soyad,
+        is_baslangic_tarihi,
+        dogum_tarihi,
+      })
+      .then(() => {
+        history.push("icons/coreui-icons");
+      });
+  };
   return (
     <CRow>
       <CCol xs={12}>
         <CCard className="mb-4">
           <CCardBody>
-            PERSONELLER
+            <a
+              class="btn btn-primary"
+              href="http://localhost:3000/#/icons/coreui-icons"
+              role="button"
+            >
+              Personeller
+            </a>
             <DocsExample href="components/card">
               <CCard style={{ width: "18rem" }}>
                 <CCardImage orientation="top" src={ReactImg} />
@@ -59,11 +67,21 @@ const postData = () => {
                     <div class="form-group">
                       <label>
                         Ad
-                        <input class="form-control" type="text" name="ad" onChange={(e) => setPersonel_ad(e.target.value)} />
+                        <input
+                          class="form-control"
+                          type="text"
+                          name="ad"
+                          onChange={(e) => setPersonel_ad(e.target.value)}
+                        />
                       </label>
                       <label>
                         Soyad
-                        <input class="form-control" type="text" name="soyad" onChange={(e) => setPersonel_soyad (e.target.value)} />
+                        <input
+                          class="form-control"
+                          type="text"
+                          name="soyad"
+                          onChange={(e) => setPersonel_soyad(e.target.value)}
+                        />
                       </label>
                       <label>
                         Başlama Tarihi
@@ -71,7 +89,9 @@ const postData = () => {
                           class="form-control"
                           type="text"
                           name="baslama"
-                          onChange={(e) => setİs_baslangic_tarihi(e.target.value)}
+                          onChange={(e) =>
+                            setİs_baslangic_tarihi(e.target.value)
+                          }
                         />
                       </label>
                       <label>
@@ -85,13 +105,12 @@ const postData = () => {
                       </label>
                       <label>
                         Birimi
-
                         <input class="form-control" type="text" name="birim" />
                       </label>
                       <br></br>
 
                       <br></br>
-                  {/*     <form action="" method="post" enctype="multipart/form-data">
+                      {/*     <form action="" method="post" enctype="multipart/form-data">
                         <input type="file" name="dosya" />
                         <br>
                         </br>
@@ -104,7 +123,6 @@ const postData = () => {
                 <CCardBody></CCardBody>
               </CCard>
             </DocsExample>
-            
           </CCardBody>
         </CCard>
       </CCol>
