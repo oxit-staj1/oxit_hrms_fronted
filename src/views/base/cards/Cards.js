@@ -29,24 +29,22 @@ import { useNavigate } from "react-router-dom";
 import HizmetList from "./HizmetList";
 
 const Cards = () => {
-  const url = "http://localhost:8080/api/hizmet/add"
+  const url = "http://localhost:8080/api/hizmet/add";
   let history = useNavigate();
-  const [hizmet_ad, setHizmet_ad] = useState([])
+  const [hizmet_ad, setHizmet_ad] = useState([]);
 
   const postData = () => {
     axios.post(url, {
-      hizmet_ad
-    })
-  }
-
-  
+      hizmet_ad,
+    });
+  };
 
   return (
     <CRow>
       <CCol xs={12}>
         <CCard className="mb-4">
           <CCardHeader>
-            <strong>Hizmet</strong> <small>Ekleme</small>
+            <strong>Hizmet Ekleme</strong>
           </CCardHeader>
           <CCardBody>
             <DocsExample href="components/card">
@@ -57,14 +55,26 @@ const Cards = () => {
                   </CCardTitle>
                   <CCardText></CCardText>
                   <form className="create-form">
-                    <label>Hizmet AD </label>
-                    <input placeholder='hizmet adınnı giriniz' onChange={(e) => setHizmet_ad(e.target.value)} />
-                    <button onClick={postData} type='sumbit'> Ekle </button>
+                    <input
+                      class="form-control"
+                      placeholder="Hizmet adını giriniz"
+                      onChange={(e) => setHizmet_ad(e.target.value)}
+                    />
+                    <br />
+                    <button
+                      class="btn btn-secondary btn-sm"
+                      onClick={postData}
+                      type="sumbit"
+                    >
+                      {" "}
+                      Ekle{" "}
+                    </button>
                   </form>
                 </CCardBody>
-              </CCard>+
+              </CCard>
+              +
             </DocsExample>
-            <HizmetList/>
+            <HizmetList />
           </CCardBody>
         </CCard>
       </CCol>
