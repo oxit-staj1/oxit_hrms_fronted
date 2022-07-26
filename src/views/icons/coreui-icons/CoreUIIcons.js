@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   CButton,
   CCard,
@@ -30,152 +30,86 @@ import {
   CChartPolarArea,
   CChartRadar,
 } from "@coreui/react-chartjs";
+import axios from "axios";
+
 const Cards = () => {
+  const url = "http://localhost:8080/api/personel/getall";
+  const [personels, setPersonels] = useState([]);
+
+  useEffect(() => {
+    axios.get(url)
+      .then((response) => {
+        setPersonels(response.data.data);
+        console.log(response.data.data)
+      })
+  }, [])
+
+  const setData = (personel) => {
+    const { personel_id, personel_ad, personel_soyad, is_baslangic_tarihi, dogum_tarihi } = personel;
+    localStorage.setItem('personel_id', personel_id);
+    localStorage.setItem('personel_ad', personel_ad);
+    localStorage.setItem(' personel_soyad', personel_soyad);
+    localStorage.setItem('is_baslangic_tarihi', is_baslangic_tarihi);
+    localStorage.setItem('dogum_tarihi', dogum_tarihi);
+  }
+
+  const getData = () => {
+    axios.get(url)
+      .then((getData) => {
+        setPersonels(getData.data.data);
+      })
+  }
+
+  const onDelete = (personel_id) => {
+    axios.delete(`http://localhost:8080/api/personel/delete/${personel_id}`)
+      .then(() => {
+        getData();
+      })
+  }
   return (
     <CRow>
       <CCol xs={12}>
-        <CCard className="mb-4">
+        <CCard className="mb-3">
           <CCardHeader>
             <strong>Personel</strong>
           </CCardHeader>
-          <CCardBody>
+          <CCardBody >
             <DocsExample href="components/card/#card-groups">
               <CCardGroup>
-                <CCard>
-                  <CCardImage orientation="top" src={ReactImg} />
-                  <CCardBody>
-                    <CCardTitle>Gizem ***</CCardTitle>
-                    <CCardText>Bildiği diller C#, C++, ...</CCardText>
-                    <CCardText>
-                      <small className="text-medium-emphasis">
-                        İşe giriş tarihi = 16.04.2019
-                      </small>
-                    </CCardText>
-                    <CCardText>
-                      <small className="text-medium-emphasis">
-                        Doğum tarihi = 05.07.1995
-                      </small>
-                    </CCardText>
-                    <CCardText>
-                      <small className="text-medium-emphasis">
-                        Birimi = Web designer
-                      </small>
-                    </CCardText>
-                  </CCardBody>
-                </CCard>
-                <CCard>
-                  <CCardImage orientation="top" src={ReactImg} />
-                  <CCardBody>
-                    <CCardTitle>Gizem ***</CCardTitle>
-                    <CCardText>Bildiği diller C#, C++, ...</CCardText>
-                    <CCardText>
-                      <small className="text-medium-emphasis">
-                        İşe giriş tarihi = 16.04.2019
-                      </small>
-                    </CCardText>
-                    <CCardText>
-                      <small className="text-medium-emphasis">
-                        Doğum tarihi = 05.07.1995
-                      </small>
-                    </CCardText>
-                    <CCardText>
-                      <small className="text-medium-emphasis">
-                        Birimi = Web designer
-                      </small>
-                    </CCardText>
-                  </CCardBody>
-                </CCard>
-                <CCard>
-                  <CCardImage orientation="top" src={ReactImg} />
-                  <CCardBody>
-                    <CCardTitle>Gizem ***</CCardTitle>
-                    <CCardText>Bildiği diller C#, C++, ...</CCardText>
-                    <CCardText>
-                      <small className="text-medium-emphasis">
-                        İşe giriş tarihi = 16.04.2019
-                      </small>
-                    </CCardText>
-                    <CCardText>
-                      <small className="text-medium-emphasis">
-                        Doğum tarihi = 05.07.1995
-                      </small>
-                    </CCardText>
-                    <CCardText>
-                      <small className="text-medium-emphasis">
-                        Birimi = Web designer
-                      </small>
-                    </CCardText>
-                  </CCardBody>
-                </CCard>
+
+                {
+                  personels.map((personel) => {
+                    return (
+                      <CCard>
+                        <CCardBody>
+                          <CCardTitle>{personel.personel_ad}</CCardTitle>
+                          <CCardTitle>{personel.personel_soyad}</CCardTitle>
+
+                          <CCardText>
+                            <small className="text-medium-emphasis">
+
+                              İşe giriş tarihi ={personel.is_baslangic_tarihi}
+                            </small>
+                          </CCardText>
+                          <CCardText>
+                            <small className="text-medium-emphasis">
+                              Doğum tarihi = {personel.dogum_tarihi}
+                            </small>
+                          </CCardText>
+                          <CCardText>
+                            <small className="text-medium-emphasis">
+                              Birimi =web
+                            </small>
+                          </CCardText>
+                        </CCardBody>
+                      </CCard>
+                    )
+                  })
+                }
+
               </CCardGroup>
-              <CCardGroup>
-                <CCard>
-                  <CCardImage orientation="top" src={ReactImg} />
-                  <CCardBody>
-                    <CCardTitle>Gizem ***</CCardTitle>
-                    <CCardText>Bildiği diller C#, C++, ...</CCardText>
-                    <CCardText>
-                      <small className="text-medium-emphasis">
-                        İşe giriş tarihi = 16.04.2019
-                      </small>
-                    </CCardText>
-                    <CCardText>
-                      <small className="text-medium-emphasis">
-                        Doğum tarihi = 05.07.1995
-                      </small>
-                    </CCardText>
-                    <CCardText>
-                      <small className="text-medium-emphasis">
-                        Birimi = Web designer
-                      </small>
-                    </CCardText>
-                  </CCardBody>
-                </CCard>
-                <CCard>
-                  <CCardImage orientation="top" src={ReactImg} />
-                  <CCardBody>
-                    <CCardTitle>Gizem ***</CCardTitle>
-                    <CCardText>Bildiği diller C#, C++, ...</CCardText>
-                    <CCardText>
-                      <small className="text-medium-emphasis">
-                        İşe giriş tarihi = 16.04.2019
-                      </small>
-                    </CCardText>
-                    <CCardText>
-                      <small className="text-medium-emphasis">
-                        Doğum tarihi = 05.07.1995
-                      </small>
-                    </CCardText>
-                    <CCardText>
-                      <small className="text-medium-emphasis">
-                        Birimi = Web designer
-                      </small>
-                    </CCardText>
-                  </CCardBody>
-                </CCard>
-                <CCard>
-                  <CCardImage orientation="top" src={ReactImg} />
-                  <CCardBody>
-                    <CCardTitle>Gizem ***</CCardTitle>
-                    <CCardText>Bildiği diller C#, C++, ...</CCardText>
-                    <CCardText>
-                      <small className="text-medium-emphasis">
-                        İşe giriş tarihi = 16.04.2019
-                      </small>
-                    </CCardText>
-                    <CCardText>
-                      <small className="text-medium-emphasis">
-                        Doğum tarihi = 05.07.1995
-                      </small>
-                    </CCardText>
-                    <CCardText>
-                      <small className="text-medium-emphasis">
-                        Birimi = Web designer
-                      </small>
-                    </CCardText>
-                  </CCardBody>
-                </CCard>
-              </CCardGroup>
+              
+            
             </DocsExample>
           </CCardBody>
         </CCard>
