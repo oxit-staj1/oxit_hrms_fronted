@@ -72,7 +72,7 @@ const Cards = () => {
                   </form>
                 </CCardBody>
               </CCard>
-              +
+              
             </DocsExample>
             <HizmetList />
           </CCardBody>
