@@ -32,7 +32,7 @@ const Cards = () => {
   const [is_baslangic_tarihi, setİs_baslangic_tarihi] = useState([]);
   const [dogum_tarihi, setDogum_tarihi] = useState([]);
 
-  const url = "http://localhost:8080/api/personel/add";
+  const url = "http://localhost:8080/api/personel/add";/*Burayı düzeltt*/
   const postData = () => {
     axios
       .post(url, {
@@ -66,46 +66,40 @@ const Cards = () => {
                   <form>
                     <div class="form-group">
                       <label>
-                        Ad
+                        Firma Tam Ünvanı
                         <input
                           class="form-control"
                           type="text"
-                          name="ad"
-                          onChange={(e) => setPersonel_ad(e.target.value)}
+                          name="Firma Tam Ünvanı"
                         />
                       </label>
                       <label>
-                        Soyad
+                        Firma Yetkilisi
                         <input
                           class="form-control"
                           type="text"
                           name="soyad"
-                          onChange={(e) => setPersonel_soyad(e.target.value)}
                         />
                       </label>
                       <label>
-                        Başlama Tarihi
+                        Firma Adresi
                         <input
                           class="form-control"
                           type="text"
-                          name="baslama"
-                          onChange={(e) =>
-                            setİs_baslangic_tarihi(e.target.value)
-                          }
+                          name="Firma Yetkilisi"
                         />
                       </label>
                       <label>
-                        Doğum Günü
+                        E-Mail
                         <input
                           class="form-control"
                           type="text"
-                          name="birthday"
-                          onChange={(e) => setDogum_tarihi(e.target.value)}
+                          name="E-Mail"
                         />
                       </label>
                       <label>
-                        Birimi
-                        <input class="form-control" type="text" name="birim" />
+                        Telefon Numarası
+                        <input class="form-control" type="text" name="Telefon Numarası" />
                       </label>
                       <br></br>
 
