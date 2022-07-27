@@ -60,7 +60,7 @@ const Login = () => {
               </CCard>
               <CCard className="text-white bg-black py-5 " style={{ width: '44%'  }}>
                 <CCardBody className="text-center" >
-                <img src="/logo.jpeg" class="img-thumbnail" width="640" height="480"></img>
+                <img src="/logo.jpg" class="img-thumbnail" width="640" height="480"></img>
                   <div>
                   <br></br>
                   <font color="white">OXIT BİLİŞİM</font> 
