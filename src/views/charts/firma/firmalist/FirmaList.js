@@ -69,6 +69,7 @@ const Cards = () => {
                         Firma Tam Ünvanı
                         <input
                           class="form-control"
+                          placeholder="Firmanın ünvanını giriniz"
                           type="text"
                           name="Firma Tam Ünvanı"
                         />
@@ -77,6 +78,7 @@ const Cards = () => {
                         Firma Yetkilisinin Adı
                         <input
                           class="form-control"
+                          placeholder="Yetkilinin adını giriniz"
                           type="text"
                           name="soyad"
                         />
@@ -85,6 +87,7 @@ const Cards = () => {
                         Firma Yetkilisinin Soyadı
                         <input
                           class="form-control"
+                          placeholder="Yetkilinin soyadını giriniz"
                           type="text"
                           name="soyad"
                         />
@@ -93,6 +96,7 @@ const Cards = () => {
                         Firma Adresi
                         <input
                           class="form-control"
+                          placeholder="Firmanın adresini giriniz"
                           type="text"
                           name="Firma Yetkilisi"
                         />
@@ -101,18 +105,21 @@ const Cards = () => {
                         E-Mail
                         <input
                           class="form-control"
+                          placeholder="E-Maili giriniz"
                           type="text"
                           name="E-Mail"
                         />
                       </label>
                       <label>
                         Telefon Numarası
-                        <input class="form-control" type="text" name="Telefon Numarası" />
+                        <input class="form-control"
+                          placeholder="Telefon numarasını giriniz" type="text" name="Telefon Numarası" />
                       </label>
                       <label>
                         Firmanın Sabit Telefonu
                         <input
                           class="form-control"
+                          placeholder="Sabit telefonu giriniz"
                           type="text"
                           name="Firmanın Sabit Telefonu"
                         />
@@ -121,6 +128,7 @@ const Cards = () => {
                         Firma Domain Adresi
                         <input
                           class="form-control"
+                          placeholder="Domain adresini giriniz"
                           type="text"
                           name="Firma Domain Adresi"
                         />
@@ -129,22 +137,16 @@ const Cards = () => {
                         Firma Adresi
                         <input
                           class="form-control"
+                          placeholder="Firmanın adresini giriniz"
                           type="text"
                           name="Firma Adresi"
-                        />
-                      </label>
-                      <label>
-                        Firma Domain Adresi
-                        <input
-                          class="form-control"
-                          type="text"
-                          name="Firma Domain Adresi"
                         />
                       </label>
                       <label>
                         Firmanın Bulunduğu İl
                         <input
                           class="form-control"
+                          placeholder="Firmanın ilini giriniz"
                           type="text"
                           name="Firmanın Bulunduğu İl"
                         />
@@ -153,6 +155,7 @@ const Cards = () => {
                         Firmanın Bulunduğu İlçe
                         <input
                           class="form-control"
+                          placeholder="Firmanın ilçesini giriniz"
                           type="text"
                           name="Firmanın Bulunduğu İlçe"
                         />
@@ -161,6 +164,7 @@ const Cards = () => {
                         Vergi Dairesi
                         <input
                           class="form-control"
+                          placeholder="Vergi dairesini giriniz"
                           type="text"
                           name="Vergi Dairesi"
                         />
@@ -169,6 +173,7 @@ const Cards = () => {
                         Vergi Numarası
                         <input
                           class="form-control"
+                          placeholder="Vergi Numarasını giriniz"
                           type="text"
                           name="Vergi Numarası"
                         />
@@ -176,6 +181,7 @@ const Cards = () => {
                         Firma Notu
                         <input
                           class="form-control"
+                          placeholder="Firma notunu giriniz"
                           type="text"
                           name="not"
                         />
@@ -189,7 +195,7 @@ const Cards = () => {
                         </br>
                         <br></br>
                       </form> */}
-                      <input onClick={postData} type="submit" value="Ekle" />
+                      <input onClick={postData}class="btn btn-primary" type="submit" value="Ekle" />
                     </div>
                   </form>
                 </CCardBody>

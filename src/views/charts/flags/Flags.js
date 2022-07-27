@@ -116,7 +116,7 @@ const Cards = () => {
                         </br>
                         <br></br>
                       </form> */}
-                      <input onClick={postData} type="submit" value="Ekle" />
+                      <input onClick={postData}class="btn btn-primary" type="submit" value="Ekle" />
                     </div>
                   </form>
                 </CCardBody>
