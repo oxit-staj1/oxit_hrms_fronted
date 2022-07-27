@@ -59,7 +59,7 @@ const Cards = () => {
             </a>
             <DocsExample href="components/card">
               <CCard style={{ width: "18rem" }}>
-                <CCardImage orientation="top" src={ReactImg} />
+              <a href="#"><CCardImage orientation="top" src={ReactImg} /></a>
                 <CCardBody>
                   <CCardTitle>Firma Ekle</CCardTitle>
                   <CCardText></CCardText>
@@ -74,7 +74,15 @@ const Cards = () => {
                         />
                       </label>
                       <label>
-                        Firma Yetkilisi
+                        Firma Yetkilisinin Adı
+                        <input
+                          class="form-control"
+                          type="text"
+                          name="soyad"
+                        />
+                      </label>
+                      <label>
+                        Firma Yetkilisinin Soyadı
                         <input
                           class="form-control"
                           type="text"
@@ -100,6 +108,77 @@ const Cards = () => {
                       <label>
                         Telefon Numarası
                         <input class="form-control" type="text" name="Telefon Numarası" />
+                      </label>
+                      <label>
+                        Firmanın Sabit Telefonu
+                        <input
+                          class="form-control"
+                          type="text"
+                          name="Firmanın Sabit Telefonu"
+                        />
+                      </label>
+                      <label>
+                        Firma Domain Adresi
+                        <input
+                          class="form-control"
+                          type="text"
+                          name="Firma Domain Adresi"
+                        />
+                      </label>
+                      <label>
+                        Firma Adresi
+                        <input
+                          class="form-control"
+                          type="text"
+                          name="Firma Adresi"
+                        />
+                      </label>
+                      <label>
+                        Firma Domain Adresi
+                        <input
+                          class="form-control"
+                          type="text"
+                          name="Firma Domain Adresi"
+                        />
+                      </label>
+                      <label>
+                        Firmanın Bulunduğu İl
+                        <input
+                          class="form-control"
+                          type="text"
+                          name="Firmanın Bulunduğu İl"
+                        />
+                      </label>
+                      <label>
+                        Firmanın Bulunduğu İlçe
+                        <input
+                          class="form-control"
+                          type="text"
+                          name="Firmanın Bulunduğu İlçe"
+                        />
+                      </label>
+                      <label>
+                        Vergi Dairesi
+                        <input
+                          class="form-control"
+                          type="text"
+                          name="Vergi Dairesi"
+                        />
+                      </label>
+                      <label>
+                        Vergi Numarası
+                        <input
+                          class="form-control"
+                          type="text"
+                          name="Vergi Numarası"
+                        />
+                      </label><label>
+                        Firma Notu
+                        <input
+                          class="form-control"
+                          type="text"
+                          name="not"
+                        />
                       </label>
                       <br></br>
 
