@@ -23,10 +23,10 @@ const Alerts = () => {
           <CCardBody>
             <p className="text-medium-emphasis small">
               Anlaşma içeriğinde kullanılacak olan yabancı dil çevirileri,
-              fotoğraf, video görüntüleri katılımcı firma tarafından sağlanır
-              Ayrı bir sözleşme ile imza altına alınmadığı sürece yayıncı
+              fotoğraf, video görüntüleri katılımcı firma tarafından sağlanır.
+              Ayrı bir sözleşme ile imza altına alınmadığı sürece yayıncıx
               firmanın belirtilen hizmetlerin sağlanması ile ilgili herhangi
-              belirtilen sorumluluğu yoktur. .
+              belirtilen sorumluluğu yoktur..
             </p>{" "}
             <hr></hr>
             <h5>Sözleşme Gereksinimleri</h5>
