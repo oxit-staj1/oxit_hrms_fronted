@@ -45,10 +45,10 @@ const AppHeader = () => {
             </CNavLink>
           </CNavItem>
           <CNavItem>
-            <CNavLink href="#">Kullanıcılar</CNavLink>
+            <CNavLink href="/#/charts">Firma İstatistikleri</CNavLink>
           </CNavItem>
           <CNavItem>
-            <CNavLink href="#">Ayarlar</CNavLink>
+            <CNavLink href="/#/icons/coreui-icons">Personeller</CNavLink>
           </CNavItem>
         </CHeaderNav>
         <CHeaderNav>

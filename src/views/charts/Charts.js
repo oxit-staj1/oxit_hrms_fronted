@@ -97,13 +97,16 @@ const Charts = () => {
             <CChartRadar
               data={{
                 labels: [
+                  'Türkçe',
                   'İngilizce',
                   'Almanca',
                   'Fransızca',
-                  'İspanyolca',
-                  'Fransızca',
-                  'Rusça',
                   'İtalyanca',
+                  'Japonca',
+                  'Rusça',
+                  'Azerice',
+                  'Arapça',
+                  'Danca',
                 ],
                 datasets: [
                   {
@@ -114,7 +117,7 @@ const Charts = () => {
                     pointBorderColor: '#fff',
                     pointHighlightFill: '#fff',
                     pointHighlightStroke: 'rgba(151, 187, 205, 1)',
-                    data: [28, 48, 40, 19, 96, 27, 100],
+                    data: [28, 48, 40, 19, 96, 27, 100,76,23,54],
                   },
                 ],
               }}

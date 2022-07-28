@@ -39,10 +39,10 @@ const Charts = React.lazy(() => import('./views/charts/Charts'))
 
 // Icons
 const CoreUIIcons = React.lazy(() => import('./views/icons/coreui-icons/CoreUIIcons'))
-const Flags = React.lazy(() => import('./views/icons/flags/Flags'))
+const Flags = React.lazy(() => import('./views/charts/flags/Flags'))
 const Brands = React.lazy(() => import('./views/icons/brands/Brands'))
-const FirmaList = React.lazy(() => import ('./views/icons/firma/firmalist/FirmaList'))
-const FirmaEkle = React.lazy(() => import ('./views/icons/firma/firmaekle/FirmaEkle'))
+const FirmaList = React.lazy(() => import ('./views/charts/firma/firmalist/FirmaList'))
+const FirmaEkle = React.lazy(() => import ('./views/charts/firma/firmaekle/FirmaEkle'))
 // Notifications
 const Alerts = React.lazy(() => import('./views/notifications/alerts/Alerts'))
 const Badges = React.lazy(() => import('./views/notifications/badges/Badges'))

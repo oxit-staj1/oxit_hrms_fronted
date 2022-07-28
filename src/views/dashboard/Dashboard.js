@@ -45,7 +45,8 @@ import {
   cilUser,
   cilUserFemale,
 } from '@coreui/icons'
-
+import Popup from 'reactjs-popup';  
+import 'reactjs-popup/dist/index.css';
 import avatar1 from 'src/assets/images/avatars/1.jpg'
 import avatar2 from 'src/assets/images/avatars/2.jpg'
 import avatar3 from 'src/assets/images/avatars/3.jpg'
@@ -86,6 +87,7 @@ const Dashboard = () => {
       },
       payment: { name: 'Mastercard', icon: cibCcMastercard },
       activity: '200$',
+      
     },
     {
       avatar: { src: avatar2},
@@ -125,7 +127,8 @@ const Dashboard = () => {
         color: 'danger',
       },
       payment: { name: 'PayPal', icon: cibCcPaypal },
-      activity: '500₺',
+      activity: '500₺'
+      ,
     },
     {
       avatar: { src: avatar5},
@@ -181,6 +184,7 @@ const Dashboard = () => {
                     <CTableHeaderCell className="text-center">Ülke</CTableHeaderCell>
                     <CTableHeaderCell>Kullanım Oranı</CTableHeaderCell>
                     <CTableHeaderCell className="text-center">Ödeme yöntemi</CTableHeaderCell>
+                    
                     <CTableHeaderCell>Ödenen Ücret</CTableHeaderCell>
                   </CTableRow>
                 </CTableHead>
@@ -217,6 +221,14 @@ const Dashboard = () => {
                       <CTableDataCell>
                         <div className="small text-medium-emphasis">Fiyat</div>
                         <strong>{item.activity}</strong>
+                        <br></br>
+                        <Popup trigger={<button type="button"
+        data-bs-toggle="popover" data-bs-placement="right"
+        data-bs-custom-class="custom-popover"
+        data-bs-title="Custom popover"
+        data-bs-content="This popover is themed via CSS variables." class="btn btn-primary">Firma Detayları</button>} position="left center">
+                             <div>{item.activity}</div>
+                        </Popup>
                       </CTableDataCell>
                     </CTableRow>
                   ))}

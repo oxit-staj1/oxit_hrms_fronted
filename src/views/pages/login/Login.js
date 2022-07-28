@@ -52,9 +52,7 @@ const Login = () => {
                         </CButton>
                       </CCol>
                       <CCol xs={6} className="text-right">
-                        <CButton color="link" className="px-0">
-                          Şifreni mi unuttun?
-                        </CButton>
+                      <a class="btn btn-primary"href="#"role="button">Şifreni mi unuttun?</a>
                       </CCol>
                     </CRow>
                   </CForm>
@@ -62,7 +60,7 @@ const Login = () => {
               </CCard>
               <CCard className="text-white bg-black py-5 " style={{ width: '44%'  }}>
                 <CCardBody className="text-center" >
-                <img src="/logo.jpeg" class="img-thumbnail" width="640" height="480"></img>
+                <img src="/logo.jpg" class="img-thumbnail" width="640" height="480"></img>
                   <div>
                   <br></br>
                   <font color="white">OXIT BİLİŞİM</font> 
