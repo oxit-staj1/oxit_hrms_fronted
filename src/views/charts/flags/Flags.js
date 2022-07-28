@@ -59,7 +59,9 @@ const Cards = () => {
             </a>
             <DocsExample href="components/card">
               <CCard style={{ width: "18rem" }}>
-              <a href="/#/icons/coreui-icons"><CCardImage orientation="top" src={ReactImg} /></a>
+                <a href="/#/icons/coreui-icons">
+                  <CCardImage orientation="top" src={ReactImg} />
+                </a>
                 <CCardBody>
                   <CCardTitle>Personel Ekle</CCardTitle>
                   <CCardText></CCardText>
@@ -116,7 +118,12 @@ const Cards = () => {
                         </br>
                         <br></br>
                       </form> */}
-                      <input onClick={postData}class="btn btn-primary" type="submit" value="Ekle" />
+                      <input
+                        onClick={postData}
+                        class="btn btn-primary"
+                        type="submit"
+                        value="Ekle"
+                      />
                     </div>
                   </form>
                 </CCardBody>
