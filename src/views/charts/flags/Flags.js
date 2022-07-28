@@ -124,12 +124,9 @@ const Cards = () => {
                         </br>
                         <br></br>
                       </form> */}
-                      <input
-                        onClick={postData}
-                        class="btn btn-primary"
-                        type="submit"
-                        value="Ekle"
-                      />
+                      <div className="d-grid gap-2">
+                        <CButton color="primary">Ekle</CButton>
+                      </div>
                     </div>
                   </form>
                 </CCardBody>
