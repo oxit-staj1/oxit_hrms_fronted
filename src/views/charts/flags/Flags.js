@@ -58,57 +58,63 @@ const Cards = () => {
               Personeller
             </a>
             <DocsExample href="components/card">
-              <CCard style={{ width: "18rem" }}>
-                <a href="/#/icons/coreui-icons">
-                  <CCardImage orientation="top" src={ReactImg} />
-                </a>
+              <CCard style={{ width: "100%" }}>
                 <CCardBody>
                   <CCardTitle>Personel Ekle</CCardTitle>
-                  <CCardText></CCardText>
+
                   <form>
-                    <div class="form-group">
-                      <label>
-                        Ad
-                        <input
-                          class="form-control"
-                          type="text"
-                          name="ad"
-                          onChange={(e) => setPersonel_ad(e.target.value)}
-                        />
-                      </label>
-                      <label>
-                        Soyad
-                        <input
-                          class="form-control"
-                          type="text"
-                          name="soyad"
-                          onChange={(e) => setPersonel_soyad(e.target.value)}
-                        />
-                      </label>
-                      <label>
-                        Başlama Tarihi
-                        <input
-                          class="form-control"
-                          type="text"
-                          name="baslama"
-                          onChange={(e) =>
-                            setİs_baslangic_tarihi(e.target.value)
-                          }
-                        />
-                      </label>
-                      <label>
-                        Doğum Günü
-                        <input
-                          class="form-control"
-                          type="text"
-                          name="birthday"
-                          onChange={(e) => setDogum_tarihi(e.target.value)}
-                        />
-                      </label>
-                      <label>
-                        Birimi
-                        <input class="form-control" type="text" name="birim" />
-                      </label>
+                    <div>
+                      <div class="row">
+                        <div class="col">
+                          Ad
+                          <input
+                            class="form-control"
+                            type="text"
+                            name="ad"
+                            onChange={(e) => setPersonel_ad(e.target.value)}
+                          />
+                        </div>
+                        <div class="col">
+                          Soyad
+                          <input
+                            class="form-control"
+                            type="text"
+                            name="soyad"
+                            onChange={(e) => setPersonel_soyad(e.target.value)}
+                          />
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col">
+                          Başlama Tarihi
+                          <input
+                            class="form-control"
+                            type="text"
+                            name="baslama"
+                            onChange={(e) =>
+                              setİs_baslangic_tarihi(e.target.value)
+                            }
+                          />
+                        </div>
+                        <div class="col">
+                          Doğum Günü
+                          <input
+                            class="form-control"
+                            type="text"
+                            name="birthday"
+                            onChange={(e) => setDogum_tarihi(e.target.value)}
+                          />
+                        </div>
+                        <div class="col">
+                          Birimi
+                          <input
+                            class="form-control"
+                            type="text"
+                            name="birim"
+                          />
+                        </div>
+                      </div>
                       <br></br>
 
                       <br></br>
