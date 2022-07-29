@@ -26,16 +26,11 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const Cards = () => {
-  const [yetkili_id, setPersonel_id] = useState([]);
+  const [yetkili_id, setYetkili_id] = useState([]);
   const [yetkili_ad, setYetkili_ad] = useState([]);
   const [yetkili_soyad, setYetkili_soyad] = useState([]);
   const [cep_telefon, setCep_telefon] = useState([]);
   const [sabit_telefon, setSabit_telefon] = useState([]);
-  const [vergi_dairesi, setVergi_dairesi] = useState([]);
-  const [vergi_numarasi, setVergi_numarasi] = useState([]);
-  const [e_mail, setE_mail] = useState([]);
-  const [firma_il, setFirma_il] = useState([]);
-  const [firma_ilce, setFirma_ilce] = useState([]);
   const [firma_adres, setFirma_adres] = useState([]);
   const [firma_not, setFirma_not] = useState([]);
   const [firma_domain_ad, setFirma_domain_ad] = useState([]);
@@ -49,11 +44,6 @@ const Cards = () => {
       yetkili_soyad,
       cep_telefon,
       sabit_telefon,
-      vergi_dairesi,
-      vergi_numarasi,
-      e_mail,
-      firma_il,
-      firma_ilce,
       firma_adres,
       firma_not,
       firma_domain_ad,
@@ -63,14 +53,9 @@ const Cards = () => {
       yetkili_soyad,
       cep_telefon,
       sabit_telefon,
-      vergi_dairesi,
-      vergi_numarasi,
-      e_mail,
-      firma_il,
-      firma_ilce,
       firma_adres,
       firma_not,
-      firma_domain_ad
+      firma_domain_ad,
     );
   };
 

@@ -31,6 +31,7 @@ const Cards = () => {
   const [personel_soyad, setPersonel_soyad] = useState([]);
   const [is_baslangic_tarihi, setİs_baslangic_tarihi] = useState([]);
   const [dogum_tarihi, setDogum_tarihi] = useState([]);
+  const [birimi, setBirimi] = useState([]);
 
   const url = "http://localhost:8080/api/personel/add";
   const postData = () => {
@@ -40,10 +41,9 @@ const Cards = () => {
         personel_soyad,
         is_baslangic_tarihi,
         dogum_tarihi,
+        birimi,
       })
-      .then(() => {
-        history.push("icons/coreui-icons");
-      });
+  
   };
   return (
     <CRow>
@@ -117,6 +117,8 @@ const Cards = () => {
                             placeholder="Birimini giriniz"
                             type="text"
                             name="birim"
+                            onChange={(e) => setBirimi(e.target.value)}
+
                           />
                         </div>
                       </div>
@@ -129,7 +131,7 @@ const Cards = () => {
                         </br>
                         <br></br>
                       </form> */}
-                      <CButton color="secondary" class="btn btn-primary">Ekle</CButton>
+                      <CButton color="secondary" onClick={postData} class="btn btn-primary">Ekle</CButton>
                     </div>
                   </form>
                 </CCardBody>
