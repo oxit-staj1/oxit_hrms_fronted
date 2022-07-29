@@ -52,7 +52,7 @@ const _nav = [
     items: [
       {
         component: CNavItem,
-        name: 'Firma İstatistikleri',
+        name: 'Firmalar',
         to: '/charts',
       },
       {

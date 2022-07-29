@@ -35,13 +35,13 @@ const Range = React.lazy(() => import('./views/forms/range/Range'))
 const Select = React.lazy(() => import('./views/forms/select/Select'))
 const Validation = React.lazy(() => import('./views/forms/validation/Validation'))
 
-const Charts = React.lazy(() => import('./views/charts/Charts'))
+const Charts = React.lazy(() => import('./views/charts/firma/firmaekle/Charts'))
 
 // Icons
 const CoreUIIcons = React.lazy(() => import('./views/icons/coreui-icons/CoreUIIcons'))
 const Flags = React.lazy(() => import('./views/charts/flags/Flags'))
 const Brands = React.lazy(() => import('./views/icons/brands/Brands'))
-const FirmaList = React.lazy(() => import ('./views/charts/firma/firmalist/FirmaList'))
+const FirmaList = React.lazy(() => import ('./views/charts/firma/firmaekle/FirmaList'))
 const FirmaEkle = React.lazy(() => import ('./views/charts/firma/firmaekle/FirmaEkle'))
 // Notifications
 const Alerts = React.lazy(() => import('./views/notifications/alerts/Alerts'))
@@ -76,7 +76,7 @@ const routes = [
   { path: '/buttons/buttons', name: 'Buttons', element: Buttons },
   { path: '/buttons/dropdowns', name: 'Dropdowns', element: Dropdowns },
   { path: '/buttons/button-groups', name: 'Button Groups', element: ButtonGroups },
-  { path: '/charts', name: 'Firma İstatistikleri', element: Charts },
+  { path: '/charts', name: 'Firmalar', element: Charts },
   { path: '/forms', name: 'Forms', element: FormControl, exact: true },
   { path: '/forms/form-control', name: 'Form Control', element: FormControl },
   { path: '/forms/select', name: 'Select', element: Select },

@@ -83,7 +83,7 @@ const Cards = () => {
                         Yetkili Ad
                         <input
                           class="form-control"
-                          placeholder="Yekili adını giriniz"
+                          placeholder="Yetkili adını giriniz"
                           type="text"
                           name="ad"
                           onChange={(e) => setYetkili_ad(e.target.value)}
