@@ -31,20 +31,20 @@ const Alerts = () => {
             <hr></hr>
             <h5>Sözleşme Gereksinimleri</h5>
             <DocsExample href="components/alert">
-              <CAlert color="secondary">Firma Seçimi</CAlert>
               <form>
-                Firma Adını Giriniz:
-                <br />
-                <input
-                  class="form-control"
-                  type="text"
-                  placeholder="Firma adını giriniz"
-                  name="firmaadi :"
-                />
                 <br />
                 <br />
                 <div class="row">
                   <div class="col">
+                    <CAlert color="dark">Firma Seçimi</CAlert>
+
+                    <input
+                      class="form-control"
+                      type="text"
+                      placeholder="Firma adını giriniz"
+                      name="firmaadi :"
+                    />
+                    <br />
                     <CAlert color="dark">Hizmet Seçimi</CAlert>
                     <div class="form-check form-check-inline">
                       <input
@@ -235,7 +235,7 @@ const Alerts = () => {
                   <br />
                   <br />
                   <div class="col">
-                    <CAlert color="secondary">Yıllık Yenileme Tutarı</CAlert>
+                    <CAlert color="dark">Yıllık Yenileme Tutarı</CAlert>
                     <div class="col-md-3">
                       <label for="validationCustom04" class="form-label">
                         Para Türü
@@ -269,7 +269,7 @@ const Alerts = () => {
                 <div class="row">
                   <div class="col">
                     <div class="row">
-                      <CAlert color="secondary">Sözleşme Tarihi</CAlert>
+                      <CAlert color="dark">Sözleşme Tarihi</CAlert>
                       <div class="col">
                         <label for="birthday">Başlangıç Tarihi:</label>
                         <input
