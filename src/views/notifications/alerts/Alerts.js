@@ -35,222 +35,249 @@ const Alerts = () => {
               <form>
                 Firma Adını Giriniz:
                 <br />
-                <input class="form-control" type="text" placeholder="Firma adını giriniz" name="firmaadi :" />
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Firma adını giriniz"
+                  name="firmaadi :"
+                />
                 <br />
                 <br />
-              </form>
-              <CAlert color="dark">Hizmet Seçimi</CAlert>
-              <label class="form-control" for="hizmet">
-                İstediğiniz Hizmetleri Seçiniz...
-              </label>
-              <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  id="inlineCheckbox1"
-                  value="option1"
-                ></input>
-                <label class="form-check-label" for="inlineCheckbox1">
-                  DİNAMİK WEB SİTESİ
+                <CAlert color="dark">Hizmet Seçimi</CAlert>
+                <label class="form-control" for="hizmet">
+                  İstediğiniz Hizmetleri Seçiniz...
                 </label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  id="inlineCheckbox2"
-                  value="option2"
-                ></input>
-                <label class="form-check-label" for="inlineCheckbox2">
-                  REKLAM PAKETİ
-                </label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  id="inlineCheckbox2"
-                  value="option2"
-                ></input>
-                <label class="form-check-label" for="inlineCheckbox2">
-                  E-TİCARET
-                </label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  id="inlineCheckbox2"
-                  value="option2"
-                ></input>
-                <label class="form-check-label" for="inlineCheckbox2">
-                  YENİLEME
-                </label>
-              </div>
-              <br />
-              <br />
-              <CAlert color="dark">Dİl Seçimi</CAlert>
-              <div class="form-check form-check-inline">
-                <div class="form-group">
-                  <label for="exampleFormControlSelect1">Yabancı Dil-1</label>
-                  <select class="form-control" id="exampleFormControlSelect1">
-                    <option>Dil Seçiniz</option>
-                    <option>Türkçe</option>
-                    <option>İngilizce</option>
-                    <option>Almanca</option>
-                    <option>Fransızca</option>
-                    <option>İtalyanca</option>
-                    <option>Japonca</option>
-                    <option>Rusça</option>
-                    <option>Azerice</option>
-                    <option>Arapça</option>
-                    <option>Danca</option>
-                  </select>
-                  <label for="exampleFormControlSelect1">Yabancı Dil-2</label>
-                  <select class="form-control" id="exampleFormControlSelect1">
-                    <option>Dil Seçiniz</option>
-                    <option>Türkçe</option>
-                    <option>İngilizce</option>
-                    <option>Almanca</option>
-                    <option>Fransızca</option>
-                    <option>İtalyanca</option>
-                    <option>Japonca</option>
-                    <option>Rusça</option>
-                    <option>Azerice</option>
-                    <option>Arapça</option>
-                    <option>Danca</option>
-                  </select>
-                  <label for="exampleFormControlSelect1">Yabancı Dil-3</label>
-                  <select class="form-control" id="exampleFormControlSelect1">
-                    <option>Dil Seçiniz</option>
-                    <option>Türkçe</option>
-                    <option>İngilizce</option>
-                    <option>Almanca</option>
-                    <option>Fransızca</option>
-                    <option>İtalyanca</option>
-                    <option>Japonca</option>
-                    <option>Rusça</option>
-                    <option>Azerice</option>
-                    <option>Arapça</option>
-                    <option>Danca</option>
-                  </select>
-                  <br></br>
-                  <button type="submit" class="btn btn-primary mb-3">
-                    Seçilen Dil(ler)i Onayla
-                  </button>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="inlineCheckbox1"
+                    value="option1"
+                  ></input>
+                  <label class="form-check-label" for="inlineCheckbox1">
+                    DİNAMİK WEB SİTESİ
+                  </label>
                 </div>
-              </div>
-              <CAlert color="secondary">Sözleşme Tarihi</CAlert>
-              <label for="birthday">Başlangıç Tarihi:</label>
-              <input
-                class="form-control"
-                type="date"
-                id="baştar"
-                name="birthday"
-              ></input>
-              &nbsp;&nbsp;
-              <label for="birthday">Bitiş Tarihi:</label>
-              <input
-                class="form-control"
-                type="date"
-                id="bittar"
-                name="birthday"
-              ></input>
-              <br />
-              <br />
-              <CAlert color="dark">KDV'siz Fiyat</CAlert>
-              <div class="col-md-1">
-                <label for="validationCustom04" class="form-label">
-                  Para Türü
-                </label>
-                <select class="form-select" id="validationCustom04" required>
-                  <option>₺</option>
-                  <option>$</option>
-                  <option>€</option>
-                </select>
-                <div class="invalid-feedback">Please select a valid state.</div>
-              </div>
-              <form>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="inlineCheckbox2"
+                    value="option2"
+                  ></input>
+                  <label class="form-check-label" for="inlineCheckbox2">
+                    REKLAM PAKETİ
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="inlineCheckbox2"
+                    value="option2"
+                  ></input>
+                  <label class="form-check-label" for="inlineCheckbox2">
+                    E-TİCARET
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="inlineCheckbox2"
+                    value="option2"
+                  ></input>
+                  <label class="form-check-label" for="inlineCheckbox2">
+                    YENİLEME
+                  </label>
+                </div>
+                <br />
+                <br />
+                <CAlert color="dark">Dİl Seçimi</CAlert>
+                <div class="form-check form-check-inline">
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">Yabancı Dil-1</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option>Dil Seçiniz</option>
+                      <option>Türkçe</option>
+                      <option>İngilizce</option>
+                      <option>Almanca</option>
+                      <option>Fransızca</option>
+                      <option>İtalyanca</option>
+                      <option>Japonca</option>
+                      <option>Rusça</option>
+                      <option>Azerice</option>
+                      <option>Arapça</option>
+                      <option>Danca</option>
+                    </select>
+                    <label for="exampleFormControlSelect1">Yabancı Dil-2</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option>Dil Seçiniz</option>
+                      <option>Türkçe</option>
+                      <option>İngilizce</option>
+                      <option>Almanca</option>
+                      <option>Fransızca</option>
+                      <option>İtalyanca</option>
+                      <option>Japonca</option>
+                      <option>Rusça</option>
+                      <option>Azerice</option>
+                      <option>Arapça</option>
+                      <option>Danca</option>
+                    </select>
+                    <label for="exampleFormControlSelect1">Yabancı Dil-3</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option>Dil Seçiniz</option>
+                      <option>Türkçe</option>
+                      <option>İngilizce</option>
+                      <option>Almanca</option>
+                      <option>Fransızca</option>
+                      <option>İtalyanca</option>
+                      <option>Japonca</option>
+                      <option>Rusça</option>
+                      <option>Azerice</option>
+                      <option>Arapça</option>
+                      <option>Danca</option>
+                    </select>
+                    <br></br>
+                    <button type="submit" class="btn btn-primary mb-3">
+                      Seçilen Dil(ler)i Onayla
+                    </button>
+                  </div>
+                </div>
+                <CAlert color="secondary">Sözleşme Tarihi</CAlert>
+                <label for="birthday">Başlangıç Tarihi:</label>
+                <input
+                  class="form-control"
+                  type="date"
+                  id="baştar"
+                  name="birthday"
+                ></input>
+                &nbsp;&nbsp;
+                <label for="birthday">Bitiş Tarihi:</label>
+                <input
+                  class="form-control"
+                  type="date"
+                  id="bittar"
+                  name="birthday"
+                ></input>
+                <br />
+                <br />
+                <CAlert color="dark">KDV'siz Fiyat</CAlert>
+                <div class="col-md-1">
+                  <label for="validationCustom04" class="form-label">
+                    Para Türü
+                  </label>
+                  <select class="form-select" id="validationCustom04" required>
+                    <option>₺</option>
+                    <option>$</option>
+                    <option>€</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a valid state.
+                  </div>
+                </div>
                 KDV'siz Fiyatı Giriniz:
                 <br />
-                <input class="form-control" placeholder="KDV'siz fiyatı giriniz" type="text" name="firmaadi :" />
+                <input
+                  class="form-control"
+                  placeholder="KDV'siz fiyatı giriniz"
+                  type="text"
+                  name="firmaadi :"
+                />
                 <br />
                 <br />
-              </form>
-              <CAlert color="secondary">KDV'li Fiyat</CAlert>
-              <div class="col-md-1">
-                <label for="validationCustom04" class="form-label">
-                  Para Türü
-                </label>
-                <select class="form-select" id="validationCustom04" required>
-                  <option>₺</option>
-                  <option>$</option>
-                  <option>€</option>
-                </select>
-                <div class="invalid-feedback">Please select a valid state.</div>
-              </div>
-              <form>
+                <CAlert color="secondary">KDV'li Fiyat</CAlert>
+                <div class="col-md-1">
+                  <label for="validationCustom04" class="form-label">
+                    Para Türü
+                  </label>
+                  <select class="form-select" id="validationCustom04" required>
+                    <option>₺</option>
+                    <option>$</option>
+                    <option>€</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a valid state.
+                  </div>
+                </div>
                 KDV'li Fiyatı Giriniz
                 <br />
-                <input class="form-control" placeholder="KDV'li fiyatı giriniz" type="text" name="firmaadi :" />
+                <input
+                  class="form-control"
+                  placeholder="KDV'li fiyatı giriniz"
+                  type="text"
+                  name="firmaadi :"
+                />
                 <br />
                 <br />
-              </form>
-              <CAlert color="dark">Kapora</CAlert>
-              <div class="col-md-1">
-                <label for="validationCustom04" class="form-label">
-                  Para Türü
-                </label>
-                <select class="form-select" id="validationCustom04" required>
-                  <option>₺</option>
-                  <option>$</option>
-                  <option>€</option>
-                </select>
-                <div class="invalid-feedback">Please select a valid state.</div>
-              </div>
-              <form>
+                <CAlert color="dark">Kapora</CAlert>
+                <div class="col-md-1">
+                  <label for="validationCustom04" class="form-label">
+                    Para Türü
+                  </label>
+                  <select class="form-select" id="validationCustom04" required>
+                    <option>₺</option>
+                    <option>$</option>
+                    <option>€</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a valid state.
+                  </div>
+                </div>
                 Ödemeniz Gereken Kapora Miktarı :<br />
-                <input class="form-control" placeholder="Kapora miktarını giriniz" type="text" name="firmaadi :" />
+                <input
+                  class="form-control"
+                  placeholder="Kapora miktarını giriniz"
+                  type="text"
+                  name="firmaadi :"
+                />
                 <br />
                 <br />
-              </form>
-              <CAlert color="secondary">Yıllık Yenileme Tutarı</CAlert>
-              <div class="col-md-1">
-                <label for="validationCustom04" class="form-label">
-                  Para Türü
-                </label>
-                <select class="form-select" id="validationCustom04" required>
-                  <option>₺</option>
-                  <option>$</option>
-                  <option>€</option>
-                </select>
-                <div class="invalid-feedback">Please select a valid state.</div>
-              </div>
-              <form>
+                <CAlert color="secondary">Yıllık Yenileme Tutarı</CAlert>
+                <div class="col-md-1">
+                  <label for="validationCustom04" class="form-label">
+                    Para Türü
+                  </label>
+                  <select class="form-select" id="validationCustom04" required>
+                    <option>₺</option>
+                    <option>$</option>
+                    <option>€</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a valid state.
+                  </div>
+                </div>
                 Yıllık Yenileme Tutarı:
                 <br />
-                <input class="form-control" placeholder="Yıllık yenileme tutarını giriniz" type="text" name="firmaadi :" />
+                <input
+                  class="form-control"
+                  placeholder="Yıllık yenileme tutarını giriniz"
+                  type="text"
+                  name="firmaadi :"
+                />
                 <br />
                 <br />
-              </form>
-              <CAlert color="secondary">Sözleşme Süresi</CAlert>
-              <form>
+                <CAlert color="secondary">Sözleşme Süresi</CAlert>
                 Sözleşme Süresi Giriniz:
                 <br />
-                <input class="form-control" placeholder="Sözleşme süresini giriniz" type="text" name="firmaadi :" />
+                <input
+                  class="form-control"
+                  placeholder="Sözleşme süresini giriniz"
+                  type="text"
+                  name="firmaadi :"
+                />
                 <br />
                 <br />
-              </form>
-              <CAlert color="dark">Sözleşme Dosyası Yükleme</CAlert>
-              <form action="" method="post" enctype="multipart/form-data">
+                <CAlert color="dark">Sözleşme Dosyası Yükleme</CAlert>
                 <input class="form-control" type="file" name="dosya" />
-                <input class="form-control" type="submit" value="Gönder" />
+                <br />
+                <input class="form-control" type="button" value="ONAYLA" />
+                <br />
+                <input class="form-control" type="button" value="YENİLE" />
               </form>
               <br />
               <br />
               <CAlert color="success"></CAlert>
-              <input class="form-control" type="button" value="ONAYLA" />
-              <input class="form-control" type="button" value="YENİLE" />
             </DocsExample>
           </CCardBody>
         </CCard>
