@@ -109,17 +109,8 @@ const Alerts = () => {
                     <div class="form-check form-check-inline">
                       <div class="col">
                         <div class="form-check form-check-inline">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            id="inlineCheckbox2"
-                            value="option2"
-                          ></input>
-                          <label class="form-check-label" for="inlineCheckbox2">
-                            Türkçe
-                          </label>
-                        </div>
-
+                          <input class="form-check-input"type="checkbox"id="inlineCheckbox2"value="option2"></input><label class="form-check-label" for="inlineCheckbox2">Türkçe</label></div>&nbsp;&nbsp;
+                        
                         <div class="form-check form-check-inline">
                           <input
                             class="form-check-input"
@@ -175,11 +166,9 @@ const Alerts = () => {
                             id="inlineCheckbox2"
                             value="option2"
                           ></input>
-                          <label class="form-check-label" for="inlineCheckbox2">
-                            Japonca
+                          <label class="form-check-label" for="inlineCheckbox2">Japonca
                           </label>
                         </div>
-
                         <div class="form-check form-check-inline">
                           <input
                             class="form-check-input"
@@ -190,7 +179,7 @@ const Alerts = () => {
                           <label class="form-check-label" for="inlineCheckbox2">
                             Rusça
                           </label>
-                        </div>
+                        </div>&nbsp;&nbsp;&nbsp;
 
                         <div class="form-check form-check-inline">
                           <input
@@ -203,7 +192,7 @@ const Alerts = () => {
                             Azerice
                           </label>
                         </div>
-
+                        &nbsp;&nbsp;
                         <div class="form-check form-check-inline">
                           <input
                             class="form-check-input"
@@ -215,7 +204,7 @@ const Alerts = () => {
                             Arapça
                           </label>
                         </div>
-
+                        &nbsp;&nbsp;&nbsp;&nbsp;
                         <div class="form-check form-check-inline">
                           <input
                             class="form-check-input"
