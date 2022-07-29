@@ -52,7 +52,7 @@ const Login = () => {
                         </CButton>
                       </CCol>
                       <CCol xs={6} className="text-right">
-                      <a class="btn btn-primary"href="https://youtu.be/KW4msApcqhQ"role="button">Şifreni mi unuttun?</a>
+                      <a class="btn btn-primary"href="#"role="button">Şifreni mi unuttun?</a>
                       </CCol>
                     </CRow>
                   </CForm>

@@ -58,7 +58,7 @@ const _nav = [
       {
         component: CNavItem,
         name: 'Firma Ekle',
-        to: '/icons/firma/firmalist',
+        to: '/icons/firma/firmaekle',
         badge: {
           color: 'success',
           text: '',
