@@ -36,7 +36,7 @@ const Alerts = () => {
                 <br />
                 <div class="row">
                   <div class="col">
-                    <CAlert color="dark">Firma Seçimi</CAlert>
+                    <CAlert color="dark">Firma Adı</CAlert>
 
                     <input
                       class="form-control"
