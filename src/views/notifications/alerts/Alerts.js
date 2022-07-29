@@ -95,77 +95,140 @@ const Alerts = () => {
                   <br />
 
                   <div class="col">
+                    <CAlert color="dark">Domain</CAlert>
+
+                    <input
+                      class="form-control"
+                      type="text"
+                      placeholder="Domain Giriniz"
+                      name="firmaadi :"
+                    />
+                    <br />
                     <CAlert color="dark">Dİl Seçimi</CAlert>
 
                     <div class="form-check form-check-inline">
                       <div class="col">
-                        <div class="form-group">
-                          <label for="exampleFormControlSelect1">
-                            Yabancı Dil-1
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox2"
+                            value="option2"
+                          ></input>
+                          <label class="form-check-label" for="inlineCheckbox2">
+                            Türkçe
                           </label>
-                          <select
-                            class="form-control"
-                            id="exampleFormControlSelect1"
-                          >
-                            <option>Dil Seçiniz</option>
-                            <option>Türkçe</option>
-                            <option>İngilizce</option>
-                            <option>Almanca</option>
-                            <option>Fransızca</option>
-                            <option>İtalyanca</option>
-                            <option>Japonca</option>
-                            <option>Rusça</option>
-                            <option>Azerice</option>
-                            <option>Arapça</option>
-                            <option>Danca</option>
-                          </select>
                         </div>
-                        <div class="col">
-                          <label for="exampleFormControlSelect1">
-                            Yabancı Dil-2
+
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox2"
+                            value="option2"
+                          ></input>
+                          <label class="form-check-label" for="inlineCheckbox2">
+                            İngilizce
                           </label>
-                          <select
-                            class="form-control"
-                            id="exampleFormControlSelect1"
-                          >
-                            <option>Dil Seçiniz</option>
-                            <option>Türkçe</option>
-                            <option>İngilizce</option>
-                            <option>Almanca</option>
-                            <option>Fransızca</option>
-                            <option>İtalyanca</option>
-                            <option>Japonca</option>
-                            <option>Rusça</option>
-                            <option>Azerice</option>
-                            <option>Arapça</option>
-                            <option>Danca</option>
-                          </select>
                         </div>
-                        <div class="col">
-                          <label for="exampleFormControlSelect1">
-                            Yabancı Dil-3
+
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox2"
+                            value="option2"
+                          ></input>
+                          <label class="form-check-label" for="inlineCheckbox2">
+                            Almanca
                           </label>
-                          <select
-                            class="form-control"
-                            id="exampleFormControlSelect1"
-                          >
-                            <option>Dil Seçiniz</option>
-                            <option>Türkçe</option>
-                            <option>İngilizce</option>
-                            <option>Almanca</option>
-                            <option>Fransızca</option>
-                            <option>İtalyanca</option>
-                            <option>Japonca</option>
-                            <option>Rusça</option>
-                            <option>Azerice</option>
-                            <option>Arapça</option>
-                            <option>Danca</option>
-                          </select>
                         </div>
+
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox2"
+                            value="option2"
+                          ></input>
+                          <label class="form-check-label" for="inlineCheckbox2">
+                            Fransızca
+                          </label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox2"
+                            value="option2"
+                          ></input>
+                          <label class="form-check-label" for="inlineCheckbox2">
+                            İtalyanca
+                          </label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox2"
+                            value="option2"
+                          ></input>
+                          <label class="form-check-label" for="inlineCheckbox2">
+                            Japonca
+                          </label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox2"
+                            value="option2"
+                          ></input>
+                          <label class="form-check-label" for="inlineCheckbox2">
+                            Rusça
+                          </label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox2"
+                            value="option2"
+                          ></input>
+                          <label class="form-check-label" for="inlineCheckbox2">
+                            Azerice
+                          </label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox2"
+                            value="option2"
+                          ></input>
+                          <label class="form-check-label" for="inlineCheckbox2">
+                            Arapça
+                          </label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox2"
+                            value="option2"
+                          ></input>
+                          <label class="form-check-label" for="inlineCheckbox2">
+                            Danca
+                          </label>
+                        </div>
+
                         <br></br>
-                        <button type="submit" class="btn btn-primary mb-3">
-                          Seçilen Dil(ler)i Onayla
-                        </button>
                       </div>
                     </div>
                   </div>
