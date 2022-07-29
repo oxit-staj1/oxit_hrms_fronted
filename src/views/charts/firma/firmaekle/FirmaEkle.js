@@ -56,19 +56,30 @@ const Cards = () => {
       firma_ilce,
       firma_adres,
       firma_not,
+      firma_domain_ad,
+    });
+    console.log(
+      yetkili_ad,
+      yetkili_soyad,
+      cep_telefon,
+      sabit_telefon,
+      vergi_dairesi,
+      vergi_numarasi,
+      e_mail,
+      firma_il,
+      firma_ilce,
+      firma_adres,
+      firma_not,
       firma_domain_ad
-    })
-    console.log(yetkili_ad,yetkili_soyad,cep_telefon,sabit_telefon,vergi_dairesi,
-                vergi_numarasi,e_mail,firma_il,firma_ilce,firma_adres,firma_not,firma_domain_ad)
+    );
+  };
 
-  }
-  
   return (
     <CRow>
       <CCol xs={12}>
         <CCard className="mb-4">
           <CCardBody>
-          {/*   <a
+            {/*   <a
               class="btn btn-primary"
               href="/#/icons/coreui-icons"
               role="button"
@@ -76,14 +87,14 @@ const Cards = () => {
               Personeller
             </a> */}
             <DocsExample href="components/card">
-              <CCard style={{ width: "18rem" }}>
-                <CCardImage orientation="top" src={ReactImg} />
+              <CCard style={{ width: "100%" }}>
                 <CCardBody>
-                  <CCardTitle>Personel Ekle</CCardTitle>
+                  <CCardTitle></CCardTitle>
                   <CCardText></CCardText>
+
                   <form>
-                    <div class="form-group">
-                      <label>
+                    <div class="row">
+                      <div class="col">
                         Yetkili AD
                         <input
                           class="form-control"
@@ -91,8 +102,8 @@ const Cards = () => {
                           name="ad"
                           onChange={(e) => setYetkili_ad(e.target.value)}
                         />
-                      </label>
-                      <label>
+                      </div>
+                      <div class="col">
                         Yetkili SOYAD
                         <input
                           class="form-control"
@@ -100,19 +111,19 @@ const Cards = () => {
                           name="soyad"
                           onChange={(e) => setYetkili_soyad(e.target.value)}
                         />
-                      </label>
-                      <label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
                         CEP TELEFONU
                         <input
                           class="form-control"
                           type="text"
                           name="baslama"
-                          onChange={(e) =>
-                            setCep_telefon(e.target.value)
-                          }
+                          onChange={(e) => setCep_telefon(e.target.value)}
                         />
-                      </label>
-                      <label>
+                      </div>
+                      <div class="col">
                         SABİT TELEFON
                         <input
                           class="form-control"
@@ -120,54 +131,9 @@ const Cards = () => {
                           name="birthday"
                           onChange={(e) => setSabit_telefon(e.target.value)}
                         />
-                      </label>
-                      <label>
-                        VERGİ DAİRESİ
-                        <input
-                          class="form-control"
-                          type="text"
-                          name="birthday"
-                          onChange={(e) => setVergi_dairesi(e.target.value)}
-                        />
-                      </label>
-                      <label>
-                        VERGİ NUMARASI
-                        <input
-                          class="form-control"
-                          type="text"
-                          name="birthday"
-                          onChange={(e) => setVergi_numarasi(e.target.value)}
-                        />
-                      </label>
+                      </div>
 
-                      <label>
-                        EMAİL
-                        <input
-                          class="form-control"
-                          type="text"
-                          name="birthday"
-                          onChange={(e) => setE_mail(e.target.value)}
-                        />
-                      </label>
-                      <label>
-                        İL
-                        <input
-                          class="form-control"
-                          type="text"
-                          name="birthday"
-                          onChange={(e) => setFirma_il(e.target.value)}
-                        />
-                      </label>
-                      <label>
-                        İLÇE
-                        <input
-                          class="form-control"
-                          type="text"
-                          name="birthday"
-                          onChange={(e) => setFirma_ilce(e.target.value)}
-                        />
-                      </label>
-                      <label>
+                      <div class="col">
                         FİRMA ADRESİ
                         <input
                           class="form-control"
@@ -175,8 +141,19 @@ const Cards = () => {
                           name="birthday"
                           onChange={(e) => setFirma_adres(e.target.value)}
                         />
-                      </label>
-                      <label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        FİRMA DOMAİN
+                        <input
+                          class="form-control"
+                          type="text"
+                          name="birthday"
+                          onChange={(e) => setFirma_domain_ad(e.target.value)}
+                        />
+                      </div>
+                      <div class="col">
                         FİRMA NOT
                         <input
                           class="form-control"
@@ -184,22 +161,13 @@ const Cards = () => {
                           name="birthday"
                           onChange={(e) => setFirma_not(e.target.value)}
                         />
-                      </label>
-                      <label>
-                        FİRMA DOMAİN AD
-                        <input
-                          class="form-control"
-                          type="text"
-                          name="birthday"
-                          onChange={(e) => setFirma_domain_ad(e.target.value)}
-                        />
-                      </label>
-                      <br></br>
-
-                      <br></br>
-                          
-                      <input onClick={postData} type="submit" value="Ekle" />
+                      </div>
                     </div>
+                    <br></br>
+
+                    <br></br>
+
+                    <input onClick={postData} type="submit" value="Ekle" />
                   </form>
                 </CCardBody>
                 <CCardBody></CCardBody>
