@@ -25,15 +25,14 @@ import ReactImg from "src/assets/images/react.gif";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const PersonelList = () => {
+const Cards = () => {
   const [personel_id, setPersonel_id] = useState([]);
   const [personel_ad, setPersonel_ad] = useState([]);
   const [personel_soyad, setPersonel_soyad] = useState([]);
   const [is_baslangic_tarihi, setİs_baslangic_tarihi] = useState([]);
   const [dogum_tarihi, setDogum_tarihi] = useState([]);
-  const [birimi, setBirimi] = useState([]);
 
-  const url = "http://localhost:8080/api/personel/add/";
+  const url = "http://localhost:8080/api/personel/add";
   const postData = () => {
     axios
       .post(url, {
@@ -41,23 +40,11 @@ const PersonelList = () => {
         personel_soyad,
         is_baslangic_tarihi,
         dogum_tarihi,
-        birimi
       })
       .then(() => {
         history.push("icons/coreui-icons");
       });
   };
-  const url_getall = "http://localhost:8080/api/personel/getall"
-  const [personels, setPersonels] = useState([])
-
-  
-  useEffect(() => {
-    axios.get(url_getall)
-      .then((response) => {
-        setPersonels(response.data.data);
-        console.log(response.data.data)
-      })
-  }, [])
   return (
     <CRow>
       <CCol xs={12}>
@@ -71,69 +58,63 @@ const PersonelList = () => {
               Personeller
             </a>
             <DocsExample href="components/card">
-              <CCard style={{ width: "18rem" }}>
-                <a href="/#/icons/coreui-icons"><CCardImage orientation="top" src={ReactImg} /></a>
+              <CCard style={{ width: "100%" }}>
                 <CCardBody>
-                  <CCardTitle>Personel Ekle</CCardTitle>
-                  <CCardText></CCardText>
+                  <CCardTitle></CCardTitle>
+
                   <form>
-                    <div class="form-group">
-                      <label>
-                        Ad
-                        <input
-                          class="form-control"
-                          type="text"
-                          name="ad"
-                          onChange={(e) => setPersonel_ad(e.target.value)}
-                        />
-                      </label>
-                      <label>
-                        Soyad
-                        <input
-                          class="form-control"
-                          type="text"
-                          name="soyad"
-                          onChange={(e) => setPersonel_soyad(e.target.value)}
-                        />
-                      </label>
-                      <label>
-                        Başlama Tarihi
-                        <input
-                          class="form-control"
-                          type="text"
-                          name="baslama"
-                          onChange={(e) =>
-                            setİs_baslangic_tarihi(e.target.value)
-                          }
-                        />
-                      </label>
-                      <label>
-                        Doğum Günü
-                        <input
-                          class="form-control"
-                          type="text"
-                          name="birthday"
-                          onChange={(e) => setDogum_tarihi(e.target.value)}
-                        />
-                      </label>
-                      <select class="form-select" aria-label="Default select example">
-                        <option selected onChange={(e) => setBirimi (e.target.value)} >Birimi</option>
-                      {
-                        personels.map((personel) => {
-                          {personel.departman?.departman_ad}  
-                        })
-                      }
-                      </select>
-                      <label>
-                        Birimi
-                        <input class="form-control"
-                          type="text"
-                          name="birim"
-                          onChange={(e) => setBirimi(e.target.value)}
+                    <div>
+                      <div class="row">
+                        <div class="col">
+                          Ad
+                          <input
+                            class="form-control"
+                            type="text"
+                            name="ad"
+                            onChange={(e) => setPersonel_ad(e.target.value)}
+                          />
+                        </div>
+                        <div class="col">
+                          Soyad
+                          <input
+                            class="form-control"
+                            type="text"
+                            name="soyad"
+                            onChange={(e) => setPersonel_soyad(e.target.value)}
+                          />
+                        </div>
+                      </div>
 
-                        />
-
-                      </label>
+                      <div class="row">
+                        <div class="col">
+                          Başlama Tarihi
+                          <input
+                            class="form-control"
+                            type="text"
+                            name="baslama"
+                            onChange={(e) =>
+                              setİs_baslangic_tarihi(e.target.value)
+                            }
+                          />
+                        </div>
+                        <div class="col">
+                          Doğum Günü
+                          <input
+                            class="form-control"
+                            type="text"
+                            name="birthday"
+                            onChange={(e) => setDogum_tarihi(e.target.value)}
+                          />
+                        </div>
+                        <div class="col">
+                          Birimi
+                          <input
+                            class="form-control"
+                            type="text"
+                            name="birim"
+                          />
+                        </div>
+                      </div>
                       <br></br>
 
                       <br></br>
@@ -143,7 +124,7 @@ const PersonelList = () => {
                         </br>
                         <br></br>
                       </form> */}
-                      <input onClick={postData} class="btn btn-primary" type="submit" value="Ekle" />
+                      <CButton color="secondary">Ekle</CButton>
                     </div>
                   </form>
                 </CCardBody>
@@ -157,4 +138,4 @@ const PersonelList = () => {
   );
 };
 
-export default PersonelList;
+export default Cards;
