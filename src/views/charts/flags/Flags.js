@@ -49,14 +49,10 @@ const Cards = () => {
     <CRow>
       <CCol xs={12}>
         <CCard className="mb-4">
+        <CCardHeader>
+            <strong>Personel Ekleme</strong>
+          </CCardHeader>
           <CCardBody>
-            <a
-              class="btn btn-primary"
-              href="/#/icons/coreui-icons"
-              role="button"
-            >
-              Personeller
-            </a>
             <DocsExample href="components/card">
               <CCard style={{ width: "100%" }}>
                 <CCardBody>

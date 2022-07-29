@@ -73,10 +73,10 @@ const Cards = () => {
             </a> */}
             <DocsExample href="components/card">
               <CCard style={{ width: "100%" }}>
+              <CCardHeader>
+            <strong>Firma Ekleme</strong>
+          </CCardHeader>
                 <CCardBody>
-                  <CCardTitle></CCardTitle>
-                  <CCardText></CCardText>
-
                   <form>
                     <div class="row">
                       <div class="col">
