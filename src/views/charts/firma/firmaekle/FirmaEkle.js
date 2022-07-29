@@ -63,6 +63,9 @@ const Cards = () => {
     <CRow>
       <CCol xs={12}>
         <CCard className="mb-4">
+        <CCardHeader>
+            <strong>Firma Ekleme</strong>
+          </CCardHeader>
           <CCardBody>
             {/*   <a
               class="btn btn-primary"
@@ -73,9 +76,6 @@ const Cards = () => {
             </a> */}
             <DocsExample href="components/card">
               <CCard style={{ width: "100%" }}>
-              <CCardHeader>
-            <strong>Firma Ekleme</strong>
-          </CCardHeader>
                 <CCardBody>
                   <form>
                     <div class="row">
