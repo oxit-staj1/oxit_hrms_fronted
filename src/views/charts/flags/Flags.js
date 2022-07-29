@@ -129,7 +129,7 @@ const Cards = () => {
                         </br>
                         <br></br>
                       </form> */}
-                      <CButton color="secondary">Ekle</CButton>
+                      <CButton color="secondary" class="btn btn-primary">Ekle</CButton>
                     </div>
                   </form>
                 </CCardBody>
