@@ -25,26 +25,47 @@ import ReactImg from "src/assets/images/react.gif";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const Cards = () => {
+const FirmaEkle = () => {
   const [personel_id, setPersonel_id] = useState([]);
-  const [personel_ad, setPersonel_ad] = useState([]);
-  const [personel_soyad, setPersonel_soyad] = useState([]);
-  const [is_baslangic_tarihi, setİs_baslangic_tarihi] = useState([]);
-  const [dogum_tarihi, setDogum_tarihi] = useState([]);
-
-  const url = "http://localhost:8080/api/personel/add";/*Burayı düzeltt*/
+  const [yetkili_ad, setYetkili_ad] = useState([]);
+  const [yetkili_soyad, setYetkili_soyad] = useState([]);
+  const [cep_tel, setCep_tel] = useState([]);
+  const [sabit_tel, setSabit_tel] = useState([]);
+  const [vergi_dairesi, setVergi_dairesi] = useState([]);
+  const [vergi_numarasi, setVergi_numarasi] = useState([]);
+  const [email, setEmail] = useState([]);
+  const [firma_il, setFirma_il] = useState([]);
+  const [firma_ilce, setFirma_ilce] = useState([]);
+  const [firma_adres, setFirma_adres] = useState([]);
+  const [firma_not, setFirma_not] = useState([]);
+  const [firma_domain_ad, setFirma_domain_ad] = useState([]);
+  //yetkili_ad,yetkili_soyad,cep_tel,sabit_tel,
+  //vergi_dairesi,vergi_numarasi,email,firma_il,firma_ilce,firma_adres,firma_not,
+  //firma_domain_ad
+  const url = "http://localhost:8080/api/firma/add";/*Burayı düzeltt*/
   const postData = () => {
-    axios
-      .post(url, {
-        personel_ad,
-        personel_soyad,
-        is_baslangic_tarihi,
-        dogum_tarihi,
+    const response = axios.post(url, JSON.stringify({
+      yetkili_ad,
+      yetkili_soyad,
+      cep_tel,
+      sabit_tel,
+      vergi_dairesi,
+      vergi_numarasi,
+      email,
+      firma_il,
+      firma_ilce,
+      firma_adres,
+      firma_not,
+      firma_domain_ad
+    }),
+      {
+        headers: { 'Content-Type': 'application/json' }
       })
-      .then(() => {
-        history.push("icons/coreui-icons");
-      });
-  };
+    console.log(yetkili_ad, yetkili_soyad, cep_tel, sabit_tel,
+      vergi_dairesi, vergi_numarasi, email, firma_il,
+      firma_ilce, firma_adres, firma_not, firma_domain_ad)
+    console.log(response)
+  }
   return (
     <CRow>
       <CCol xs={12}>
@@ -59,21 +80,13 @@ const Cards = () => {
             </a>
             <DocsExample href="components/card">
               <CCard style={{ width: "18rem" }}>
-              <a href="#"><CCardImage orientation="top" src={ReactImg} /></a>
+                <a href="#"><CCardImage orientation="top" src={ReactImg} /></a>
                 <CCardBody>
                   <CCardTitle>Firma Ekle</CCardTitle>
                   <CCardText></CCardText>
                   <form>
                     <div class="form-group">
-                      <label>
-                        Firma Tam Ünvanı
-                        <input
-                          class="form-control"
-                          placeholder="Firmanın ünvanını giriniz"
-                          type="text"
-                          name="Firma Tam Ünvanı"
-                        />
-                      </label>
+
                       <label>
                         Firma Yetkilisinin Adı
                         <input
@@ -81,6 +94,8 @@ const Cards = () => {
                           placeholder="Yetkilinin adını giriniz"
                           type="text"
                           name="soyad"
+                          onChange={(e) => setYetkili_ad(e.target.value)}
+
                         />
                       </label>
                       <label>
@@ -90,30 +105,17 @@ const Cards = () => {
                           placeholder="Yetkilinin soyadını giriniz"
                           type="text"
                           name="soyad"
-                        />
-                      </label>
-                      <label>
-                        Firma Adresi
-                        <input
-                          class="form-control"
-                          placeholder="Firmanın adresini giriniz"
-                          type="text"
-                          name="Firma Yetkilisi"
-                        />
-                      </label>
-                      <label>
-                        E-Mail
-                        <input
-                          class="form-control"
-                          placeholder="E-Maili giriniz"
-                          type="text"
-                          name="E-Mail"
+                          onChange={(e) => setYetkili_soyad(e.target.value)}
+
                         />
                       </label>
                       <label>
                         Telefon Numarası
                         <input class="form-control"
-                          placeholder="Telefon numarasını giriniz" type="text" name="Telefon Numarası" />
+                          placeholder="Telefon numarasını giriniz" type="text" name="Telefon Numarası"
+                          onChange={(e) => setCep_tel(e.target.value)}
+
+                        />
                       </label>
                       <label>
                         Firmanın Sabit Telefonu
@@ -122,6 +124,9 @@ const Cards = () => {
                           placeholder="Sabit telefonu giriniz"
                           type="text"
                           name="Firmanın Sabit Telefonu"
+                          onChange={(e) => setSabit_tel(e.target.value)}
+
+
                         />
                       </label>
                       <label>
@@ -131,6 +136,8 @@ const Cards = () => {
                           placeholder="Domain adresini giriniz"
                           type="text"
                           name="Firma Domain Adresi"
+                          onChange={(e) => setFirma_domain_ad(e.target.value)}
+
                         />
                       </label>
                       <label>
@@ -140,6 +147,8 @@ const Cards = () => {
                           placeholder="Firmanın adresini giriniz"
                           type="text"
                           name="Firma Adresi"
+                          onChange={(e) => setFirma_adres(e.target.value)}
+
                         />
                       </label>
                       <label>
@@ -149,53 +158,26 @@ const Cards = () => {
                           placeholder="Firmanın ilini giriniz"
                           type="text"
                           name="Firmanın Bulunduğu İl"
+                          onChange={(e) => setFirma_il(e.target.value)}
+
                         />
                       </label>
                       <label>
-                        Firmanın Bulunduğu İlçe
-                        <input
-                          class="form-control"
-                          placeholder="Firmanın ilçesini giriniz"
-                          type="text"
-                          name="Firmanın Bulunduğu İlçe"
-                        />
-                      </label>
-                      <label>
-                        Vergi Dairesi
-                        <input
-                          class="form-control"
-                          placeholder="Vergi dairesini giriniz"
-                          type="text"
-                          name="Vergi Dairesi"
-                        />
-                      </label>
-                      <label>
-                        Vergi Numarası
-                        <input
-                          class="form-control"
-                          placeholder="Vergi Numarasını giriniz"
-                          type="text"
-                          name="Vergi Numarası"
-                        />
-                      </label><label>
                         Firma Notu
                         <input
                           class="form-control"
                           placeholder="Firma notunu giriniz"
                           type="text"
                           name="not"
+                          onChange={(e) => setFirma_not(e.target.value)}
+
                         />
                       </label>
                       <br></br>
 
                       <br></br>
-                      {/*     <form action="" method="post" enctype="multipart/form-data">
-                        <input type="file" name="dosya" />
-                        <br>
-                        </br>
-                        <br></br>
-                      </form> */}
-                      <input onClick={postData}class="btn btn-primary" type="submit" value="Ekle" />
+
+                      <input onClick={postData} class="btn btn-primary" type="submit" value="Ekle" />
                     </div>
                   </form>
                 </CCardBody>
@@ -209,4 +191,4 @@ const Cards = () => {
   );
 };
 
-export default Cards;
+export default FirmaEkle;

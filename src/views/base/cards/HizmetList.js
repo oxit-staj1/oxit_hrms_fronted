@@ -5,9 +5,8 @@ import { Link } from 'react-router-dom';
 
 
 const HizmetList = () => {
-    const url = " http://localhost:8080/api/hizmet/getall";
+    const url = "http://localhost:8080/api/hizmet/getall";
     const [hizmets, setHizmets] = useState([]);
-
     useEffect(() => {
         axios.get(url)
             .then((response) => {

@@ -25,14 +25,15 @@ import ReactImg from "src/assets/images/react.gif";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const Cards = () => {
+const PersonelList = () => {
   const [personel_id, setPersonel_id] = useState([]);
   const [personel_ad, setPersonel_ad] = useState([]);
   const [personel_soyad, setPersonel_soyad] = useState([]);
   const [is_baslangic_tarihi, setİs_baslangic_tarihi] = useState([]);
   const [dogum_tarihi, setDogum_tarihi] = useState([]);
+  const [birimi, setBirimi] = useState([]);
 
-  const url = "http://localhost:8080/api/personel/add";
+  const url = "http://localhost:8080/api/personel/add/";
   const postData = () => {
     axios
       .post(url, {
@@ -40,11 +41,23 @@ const Cards = () => {
         personel_soyad,
         is_baslangic_tarihi,
         dogum_tarihi,
+        birimi
       })
       .then(() => {
         history.push("icons/coreui-icons");
       });
   };
+  const url_getall = "http://localhost:8080/api/personel/getall"
+  const [personels, setPersonels] = useState([])
+
+  
+  useEffect(() => {
+    axios.get(url_getall)
+      .then((response) => {
+        setPersonels(response.data.data);
+        console.log(response.data.data)
+      })
+  }, [])
   return (
     <CRow>
       <CCol xs={12}>
@@ -59,7 +72,7 @@ const Cards = () => {
             </a>
             <DocsExample href="components/card">
               <CCard style={{ width: "18rem" }}>
-              <a href="/#/icons/coreui-icons"><CCardImage orientation="top" src={ReactImg} /></a>
+                <a href="/#/icons/coreui-icons"><CCardImage orientation="top" src={ReactImg} /></a>
                 <CCardBody>
                   <CCardTitle>Personel Ekle</CCardTitle>
                   <CCardText></CCardText>
@@ -103,9 +116,23 @@ const Cards = () => {
                           onChange={(e) => setDogum_tarihi(e.target.value)}
                         />
                       </label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected onChange={(e) => setBirimi (e.target.value)} >Birimi</option>
+                      {
+                        personels.map((personel) => {
+                          {personel.departman?.departman_ad}  
+                        })
+                      }
+                      </select>
                       <label>
                         Birimi
-                        <input class="form-control" type="text" name="birim" />
+                        <input class="form-control"
+                          type="text"
+                          name="birim"
+                          onChange={(e) => setBirimi(e.target.value)}
+
+                        />
+
                       </label>
                       <br></br>
 
@@ -116,7 +143,7 @@ const Cards = () => {
                         </br>
                         <br></br>
                       </form> */}
-                      <input onClick={postData}class="btn btn-primary" type="submit" value="Ekle" />
+                      <input onClick={postData} class="btn btn-primary" type="submit" value="Ekle" />
                     </div>
                   </form>
                 </CCardBody>
@@ -130,4 +157,4 @@ const Cards = () => {
   );
 };
 
-export default Cards;
+export default PersonelList;

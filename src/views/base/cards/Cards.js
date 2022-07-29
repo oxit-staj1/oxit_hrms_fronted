@@ -31,13 +31,20 @@ import HizmetList from "./HizmetList";
 const Cards = () => {
   const url = "http://localhost:8080/api/hizmet/add";
   let history = useNavigate();
+
   const [hizmet_ad, setHizmet_ad] = useState([]);
 
+
   const postData = () => {
-    axios.post(url, {
-      hizmet_ad,
-    });
-  };
+
+    const response = axios.post(url, JSON.stringify({ hizmet_ad }),
+      {
+        headers: { 'Content-Type': 'application/json' }
+      })
+
+    console.log(hizmet_ad)
+    console.log(response)
+  }
 
   return (
     <CRow>
@@ -72,7 +79,7 @@ const Cards = () => {
                   </form>
                 </CCardBody>
               </CCard>
-              
+
             </DocsExample>
             <HizmetList />
           </CCardBody>

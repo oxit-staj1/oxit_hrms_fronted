@@ -1,27 +1,5 @@
-import React, { useState, useEffect } from "react";
-import {
-  CButton,
-  CCard,
-  CCardBody,
-  CCardFooter,
-  CCardGroup,
-  CCardHeader,
-  CCardImage,
-  CCardLink,
-  CCardSubtitle,
-  CCardText,
-  CCardTitle,
-  CListGroup,
-  CListGroupItem,
-  CNav,
-  CNavItem,
-  CNavLink,
-  CCol,
-  CRow,
-} from "@coreui/react";
-import { DocsExample } from "src/components";
-
-import ReactImg from "src/assets/images/react.gif";
+import React, { useEffect, useState } from 'react'
+import { CCard, CCardBody, CCol, CCardHeader, CRow, CTable, CTableHead, CTableRow, CTableHeaderCell, CTableBody, CTableDataCell } from '@coreui/react'
 import {
   CChartBar,
   CChartDoughnut,
@@ -29,13 +7,17 @@ import {
   CChartPie,
   CChartPolarArea,
   CChartRadar,
-} from "@coreui/react-chartjs";
-import axios from "axios";
+} from '@coreui/react-chartjs'
+import { DocsCallout } from 'src/components'
+import { Table } from 'semantic-ui-react'
+import axios from 'axios'
+import { Button } from '@coreui/coreui'
+const Flags = () => { // firma list olacak 
 
-const Cards = () => {
-  const url = "http://localhost:8080/api/personel/getall";
-  const [personels, setPersonels] = useState([]);
+  const url = "http://localhost:8080/api/personel/getall"
+  const [personels, setPersonels] = useState([])
 
+  
   useEffect(() => {
     axios.get(url)
       .then((response) => {
@@ -45,12 +27,13 @@ const Cards = () => {
   }, [])
 
   const setData = (personel) => {
-    const { personel_id, personel_ad, personel_soyad, is_baslangic_tarihi, dogum_tarihi } = personel;
-    localStorage.setItem('personel_id', personel_id);
-    localStorage.setItem('personel_ad', personel_ad);
-    localStorage.setItem(' personel_soyad', personel_soyad);
-    localStorage.setItem('is_baslangic_tarihi', is_baslangic_tarihi);
-    localStorage.setItem('dogum_tarihi', dogum_tarihi);
+    const {personel_id,personel_ad,personel_soyad,is_baslangic_tarihi,dogum_tarihi,birimi } = personel;
+    localStorage.setData('personel_id', personel_id);
+    localStorage.setData('personel_ad', personel_ad);
+    localStorage.setData(' personel_soyad', personel_soyad);
+    localStorage.setData('is_baslangic_tarihi', is_baslangic_tarihi);
+    localStorage.setData('dogum_tarihi', dogum_tarihi);
+    localStorage.setData('birimi', birimi);
   }
 
   const getData = () => {
@@ -60,6 +43,7 @@ const Cards = () => {
       })
   }
 
+ 
   const onDelete = (personel_id) => {
     axios.delete(`http://localhost:8080/api/personel/delete/${personel_id}`)
       .then(() => {
@@ -69,63 +53,48 @@ const Cards = () => {
   return (
     <CRow>
       <CCol xs={12}>
-        <CCard className="mb-3">
-          <CCardHeader>
-            <strong>Personel</strong>
-          </CCardHeader>
-          <CCardBody >
-            <DocsExample href="components/card/#card-groups">
-              <CCardGroup>
+        <CTable>
+          <CTableHead>
+            <CTableRow>
+            <CTableHeaderCell scope='col'>personel_ad   </CTableHeaderCell>
+            <CTableHeaderCell scope='col'>personel_soyad   </CTableHeaderCell>
+            <CTableHeaderCell scope='col'>  is_baslangic_tarihi </CTableHeaderCell>
+            <CTableHeaderCell scope='col'>   dogum_tarihi</CTableHeaderCell>
+            <CTableHeaderCell scope='col'>birimi</CTableHeaderCell>
+            </CTableRow>
+          </CTableHead>
+          {
+            personels.map((personel) => (
+              <CTableBody>
+                <CTableRow key={personel.personel_id}>
+                  <CTableHeaderCell scope='row'>{personel.personel_ad}</CTableHeaderCell>
+                  <CTableHeaderCell scope='row'>{personel.personel_soyad}</CTableHeaderCell>
+                  <CTableHeaderCell scope='row'>{personel.is_baslangic_tarihi}</CTableHeaderCell>
+                  <CTableHeaderCell scope='row'>{personel.dogum_tarihi}</CTableHeaderCell>
+                  <CTableHeaderCell scope='row'>{personel.birimi}</CTableHeaderCell>
+                  <CTableHeaderCell scope='row'>
+                    <button onClick={() => onDelete(personel.personel_id)}>Delete</button>
+                  </CTableHeaderCell>
+                  
+                </CTableRow>
+              </CTableBody>
+            ))
+          }
 
-                {
-                  personels.map((personel) => {
-                    return (
-                      <CCard>
-                        <CCardBody>
-                          <CCardTitle>{personel.personel_ad}</CCardTitle>
-                          <CCardTitle>{personel.personel_soyad}</CCardTitle>
-
-                          <CCardText>
-                            <small className="text-medium-emphasis">
-
-                              İşe giriş tarihi ={personel.is_baslangic_tarihi}
-                            </small>
-                          </CCardText>
-                          <CCardText>
-                            <small className="text-medium-emphasis">
-                              Doğum tarihi = {personel.dogum_tarihi}
-                            </small>
-                          </CCardText>
-                          <CCardText>
-                            <small className="text-medium-emphasis">
-                              Birimi =web
-                            </small>
-                          </CCardText>
-                        </CCardBody>
-                      </CCard>
-                    )
-                  })
-                }
-
-              </CCardGroup>
-              
-            
-            </DocsExample>
-          </CCardBody>
-        </CCard>
+        </CTable>
       </CCol>
-      <CCol xs={12}>
+      {/*    <CCol xs={6}>
         <CCard className="mb-4">
-          <CCardHeader>Satış Grafiği</CCardHeader>
+          <CCardHeader>Firmaların Tercih Ettiği Yabancı Diller Grafiği</CCardHeader>
           <CCardBody>
             <CChartBar
               data={{
-                labels: ["Gizem", "Hakkı", "Ömer", "Çağrı", "Eren", "Doğa"],
+                labels: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz'],
                 datasets: [
                   {
-                    label: "Personellerin satış yaptığı firma sayısı",
-                    backgroundColor: "#f87979",
-                    data: [60, 20, -3, 39, 52, 45],
+                    label: 'Firma Sayısı',
+                    backgroundColor: '#f87979',
+                    data: [40, 20, 12, 39, 10, 40, 39, 80, 40],
                   },
                 ],
               }}
@@ -133,9 +102,89 @@ const Cards = () => {
             />
           </CCardBody>
         </CCard>
-      </CCol>
+      </CCol> */}
+      {/*  <CCol xs={6}>
+        <CCard className="mb-4">
+          <CCardHeader>Hizmetleri Yenileyen/Yenilenmeyen Firma Sayısı Grafiği</CCardHeader>
+          <CCardBody>
+            <CChartLine
+              data={{
+                labels: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz'],
+                datasets: [
+                  {
+                    label: 'Hizmetleri Yenileyen Firmalar',
+                    backgroundColor: 'rgba(220, 220, 220, 0.2)',
+                    borderColor: 'rgba(220, 220, 220, 1)',
+                    pointBackgroundColor: 'rgba(220, 220, 220, 1)',
+                    pointBorderColor: '#fff',
+                    data: [random(), random(), random(), random(), random(), random(), random()],
+                  },
+                  {
+                    label: 'Hizmetleri Yenilemeyen Firmalar',
+                    backgroundColor: 'rgba(151, 187, 205, 0.2)',
+                    borderColor: 'rgba(151, 187, 205, 1)',
+                    pointBackgroundColor: 'rgba(151, 187, 205, 1)',
+                    pointBorderColor: '#fff',
+                    data: [random(), random(), random(), random(), random(), random(), random()],
+                  },
+                ],
+              }}
+            />
+          </CCardBody>
+        </CCard>
+      </CCol> */}
+      {/*   <CCol xs={6}>
+        <CCard className="mb-4">
+          <CCardHeader>Alınan Hizmet Sayısı Grafiği</CCardHeader>
+          <CCardBody>
+            <CChartDoughnut
+              data={{
+                labels: ['Dinamik Web Site', 'Reklam Paketi', 'Yenileme', 'E-Ticaret'],
+                datasets: [
+                  {
+                    backgroundColor: ['#41B883', '#E46651', '#00D8FF', '#DD1B16'],
+                    data: [30, 20, 40, 10],
+                  },
+                ],
+              }}
+            />
+          </CCardBody>
+        </CCard>
+      </CCol> */}
+      {/* <CCol xs={6}>
+        <CCard className="mb-4">
+          <CCardHeader>Radar Grafik</CCardHeader>
+          <CCardBody>
+            <CChartRadar
+              data={{
+                labels: [
+                  'İngilizce',
+                  'Almanca',
+                  'Fransızca',
+                  'İspanyolca',
+                  'Fransızca',
+                  'Rusça',
+                  'İtalyanca',
+                ],
+                datasets: [
+                  {
+                    label: 'Kullanılan Yabancı Diller',
+                    backgroundColor: 'rgba(151, 187, 205, 0.2)',
+                    borderColor: 'rgba(151, 187, 205, 1)',
+                    pointBackgroundColor: 'rgba(151, 187, 205, 1)',
+                    pointBorderColor: '#fff',
+                    pointHighlightFill: '#fff',
+                    pointHighlightStroke: 'rgba(151, 187, 205, 1)',
+                    data: [28, 48, 40, 19, 96, 27, 100],
+                  },
+                ],
+              }}
+            />
+          </CCardBody>
+        </CCard>
+      </CCol> */}
     </CRow>
-  );
-};
+  )
+}
 
-export default Cards;
+export default Flags
