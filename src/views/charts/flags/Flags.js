@@ -69,6 +69,7 @@ const Cards = () => {
                           Ad
                           <input
                             class="form-control"
+                            placeholder="Adını giriniz"
                             type="text"
                             name="ad"
                             onChange={(e) => setPersonel_ad(e.target.value)}
@@ -78,6 +79,7 @@ const Cards = () => {
                           Soyad
                           <input
                             class="form-control"
+                            placeholder="Soyadını giriniz"
                             type="text"
                             name="soyad"
                             onChange={(e) => setPersonel_soyad(e.target.value)}
@@ -90,6 +92,7 @@ const Cards = () => {
                           Başlama Tarihi
                           <input
                             class="form-control"
+                            placeholder="Başlama tarihini giriniz"
                             type="text"
                             name="baslama"
                             onChange={(e) =>
@@ -101,6 +104,7 @@ const Cards = () => {
                           Doğum Günü
                           <input
                             class="form-control"
+                            placeholder="Doğum gününü giriniz"
                             type="text"
                             name="birthday"
                             onChange={(e) => setDogum_tarihi(e.target.value)}
@@ -110,6 +114,7 @@ const Cards = () => {
                           Birimi
                           <input
                             class="form-control"
+                            placeholder="Birimini giriniz"
                             type="text"
                             name="birim"
                           />

@@ -35,7 +35,7 @@ const Alerts = () => {
               <form>
                 Firma Adını Giriniz:
                 <br />
-                <input class="form-control" type="text" name="firmaadi :" />
+                <input class="form-control" type="text" placeholder="Firma adını giriniz" name="firmaadi :" />
                 <br />
                 <br />
               </form>
@@ -159,7 +159,7 @@ const Alerts = () => {
               <br />
               <br />
               <CAlert color="dark">KDV'siz Fiyat</CAlert>
-              <div class="col-md-3">
+              <div class="col-md-1">
                 <label for="validationCustom04" class="form-label">
                   Para Türü
                 </label>
@@ -173,12 +173,12 @@ const Alerts = () => {
               <form>
                 KDV'siz Fiyatı Giriniz:
                 <br />
-                <input class="form-control" type="text" name="firmaadi :" />
+                <input class="form-control" placeholder="KDV'siz fiyatı giriniz" type="text" name="firmaadi :" />
                 <br />
                 <br />
               </form>
               <CAlert color="secondary">KDV'li Fiyat</CAlert>
-              <div class="col-md-3">
+              <div class="col-md-1">
                 <label for="validationCustom04" class="form-label">
                   Para Türü
                 </label>
@@ -192,12 +192,12 @@ const Alerts = () => {
               <form>
                 KDV'li Fiyatı Giriniz
                 <br />
-                <input class="form-control" type="text" name="firmaadi :" />
+                <input class="form-control" placeholder="KDV'li fiyatı giriniz" type="text" name="firmaadi :" />
                 <br />
                 <br />
               </form>
               <CAlert color="dark">Kapora</CAlert>
-              <div class="col-md-3">
+              <div class="col-md-1">
                 <label for="validationCustom04" class="form-label">
                   Para Türü
                 </label>
@@ -210,12 +210,12 @@ const Alerts = () => {
               </div>
               <form>
                 Ödemeniz Gereken Kapora Miktarı :<br />
-                <input class="form-control" type="text" name="firmaadi :" />
+                <input class="form-control" placeholder="Kapora miktarını giriniz" type="text" name="firmaadi :" />
                 <br />
                 <br />
               </form>
               <CAlert color="secondary">Yıllık Yenileme Tutarı</CAlert>
-              <div class="col-md-3">
+              <div class="col-md-1">
                 <label for="validationCustom04" class="form-label">
                   Para Türü
                 </label>
@@ -229,7 +229,7 @@ const Alerts = () => {
               <form>
                 Yıllık Yenileme Tutarı:
                 <br />
-                <input class="form-control" type="text" name="firmaadi :" />
+                <input class="form-control" placeholder="Yıllık yenileme tutarını giriniz" type="text" name="firmaadi :" />
                 <br />
                 <br />
               </form>
@@ -237,7 +237,7 @@ const Alerts = () => {
               <form>
                 Sözleşme Süresi Giriniz:
                 <br />
-                <input class="form-control" type="text" name="firmaadi :" />
+                <input class="form-control" placeholder="Sözleşme süresini giriniz" type="text" name="firmaadi :" />
                 <br />
                 <br />
               </form>
