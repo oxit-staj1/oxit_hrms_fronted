@@ -95,18 +95,20 @@ const Cards = () => {
                   <form>
                     <div class="row">
                       <div class="col">
-                        Yetkili AD
+                        Yetkili Ad
                         <input
                           class="form-control"
+                          placeholder="Yekili adını giriniz"
                           type="text"
                           name="ad"
                           onChange={(e) => setYetkili_ad(e.target.value)}
                         />
                       </div>
                       <div class="col">
-                        Yetkili SOYAD
+                        Yetkili Soyad
                         <input
                           class="form-control"
+                          placeholder="Yekili soyadını giriniz"
                           type="text"
                           name="soyad"
                           onChange={(e) => setYetkili_soyad(e.target.value)}
@@ -115,18 +117,20 @@ const Cards = () => {
                     </div>
                     <div class="row">
                       <div class="col">
-                        CEP TELEFONU
+                        Cep Telefonu
                         <input
                           class="form-control"
+                          placeholder="Cep telefonunu giriniz"
                           type="text"
                           name="baslama"
                           onChange={(e) => setCep_telefon(e.target.value)}
                         />
                       </div>
                       <div class="col">
-                        SABİT TELEFON
+                        Sabit Telefon
                         <input
                           class="form-control"
+                          placeholder="Sabit telefon numarasını giriniz"
                           type="text"
                           name="birthday"
                           onChange={(e) => setSabit_telefon(e.target.value)}
@@ -134,9 +138,10 @@ const Cards = () => {
                       </div>
 
                       <div class="col">
-                        FİRMA ADRESİ
+                        Firma Adresi
                         <input
                           class="form-control"
+                          placeholder="Firma adresini giriniz"
                           type="text"
                           name="birthday"
                           onChange={(e) => setFirma_adres(e.target.value)}
@@ -145,18 +150,20 @@ const Cards = () => {
                     </div>
                     <div class="row">
                       <div class="col">
-                        FİRMA DOMAİN
+                        Firma Domain
                         <input
                           class="form-control"
+                          placeholder="Domaini giriniz"
                           type="text"
                           name="birthday"
                           onChange={(e) => setFirma_domain_ad(e.target.value)}
                         />
                       </div>
                       <div class="col">
-                        FİRMA NOT
+                        Firma Not
                         <input
                           class="form-control"
+                          placeholder="Notu giriniz"
                           type="text"
                           name="birthday"
                           onChange={(e) => setFirma_not(e.target.value)}
@@ -167,7 +174,7 @@ const Cards = () => {
 
                     <br></br>
 
-                    <input onClick={postData} type="submit" value="Ekle" />
+                    <input onClick={postData} type="submit" class="btn btn-primary" value="Ekle" />
                   </form>
                 </CCardBody>
                 <CCardBody></CCardBody>
