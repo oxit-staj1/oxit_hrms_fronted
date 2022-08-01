@@ -61,7 +61,7 @@ const Cards = () => {
                     Eklemek İstediğiniz Hizmet Türünü Giriniz
                   </CCardTitle>
                   <CCardText></CCardText>
-                  <form className="create-form">
+                  <form className="create-form d-flex justify-content-center">
                     <input
                       class="form-control"
                       placeholder="Hizmet adını giriniz"
@@ -69,7 +69,7 @@ const Cards = () => {
                     />
                     <br />
                     <button
-                      class="btn btn-secondary btn-sm"
+                      class="btn btn-primary btn-sm"
                       onClick={postData}
                       type="sumbit"
                     >

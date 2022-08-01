@@ -49,14 +49,14 @@ const HizmetList = () => {
                         return (
                             <Table.Row>
                                 <Table.Cell>{hizmet.hizmet_ad}</Table.Cell>
-                                <Link to='/hizmetupdate'>
+                               <div> <Link to='/hizmetupdate'>
                                     <Table.Cell>
-                                        <Button onClick={() => setData(hizmet)}>Update</Button>
+                                    <button type="button"class="btn btn-primary" onClick={() => setData(hizmet)}>Güncelle</button>
                                     </Table.Cell>
                                 </Link>
-                                <Table.Cell>
-                                    <Button onClick={() => onDelete(hizmet.hizmet_id)}>Delete</Button>
-                                </Table.Cell>
+                                
+                                <button type="button"class="btn btn-warning" onClick={() => onDelete(hizmet.hizmet_id)} >Sil</button>
+                                </div>
                             </Table.Row>
                         )
                     })}
