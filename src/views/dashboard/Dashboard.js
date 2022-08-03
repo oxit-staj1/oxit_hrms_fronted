@@ -227,7 +227,7 @@ const Dashboard = () => {
         data-bs-custom-class="custom-popover"
         data-bs-title="Custom popover"
         data-bs-content="This popover is themed via CSS variables." class="btn btn-primary">Firma Detayları</button>} position="left center">
-                             <div><div class="card">
+                             <div class="card">
   <div class="card-body">
     <h5 class="card-title">Erebus</h5>
     <p class="card-text">Bir Milleti Korkuyla Dizginlemek,İhtiyaç Duyulan Tavize En Geçerli Bahaneleri Sağlar.
@@ -240,7 +240,6 @@ Ama Şunu Unutmasınlar;
     <li class="list-group-item"><b>Sabit Telefon</b><br></br>0850 346 34 62</li>
   </ul>
 </div>
-                             </div>
                         </Popup>
                       </CTableDataCell>
                     </CTableRow>
