@@ -34,17 +34,14 @@ const Cards = () => {
 
   const [hizmet_ad, setHizmet_ad] = useState([]);
 
-
   const postData = () => {
+    const response = axios.post(url, JSON.stringify({ hizmet_ad }), {
+      headers: { "Content-Type": "application/json" },
+    });
 
-    const response = axios.post(url, JSON.stringify({ hizmet_ad }),
-      {
-        headers: { 'Content-Type': 'application/json' }
-      })
-
-    console.log(hizmet_ad)
-    console.log(response)
-  }
+    console.log(hizmet_ad);
+    console.log(response);
+  };
 
   return (
     <CRow>
@@ -53,14 +50,14 @@ const Cards = () => {
           <CCardHeader>
             <strong>Hizmet Ekleme</strong>
           </CCardHeader>
-          <CCardBody>
+          <CCardBody style={{ width: "70%" }}>
             <DocsExample href="components/card">
-              <CCard style={{ width: "18rem" }}>
+              <CCard style={{ width: "100%" }}>
                 <CCardBody>
                   <CCardTitle>
                     Eklemek İstediğiniz Hizmet Türünü Giriniz
                   </CCardTitle>
-                  <CCardText></CCardText>
+
                   <form className="create-form d-flex justify-content-center">
                     <input
                       class="form-control"
@@ -73,13 +70,11 @@ const Cards = () => {
                       onClick={postData}
                       type="sumbit"
                     >
-                      {" "}
-                      Ekle{" "}
+                      Ekle
                     </button>
                   </form>
                 </CCardBody>
               </CCard>
-
             </DocsExample>
             <HizmetList />
           </CCardBody>
