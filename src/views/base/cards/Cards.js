@@ -46,13 +46,13 @@ const Cards = () => {
   return (
     <CRow>
       <CCol xs={12}>
-        <CCard className="mb-4">
+        <CCard style={{ width: "70%" }} className="mb-4">
           <CCardHeader>
             <strong>Hizmet Ekleme</strong>
           </CCardHeader>
-          <CCardBody style={{ width: "70%" }}>
+          <CCardBody>
             <DocsExample href="components/card">
-              <CCard style={{ width: "100%" }}>
+              <CCard>
                 <CCardBody>
                   <CCardTitle>
                     Eklemek İstediğiniz Hizmet Türünü Giriniz
