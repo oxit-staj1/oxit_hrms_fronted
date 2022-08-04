@@ -50,6 +50,7 @@ const HizmetList = () => {
                     {hizmets.map((hizmet) => {
                         return (
                             <Table.Row>
+<<<<<<< HEAD
                                 
                                 <Table.Cell><th>-->      {hizmet.hizmet_ad .toUpperCase()}</th></Table.Cell>
                                     <Table.Cell>
@@ -59,6 +60,17 @@ const HizmetList = () => {
                                         </p>
                                     </Table.Cell>
                     
+=======
+                                <Table.Cell>{hizmet.hizmet_ad}</Table.Cell>
+                                <Link to='/hizmetupdate'>
+                                    <Table.Cell>
+                                        <Button onClick={() => setData(hizmet)}>Update</Button>
+                                    </Table.Cell>
+                                </Link>
+                                <Table.Cell>
+                                    <Button onClick={() => onDelete(hizmet.hizmet_id)}>Delete</Button>
+                                </Table.Cell>
+>>>>>>> parent of 7e44898 (yallah)
                             </Table.Row>
                         )
                     })}
