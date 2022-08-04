@@ -36,27 +36,29 @@ const HizmetList = () => {
     }
     return (
         <div>
-            <Table singleLine>
+            <Table class="table table striped">
 
                 <Table.Header>
+                    <p>
                     <Table.Row>
-                        <Table.HeaderCell>Hizmet Ad </Table.HeaderCell>
+                        <Table.HeaderCell>Hizmet Listesi</Table.HeaderCell>
                     </Table.Row>
+                    </p>
                 </Table.Header>
 
                 <Table.Body>
                     {hizmets.map((hizmet) => {
                         return (
                             <Table.Row>
-                                <Table.Cell>{hizmet.hizmet_ad}</Table.Cell>
-                               <div> <Link to='/hizmetupdate'>
-                                    <Table.Cell>
-                                    <button type="button"class="btn btn-primary" onClick={() => setData(hizmet)}>Güncelle</button>
-                                    </Table.Cell>
-                                </Link>
                                 
-                                <button type="button"class="btn btn-warning" onClick={() => onDelete(hizmet.hizmet_id)} >Sil</button>
-                                </div>
+                                <Table.Cell><th>-->      {hizmet.hizmet_ad .toUpperCase()}</th></Table.Cell>
+                                    <Table.Cell>
+                                        <p>
+                                        <Button type="button" class=" btn-secondary" onClick={() => setData(hizmet)}>Update</Button>
+                                        <Button type="button" class ="btn-secondary" onClick={() => onDelete(hizmet.hizmet_id)}>Delete</Button>
+                                        </p>
+                                    </Table.Cell>
+                    
                             </Table.Row>
                         )
                     })}
