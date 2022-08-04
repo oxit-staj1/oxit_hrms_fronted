@@ -86,13 +86,9 @@ useEffect(() => {
                     Eklemek İstediğiniz Hizmet Türünü Giriniz
                   </CCardTitle>
                   <CCardText></CCardText>
-<<<<<<< HEAD
                   
                   <form className="create-form">
                   
-=======
-                  <form className="create-form">
->>>>>>> parent of 7e44898 (yallah)
                     <input
                       class="form-control"
                       placeholder="Hizmet adını giriniz"
