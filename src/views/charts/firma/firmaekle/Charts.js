@@ -1,24 +1,36 @@
 import React, { useEffect, useState } from 'react'
-import { CCard, CCardBody, CCol, CCardHeader, CRow, CTable, CTableHead, CTableRow, CTableHeaderCell, CTableBody, CTableDataCell } from '@coreui/react'
-import {
-  CChartBar,
-  CChartDoughnut,
-  CChartLine,
-  CChartPie,
-  CChartPolarArea,
-  CChartRadar,
-} from '@coreui/react-chartjs'
-import { DocsCallout } from 'src/components'
-import { Table } from 'semantic-ui-react'
+import { CBadge, CButton, CCardBody, CCollapse, CSmartTable } from '@coreui/react-pro'
 import axios from 'axios'
-import { Button } from '@coreui/coreui'
-const FirmaList = () => { // firma list olacak 
 
+const Charts = () => { 
   const url = "http://localhost:8080/api/firma/getall"
   const [firmas, setFirmas] = useState([])
-
-  // yetkili_ad, yetkili_soyad, cep_tel, sabit_tel,
-  // vergi_dairesi, vergi_numarasi, email, firma_il, firma_ilce, firma_adres, firma_not, firma_domain_ad
+  const [details, setDetails] = useState([])
+  const columns = [
+    'firma_id' ,
+    'yetkili_ad' ,
+    'yetkili_soyad',
+    'cep_tel',
+    'firma_domain_ad',
+    'email',
+    'firma_il',
+    'firma_ilce',
+    'firma_not',
+    'sabit_tel',
+    'vergi_dairesi',
+    'vergi_numarasi',
+  {
+    key: 'show_details',
+    label: '',
+    _style: { width: '1%' },
+    filter: false,
+    sorter: false,
+  },
+] 
+const setData = [
+  { firma_id:"",cep_tel: "",email: "",firma_adres: "",firma_domain_ad: "",firma_il: "",firma_ilce: "",firma_not: "",sabit_tel: "",
+  vergi_dairesi: "",vergi_numarasi: "",yetkili_ad: "",yetkili_soyad: "",},
+]
   useEffect(() => {
     axios.get(url)
       .then((response) => {
@@ -26,176 +38,73 @@ const FirmaList = () => { // firma list olacak
         console.log(response.data.data)
       })
   }, [])
-
-  const setData = (firma) => {
-    const { firma_id, yetkili_ad, yetkili_soyad, cep_telefon, sabit_telefon,
-    firma_adres, firma_not, firma_domain_ad } = firma;
-    localStorage.setData('personel_id', firma_id);
-    localStorage.setData('yetkili_ad', yetkili_ad);
-    localStorage.setData(' yetkili_soyad', yetkili_soyad);
-    localStorage.setData('cep_tel', cep_telefon);
-    localStorage.setData('sabit_tel', sabit_telefon);
-    localStorage.setData('firma_adres', firma_adres);
-    localStorage.setData('firma_not', firma_not);
-    localStorage.setData('firma_domain_ad', firma_domain_ad);
+  const toggleDetails = (index) => {
+    const position = details.indexOf(index)
+    let newDetails = details.slice()
+    if (position !== -1) {
+      newDetails.splice(position, 1)
+    } else {
+      newDetails = [...details, index]
+    }
+    setDetails(newDetails)
   }
-
-  const getData = () => {
-    axios.get(url)
-      .then((getData) => {
-        setFirmas(getData.data.data);
-      })
-  }
-
   const onDelete = (firma_id) => { 
     axios.delete(`http://localhost:8080/api/firma/delete/${firma_id}`)
       .then(() => {
-        getData();
+        window.location.reload();
+
       })
   }
   return (
-    <CRow>
-      <CCol xs={12}>
-        <CTable>
-          <CTableHead>
-            <CTableRow>
+    <>
+    <CSmartTable
+      columnSorter
+      pagination
+      items={firmas}
+      columns ={columns}
+      cleaner
+      itemsPerPage={5}
+      itemsPerPageSelect
+      clickableRows
+      tableFilter
+      tableProps={{
+        hover: true,
+        responsive: true,
+      }}
+      scopedColumns={{
+        show_details: (firma) => {
+          return (
+            <td>
+              <CButton
+                color="primary"
+                variant="outline"
+                shape="square"
+                size="sm"
+                onClick={() => {
+                  toggleDetails(firma.firma_id)
+                }}
+              >
+                {details.includes(firma.firma_id) ? 'Hide' : 'Show'}
+              </CButton>
+            </td>
+          )
+        },
+        details: (firma) => {
+          return (
+            <CCollapse visible={details.includes(firma.firma_id)}>
+              <CCardBody>
+                <CButton size="sm" color="danger" className="ml-1"  onClick={() => onDelete(firma.firma_id)} >
+                  Delete
+                </CButton>           
+              </CCardBody>
+            </CCollapse>
+          )
+        },
+      }}
+    />
 
-              <CTableHeaderCell scope='col'>yetkili ad</CTableHeaderCell>
-              <CTableHeaderCell scope='col'>yetkili soyad</CTableHeaderCell>
-              <CTableHeaderCell scope='col'>cep tel</CTableHeaderCell>
-              <CTableHeaderCell scope='col'>sabit tel</CTableHeaderCell>
-              <CTableHeaderCell scope='col'>adres</CTableHeaderCell>
-              <CTableHeaderCell scope='col'>not</CTableHeaderCell>
-              <CTableHeaderCell scope='col'>domain</CTableHeaderCell>
-            </CTableRow>
-          </CTableHead>
-          {
-            firmas.map((firma) => (
-              <CTableBody>
-                <CTableRow key={firma.firma_id}>
-                  <CTableHeaderCell scope='row'>{firma.yetkili_ad}</CTableHeaderCell>
-                  <CTableHeaderCell scope='row'>{firma.yetkili_soyad}</CTableHeaderCell>
-                  <CTableHeaderCell scope='row'>{firma.cep_telefon}</CTableHeaderCell>
-                  <CTableHeaderCell scope='row'>{firma.sabit_telefon}</CTableHeaderCell>
-                  <CTableHeaderCell scope='row'>{firma.firma_adres}</CTableHeaderCell>
-                  <CTableHeaderCell scope='row'>{firma.firma_not}</CTableHeaderCell>
-                  <CTableHeaderCell scope='row'>{firma.firma_domain_ad}</CTableHeaderCell>
-                  <CTableHeaderCell scope='row'>
-                    <button onClick={() => onDelete(firma.firma_id)}>Delete</button>
-                  </CTableHeaderCell>
-                  
-                </CTableRow>
-              </CTableBody>
-            ))
-          }
+  </>
 
-        </CTable>
-      </CCol>
-      {/*    <CCol xs={6}>
-        <CCard className="mb-4">
-          <CCardHeader>Firmaların Tercih Ettiği Yabancı Diller Grafiği</CCardHeader>
-          <CCardBody>
-            <CChartBar
-              data={{
-                labels: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz'],
-                datasets: [
-                  {
-                    label: 'Firma Sayısı',
-                    backgroundColor: '#f87979',
-                    data: [40, 20, 12, 39, 10, 40, 39, 80, 40],
-                  },
-                ],
-              }}
-              labels="aylar"
-            />
-          </CCardBody>
-        </CCard>
-      </CCol> */}
-      {/*  <CCol xs={6}>
-        <CCard className="mb-4">
-          <CCardHeader>Hizmetleri Yenileyen/Yenilenmeyen Firma Sayısı Grafiği</CCardHeader>
-          <CCardBody>
-            <CChartLine
-              data={{
-                labels: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz'],
-                datasets: [
-                  {
-                    label: 'Hizmetleri Yenileyen Firmalar',
-                    backgroundColor: 'rgba(220, 220, 220, 0.2)',
-                    borderColor: 'rgba(220, 220, 220, 1)',
-                    pointBackgroundColor: 'rgba(220, 220, 220, 1)',
-                    pointBorderColor: '#fff',
-                    data: [random(), random(), random(), random(), random(), random(), random()],
-                  },
-                  {
-                    label: 'Hizmetleri Yenilemeyen Firmalar',
-                    backgroundColor: 'rgba(151, 187, 205, 0.2)',
-                    borderColor: 'rgba(151, 187, 205, 1)',
-                    pointBackgroundColor: 'rgba(151, 187, 205, 1)',
-                    pointBorderColor: '#fff',
-                    data: [random(), random(), random(), random(), random(), random(), random()],
-                  },
-                ],
-              }}
-            />
-          </CCardBody>
-        </CCard>
-      </CCol> */}
-      {/*   <CCol xs={6}>
-        <CCard className="mb-4">
-          <CCardHeader>Alınan Hizmet Sayısı Grafiği</CCardHeader>
-          <CCardBody>
-            <CChartDoughnut
-              data={{
-                labels: ['Dinamik Web Site', 'Reklam Paketi', 'Yenileme', 'E-Ticaret'],
-                datasets: [
-                  {
-                    backgroundColor: ['#41B883', '#E46651', '#00D8FF', '#DD1B16'],
-                    data: [30, 20, 40, 10],
-                  },
-                ],
-              }}
-            />
-          </CCardBody>
-        </CCard>
-      </CCol> */}
-      {/* <CCol xs={6}>
-        <CCard className="mb-4">
-          <CCardHeader>Radar Grafik</CCardHeader>
-          <CCardBody>
-            <CChartRadar
-              data={{
-                labels: [
-                  'Türkçe',
-                  'İngilizce',
-                  'Almanca',
-                  'Fransızca',
-                  'İtalyanca',
-                  'Japonca',
-                  'Rusça',
-                  'Azerice',
-                  'Arapça',
-                  'Danca',
-                ],
-                datasets: [
-                  {
-                    label: 'Kullanılan Yabancı Diller',
-                    backgroundColor: 'rgba(151, 187, 205, 0.2)',
-                    borderColor: 'rgba(151, 187, 205, 1)',
-                    pointBackgroundColor: 'rgba(151, 187, 205, 1)',
-                    pointBorderColor: '#fff',
-                    pointHighlightFill: '#fff',
-                    pointHighlightStroke: 'rgba(151, 187, 205, 1)',
-                    data: [28, 48, 40, 19, 96, 27, 100,76,23,54],
-                  },
-                ],
-              }}
-            />
-          </CCardBody>
-        </CCard>
-      </CCol> */}
-    </CRow>
   )
 }
-
-export default FirmaList
+export default Charts;

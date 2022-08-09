@@ -34,7 +34,7 @@ const HizmetUpdate = () => {
                 {/* <Form.Field>
                     <Checkbox label='I agree to the Terms and Conditions' checked={checkbox} onChange={() => setCheckbox(!checkbox)}/>
                 </Form.Field> */}
-                <Button type='submit' value={hizmet_ad} onClick={update}>Update</Button>
+                <Button type='submit' value={hizmet_ad} onClick={update}>GÜNCELLE</Button>
             </Form>
         </div>
     )

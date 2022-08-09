@@ -27,24 +27,43 @@ import ReactImg from "src/assets/images/react.gif";
 import HizmetService from "src/service/hizmetService";
 import { useNavigate } from "react-router-dom";
 import HizmetList from "./HizmetList";
+import FormControl from "src/views/forms/form-control/FormControl";
 
 const Cards = () => {
-  const url = "http://localhost:8080/api/hizmet/add";
   let history = useNavigate();
+  const urlAdd= "http://localhost:8080/api/hizmet/add";
 
   const [hizmet_ad, setHizmet_ad] = useState([]);
 
 
+  const getData = () => {
+    axios.get(urlGet)
+        .then((getData) => {
+            setHizmets(getData.data.data);
+        })
+}
+const urlGet = "http://localhost:8080/api/hizmet/getall";
+const [hizmets, setHizmets] = useState([]);
+useEffect(() => {
+    axios.get(urlGet)
+        .then((response) => {
+            setHizmets(response.data.data);
+            console.log(response.data.data)
+        })
+}, [])
   const postData = () => {
 
-    const response = axios.post(url, JSON.stringify({ hizmet_ad }),
+    const response = axios.post(urlAdd, JSON.stringify({ hizmet_ad }),
       {
         headers: { 'Content-Type': 'application/json' }
       })
+      .then(() => {
+        window.location.reload();
+      })
 
-    console.log(hizmet_ad)
-    console.log(response)
+
   }
+
 
   return (
     <CRow>
@@ -53,6 +72,12 @@ const Cards = () => {
           <CCardHeader>
             <strong>Hizmet Ekleme</strong>
           </CCardHeader>
+          <CCard>
+         
+          
+          
+          </CCard>
+        
           <CCardBody>
             <DocsExample href="components/card">
               <CCard style={{ width: "18rem" }}>
@@ -61,7 +86,9 @@ const Cards = () => {
                     Eklemek İstediğiniz Hizmet Türünü Giriniz
                   </CCardTitle>
                   <CCardText></CCardText>
+                  
                   <form className="create-form">
+                  
                     <input
                       class="form-control"
                       placeholder="Hizmet adını giriniz"
@@ -71,13 +98,17 @@ const Cards = () => {
                     <button
                       class="btn btn-secondary btn-sm"
                       onClick={postData}
-                      type="sumbit"
+                      type="submit"
+                      value="submit"
                     >
                       {" "}
                       Ekle{" "}
                     </button>
+                    
                   </form>
+                  
                 </CCardBody>
+
               </CCard>
 
             </DocsExample>
@@ -86,7 +117,11 @@ const Cards = () => {
         </CCard>
       </CCol>
     </CRow>
+    
+
   );
+ 
 };
 
 export default Cards;
+

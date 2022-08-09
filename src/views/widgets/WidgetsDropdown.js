@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   CRow,
   CCol,
@@ -12,8 +12,45 @@ import { getStyle } from '@coreui/utils'
 import { CChartBar, CChartLine } from '@coreui/react-chartjs'
 import CIcon from '@coreui/icons-react'
 import { cilArrowBottom, cilArrowTop, cilOptions } from '@coreui/icons'
-
+import axios from 'axios'
 const WidgetsDropdown = () => {
+
+    const url = "http://localhost:8080/api/firma/getall";
+    const [firmas, setFirmas] = useState([]);
+    useEffect(() => {
+        axios.get(url)
+            .then((response) => {
+                setFirmas(response.data.data);
+                console.log(response.data.data)           
+                console.log(firmas.length);
+
+            })
+    }, [])
+
+    const setData = (firma) => {
+        let { firma_id, yetkili_ad } = firma;
+        localStorage.setItem('firma_id', firma_id);
+        localStorage.setItem('yetkili_ad', yetkili_ad);
+    }
+
+    const getData = () => {
+        axios.get(url)
+            .then((getData) => {
+                setFirmas(getData.data.data);
+            })
+    }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   return (
     <CRow>
       <CCol sm={6} lg={3}>
@@ -22,69 +59,29 @@ const WidgetsDropdown = () => {
           color="primary"
           value={
             <>
-              600{' '}
+
+FİRMA SAYISI
+
+
+
+
+
               <span className="fs-6 fw-normal">
-                (+12.4%)
               </span>
             </>
           }
-          title="Firmalar"
+          title={firmas.length}
+
           chart={
             <CChartLine
               className="mt-3 mx-3"
               style={{ height: '70px' }}
-              data={{
-                labels: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz'],
-                datasets: [
-                  {
-                    label: 'Veri kümesi',
-                    backgroundColor: 'transparent',
-                    borderColor: 'rgba(255,255,255,.55)',
-                    pointBackgroundColor: getStyle('--cui-primary'),
-                    data: [65, 59, 84, 84, 51, 55, 40],
-                  },
-                ],
-              }}
+              
               options={{
-                plugins: {
-                  legend: {
-                    display: false,
-                  },
-                },
-                maintainAspectRatio: false,
-                scales: {
-                  x: {
-                    grid: {
-                      display: false,
-                      drawBorder: false,
-                    },
-                    ticks: {
-                      display: false,
-                    },
-                  },
-                  y: {
-                    min: 30,
-                    max: 89,
-                    display: false,
-                    grid: {
-                      display: false,
-                    },
-                    ticks: {
-                      display: false,
-                    },
-                  },
-                },
-                elements: {
-                  line: {
-                    borderWidth: 1,
-                    tension: 0.4,
-                  },
-                  point: {
-                    radius: 4,
-                    hitRadius: 10,
-                    hoverRadius: 4,
-                  },
-                },
+                
+                
+            
+                
               }}
             />
           }

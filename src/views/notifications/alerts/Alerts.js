@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
+import { CMultiSelect } from '@coreui/react-pro'
 
 import {
   CAlert,
@@ -13,6 +15,63 @@ import {
 import { DocsExample } from "src/components";
 
 const Alerts = () => {
+  const url = "http://localhost:8080/api/hizmet/getall";
+  const urlFirma = "http://localhost:8080/api/firma/getall";
+
+
+  const [hizmets, setHizmets] = useState([]);
+  const [firmas, setFirmas] = useState([])
+
+  useEffect(() => {
+    axios.get(url)
+      .then((response) => {
+        setHizmets(response.data.data);
+        console.log(response.data.data)
+      })
+  }, [])
+  const setData = (hizmet) => {
+    let { hizmet_id, hizmet_ad } = hizmet;
+    localStorage.setItem('hizmet_id', hizmet_id);
+    localStorage.setItem('hizmet_ad', hizmet_ad);
+  }
+  const getData = () => {
+
+    const setData = (firma) => {
+      let { firma_id, yetkili_ad } = firma;
+      localStorage.setItem('firma_id', firma_id);
+      localStorage.setItem('yetkili_ad', yetkili_ad);
+      localStorage.setItem('domain_ad',firma_domain_ad)
+    }
+    const getData = () => {
+      axios.get(url)
+        .then((getData) => {
+          setHizmets(getData.data.data);
+        })
+
+
+    }
+  }
+  axios.get(urlFirma)
+    .then((getData) => {
+      setFirmas(getData.data.data);
+    })
+
+  useEffect(() => {
+    axios.get(urlFirma)
+      .then((response) => {
+        setFirmas(response.data.data);
+        console.log(response.data.data)
+      })
+  }, [])
+
+
+
+
+
+
+
+
+
   return (
     <CRow>
       <CCol xs={12}>
@@ -30,7 +89,9 @@ const Alerts = () => {
             </p>{" "}
             <hr></hr>
             <h5>Sözleşme Gereksinimleri</h5>
-            <DocsExample href="components/alert">
+            <DocsExample
+
+              href="components/alert">
               <form>
                 <br />
                 <br />
@@ -38,79 +99,98 @@ const Alerts = () => {
                   <div class="col">
                     <CAlert color="dark">Firma Adı</CAlert>
 
-                    <input
-                      class="form-control"
-                      type="text"
-                      placeholder="Firma adını giriniz"
-                      name="firmaadi :"
-                    />
+          
+
+
+
+
+                        <div class="col-md-11">
+                          <label for="validationCustom04" class="form-label">
+                           <i> Firma adı seçiniz</i>
+                          </label>
+                          <select
+                            class="form-select"
+                            id="validationCustom04"
+                            required
+                          >
+                            {firmas.map((firma) => {return(
+                            <option>
+                              {firma.yetkili_ad.toUpperCase()}
+
+                            </option>)})}
+                          </select>
+                          <div class="invalid-feedback">
+                            Please select a valid state.
+                          </div>
+                        </div>
+
+                    
+
+
+
+
+
                     <br />
+                    <br />
+
                     <CAlert color="dark">Hizmet Seçimi</CAlert>
-                    <div class="form-check form-check-inline">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="inlineCheckbox1"
-                        value="option1"
-                      ></input>
-                      <label class="form-check-label" for="inlineCheckbox1">
-                        DİNAMİK WEB SİTESİ
-                      </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="inlineCheckbox2"
-                        value="option2"
-                      ></input>
-                      <label class="form-check-label" for="inlineCheckbox2">
-                        REKLAM PAKETİ
-                      </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="inlineCheckbox2"
-                        value="option2"
-                      ></input>
-                      <label class="form-check-label" for="inlineCheckbox2">
-                        E-TİCARET
-                      </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="inlineCheckbox2"
-                        value="option2"
-                      ></input>
-                      <label class="form-check-label" for="inlineCheckbox2">
-                        YENİLEME
-                      </label>
-                    </div>
+
+                    {hizmets.map((hizmet) => {
+                      return (
+                        <div class="form-check form-check-inline">
+
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox1"
+                            value="option1"
+                          ></input>
+                          <label class="form-check-label" for="inlineCheckbox1">
+
+                            <a>{hizmet.hizmet_ad.toUpperCase()}</a>
+                          </label>
+                        </div>
+
+                      )
+                    })}
+
                   </div>
                   <br />
                   <br />
 
                   <div class="col">
-                    <CAlert color="dark">Domain</CAlert>
+                  <CAlert color="dark">Domain Adı Seçiniz</CAlert>
 
-                    <input
-                      class="form-control"
-                      type="text"
-                      placeholder="Domain Giriniz"
-                      name="firmaadi :"
-                    />
+                    
+
+<div class="col-md-11">
+  <label for="validationCustom04" class="form-label">
+<i>Domain Adı Seçiniz</i>  </label>
+  <select
+    class="form-select"
+    id="validationCustom04"
+    required
+  >
+    {firmas.map((firma) => {return(
+    <option>
+      {firma.firma_domain_ad.toUpperCase()}
+
+    </option>)})}
+  </select>
+  <div class="invalid-feedback">
+    Please select a valid state.
+  </div>
+</div>
+<br />
+
                     <br />
                     <CAlert color="dark">Dİl Seçimi</CAlert>
 
                     <div class="form-check form-check-inline">
                       <div class="col">
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input"type="checkbox"id="inlineCheckbox2"value="option2"></input><label class="form-check-label" for="inlineCheckbox2">Türkçe</label></div>&nbsp;&nbsp;
-                        
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"></input><label class="form-check-label" for="inlineCheckbox2">Türkçe</label></div>&nbsp;&nbsp;
+
                         <div class="form-check form-check-inline">
                           <input
                             class="form-check-input"
@@ -228,12 +308,12 @@ const Alerts = () => {
                   <div class="col">
                     <CAlert color="dark">KDV'siz Fiyat</CAlert>
                     <div class="col-md-3">
-                      <label for="validationCustom04" class="form-label">
+                      <label for="kdvsiz" class="form-label">
                         Para Türü
                       </label>
                       <select
                         class="form-select"
-                        id="validationCustom04"
+                        id="kdvsiz"
                         required
                       >
                         <option>₺</option>
@@ -251,6 +331,7 @@ const Alerts = () => {
                       placeholder="KDV'siz fiyatı giriniz"
                       type="text"
                       name="firmaadi :"
+                      id ="kdvsiz"
                     />
                   </div>
                   <br />
@@ -260,12 +341,12 @@ const Alerts = () => {
                   <div class="col">
                     <CAlert color="dark">Kapora</CAlert>
                     <div class="col-md-3">
-                      <label for="validationCustom04" class="form-label">
+                      <label for="kapora" class="form-label">
                         Para Türü
                       </label>
                       <select
                         class="form-select"
-                        id="validationCustom04"
+                        id="kapora"
                         required
                       >
                         <option>₺</option>
@@ -282,6 +363,7 @@ const Alerts = () => {
                       placeholder="Kapora miktarını giriniz"
                       type="text"
                       name="firmaadi :"
+                      id="kapora"
                     />
                   </div>
                   <br />
@@ -289,12 +371,12 @@ const Alerts = () => {
                   <div class="col">
                     <CAlert color="dark">Yıllık Yenileme Tutarı</CAlert>
                     <div class="col-md-3">
-                      <label for="validationCustom04" class="form-label">
+                      <label for="yıllık" class="form-label">
                         Para Türü
                       </label>
                       <select
                         class="form-select"
-                        id="validationCustom04"
+                        id="yıllık"
                         required
                       >
                         <option>₺</option>
@@ -312,6 +394,7 @@ const Alerts = () => {
                         placeholder="Yıllık yenileme tutarını giriniz"
                         type="text"
                         name="firmaadi :"
+                        id="yıllık"
                       />
                     </div>
                   </div>
@@ -357,6 +440,7 @@ const Alerts = () => {
               <br />
               <br />
               <CAlert color="success"></CAlert>
+
             </DocsExample>
           </CCardBody>
         </CCard>

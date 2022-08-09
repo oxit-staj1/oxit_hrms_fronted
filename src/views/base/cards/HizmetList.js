@@ -11,7 +11,9 @@ const HizmetList = () => {
         axios.get(url)
             .then((response) => {
                 setHizmets(response.data.data);
-                console.log(response.data.data)
+                console.log(response.data.data)           
+                console.log(hizmets.length);
+
             })
     }, [])
 
@@ -32,31 +34,58 @@ const HizmetList = () => {
         axios.delete(`http://localhost:8080/api/hizmet/delete/${hizmet_id}`)
             .then(() => {
                 getData();
-            })
+            })    
+
     }
+
     return (
         <div>
-            <Table singleLine>
+            <Table class="table table striped">
 
                 <Table.Header>
+                    <p>
                     <Table.Row>
-                        <Table.HeaderCell>Hizmet Ad </Table.HeaderCell>
+                        <Table.HeaderCell>Hizmet Listesi</Table.HeaderCell>
+
+
+
+
+
+
+<Table.HeaderCell>
+
+(<a>{hizmets.length}</a>)
+
+</Table.HeaderCell>
+
+
+
+
+
+
+
+
                     </Table.Row>
+                    </p>
                 </Table.Header>
 
                 <Table.Body>
                     {hizmets.map((hizmet) => {
                         return (
                             <Table.Row>
-                                <Table.Cell>{hizmet.hizmet_ad}</Table.Cell>
-                                <Link to='/hizmetupdate'>
+                                
+
+
+
+
+                                <Table.Cell><th>-      {hizmet.hizmet_ad .toUpperCase()}</th></Table.Cell>
                                     <Table.Cell>
-                                        <Button onClick={() => setData(hizmet)}>Update</Button>
+                                        <p>
+                                        <Button type="button" class=" btn-secondary" onClick={() => setData(hizmet)}>Update</Button>
+                                        <Button type="button" class ="btn-secondary" onClick={() => onDelete(hizmet.hizmet_id)}>Delete</Button>
+                                        </p>
                                     </Table.Cell>
-                                </Link>
-                                <Table.Cell>
-                                    <Button onClick={() => onDelete(hizmet.hizmet_id)}>Delete</Button>
-                                </Table.Cell>
+                    
                             </Table.Row>
                         )
                     })}
