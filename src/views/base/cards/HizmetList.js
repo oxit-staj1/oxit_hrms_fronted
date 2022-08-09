@@ -65,6 +65,7 @@ const HizmetList = () => {
 
 
 
+
                     </Table.Row>
                     </p>
                 </Table.Header>
@@ -79,6 +80,7 @@ const HizmetList = () => {
 
 
                                 <Table.Cell><th>-      {hizmet.hizmet_ad .toUpperCase()}</th></Table.Cell>
+
                                     <Table.Cell>
                                         <p>
                                         <Button type="button" class=" btn-secondary" onClick={() => setData(hizmet)}>Update</Button>
