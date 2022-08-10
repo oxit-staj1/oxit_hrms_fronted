@@ -95,15 +95,7 @@ useEffect(() => {
                       onChange={(e) => setHizmet_ad(e.target.value)}
                     />
                     <br />
-                    <button
-                      class="btn btn-secondary btn-sm"
-                      onClick={postData}
-                      type="submit"
-                      value="submit"
-                    >
-                      {" "}
-                      Ekle{" "}
-                    </button>
+                    <button class="btn btn-primary"onClick={postData}type="submit"value="submit">{" "}Ekle{" "}</button>
                     
                   </form>
                   

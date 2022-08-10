@@ -3,7 +3,6 @@ import axios from 'axios';
 import { Button, Table } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
-
 const HizmetList = () => {
     const url = "http://localhost:8080/api/hizmet/getall";
     const [hizmets, setHizmets] = useState([]);
@@ -47,25 +46,11 @@ const HizmetList = () => {
                     <Table.Row>
                         <Table.HeaderCell>Hizmet Listesi</Table.HeaderCell>
 
-
-
-
-
-
 <Table.HeaderCell>
 
 (<a>{hizmets.length}</a>)
 
 </Table.HeaderCell>
-
-
-
-
-
-
-
-
-
                     </Table.Row>
                     </p>
                 </Table.Header>
@@ -74,20 +59,13 @@ const HizmetList = () => {
                     {hizmets.map((hizmet) => {
                         return (
                             <Table.Row>
-                                
-
-
-
-
-                                <Table.Cell><th>-      {hizmet.hizmet_ad .toUpperCase()}</th></Table.Cell>
-
+                                <Table.Cell><th>-{hizmet.hizmet_ad .toUpperCase()}</th></Table.Cell>
                                     <Table.Cell>
                                         <p>
-                                        <Button type="button" class=" btn-secondary" onClick={() => setData(hizmet)}>Update</Button>
-                                        <Button type="button" class ="btn-secondary" onClick={() => onDelete(hizmet.hizmet_id)}>Delete</Button>
+                                        <Button type="button" color="btn btn-warning" onClick={() => setData(hizmet)}>Güncelle</Button> <bre></bre>
+                                        <Button type="button" color="btn btn-danger" onClick={() => onDelete(hizmet.hizmet_id)}>Sil</Button>
                                         </p>
                                     </Table.Cell>
-                    
                             </Table.Row>
                         )
                     })}
