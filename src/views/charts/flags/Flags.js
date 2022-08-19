@@ -18,6 +18,11 @@ import {
   CNavLink,
   CCol,
   CRow,
+  CForm,
+  CFormLabel,
+  CFormInput,
+  CInputGroup,
+  CInputGroupText,
 } from "@coreui/react";
 import { DocsExample } from "src/components";
 
@@ -26,30 +31,85 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const Cards = () => {
-  const [personel_id, setPersonel_id] = useState([]);
+
+  //const { personel_id, personel_ad, personel_soyad,is_baslangic_tarihi,dogum_tarihi} = personel;
+
+  const url = "http://localhost:8080/api/personel/getall";
+  const [personels, setPersonels] = useState([]);
+
+  useEffect((e) => {
+    axios.get(url)
+      .then((response) => {
+        setPersonels(response.data.data);
+        // console.log(response.data.data)
+      })
+
+  }, [])
+  /*    const getData = () => {
+         axios.get(url)
+             .then((getData) => {
+                 setPersonels(getData.data.data);
+             })
+     } */
+
   const [personel_ad, setPersonel_ad] = useState([]);
   const [personel_soyad, setPersonel_soyad] = useState([]);
   const [is_baslangic_tarihi, setİs_baslangic_tarihi] = useState([]);
   const [dogum_tarihi, setDogum_tarihi] = useState([]);
-  const [birimi, setBirimi] = useState([]);
+  const [departmans, setDepartmans] = useState([]);
+  const [departman, setDepartman] = useState([]);
+  const [departman_id, setDepartman_id] = useState([]);
+  const [departman_ad, setDepartman_ad] = useState([]);
+  //<Table.Cell>{personel.departman?.departman_ad}</Table.Cell>
 
-  const url = "http://localhost:8080/api/personel/add";
-  const postData = () => {
-    axios
-      .post(url, {
-        personel_ad,
-        personel_soyad,
-        is_baslangic_tarihi,
-        dogum_tarihi,
-        birimi,
+  const [departmanId, setDepartmanId] = useState(departman_id.departman_id);
+  const [departmanAd, setDepartmanAd] = useState(departman_ad.departman_ad);
+  const [personelAd, setPersonelAd] = useState(personel_ad.personel_ad);
+  const [personelSoyad, setPersonelSoyad] = useState(personel_soyad.personel_soyad);
+  const [personelİsbaslangic, setPersonelİsbaslangic] = useState(is_baslangic_tarihi.is_baslangic_tarihi);
+  const [personelDogumTarihi, setPersonelDogumTarihi] = useState(dogum_tarihi.dogum_tarihi)
+
+  const postData = (e) => {
+    //console.log(departman)
+    //console.log(departman[0])
+    const departmanId = departman[0];
+    axios.post(`http://localhost:8080/api/personel/add`, JSON.stringify({
+      personelAd,
+      personelSoyad,
+      personelİsbaslangic,
+      personelDogumTarihi,
+      departmanId
+
+    }),
+      {
+        headers: { 'Content-Type': 'application/json' }
       })
-  
-  };
+    /* .then(() => {
+        history.push('icons/coreui-icons')
+}) */
+    console.log(personelAd,
+      personelSoyad,
+      personelİsbaslangic,
+      personelDogumTarihi,
+      departman,
+    )
+
+  }
+
+  const urlDep = "http://localhost:8080/api/departman/getall";
+
+  useEffect(() => {
+    axios.get(urlDep)
+      .then((response) => {
+        setDepartmans(response.data.data);
+        console.log(response.data.data)
+      })
+  }, [])
   return (
     <CRow>
       <CCol xs={12}>
         <CCard className="mb-4">
-        <CCardHeader>
+          <CCardHeader>
             <strong>Personel Ekleme</strong>
           </CCardHeader>
           <CCardBody>
@@ -57,6 +117,7 @@ const Cards = () => {
               <CCard style={{ width: "100%" }}>
                 <CCardBody>
                   <CCardTitle></CCardTitle>
+
 
                   <form>
                     <div>
@@ -68,7 +129,7 @@ const Cards = () => {
                             placeholder="Adını giriniz"
                             type="text"
                             name="ad"
-                            onChange={(e) => setPersonel_ad(e.target.value)}
+                            onChange={(e) => setPersonelAd(e.target.value)}
                           />
                         </div>
                         <div class="col">
@@ -78,7 +139,7 @@ const Cards = () => {
                             placeholder="Soyadını giriniz"
                             type="text"
                             name="soyad"
-                            onChange={(e) => setPersonel_soyad(e.target.value)}
+                            onChange={(e) => setPersonelSoyad(e.target.value)}
                           />
                         </div>
                       </div>
@@ -89,10 +150,10 @@ const Cards = () => {
                           <input
                             class="form-control"
                             placeholder="Başlama tarihini giriniz"
-                            type="text"
+                            type="date"
                             name="baslama"
                             onChange={(e) =>
-                              setİs_baslangic_tarihi(e.target.value)
+                              setPersonelİsbaslangic(e.target.value)
                             }
                           />
                         </div>
@@ -101,21 +162,36 @@ const Cards = () => {
                           <input
                             class="form-control"
                             placeholder="Doğum gününü giriniz"
-                            type="text"
+                            type="dateg"
                             name="birthday"
-                            onChange={(e) => setDogum_tarihi(e.target.value)}
+                            onChange={(e) => setPersonelDogumTarihi(e.target.value)}
                           />
                         </div>
-                        <div class="col">
+                        <div class="col ">
                           Birimi
-                          <input
-                            class="form-control"
-                            placeholder="Birimini giriniz"
-                            type="text"
-                            name="birim"
-                            onChange={(e) => setBirimi(e.target.value)}
+                          <select
+                            onChange={(e) => setDepartman(e.target.value)}
+                          >
+                            {
+                              departmans.map((departman) => (
 
-                          />
+                                <option
+                                  key={departman.departman_id}
+
+                                >
+                                  {
+
+                                    departman.departman_id + "  "
+                                  }
+                                  <span>
+                                    {departman.departman_ad}
+
+                                  </span>
+                                </option>
+
+                              ))
+                            }
+                          </select>
                         </div>
                       </div>
                       <br></br>
