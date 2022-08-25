@@ -1,451 +1,164 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { CMultiSelect } from '@coreui/react-pro'
-
-import {
-  CAlert,
-  CAlertHeading,
-  CAlertLink,
-  CCard,
-  CCardBody,
-  CCardHeader,
-  CCol,
-  CRow,
-} from "@coreui/react";
 import { DocsExample } from "src/components";
+import { CButton, CCol, CForm, CFormCheck, CFormInput, CFormLabel, CFormSelect, CInputGroup, CInputGroupText } from '@coreui/react'
 
 const Alerts = () => {
-  const url = "http://localhost:8080/api/hizmet/getall";
   const urlFirma = "http://localhost:8080/api/firma/getall";
-
-
-  const [hizmets, setHizmets] = useState([]);
-  const [firmas, setFirmas] = useState([])
-
-  useEffect(() => {
-    axios.get(url)
-      .then((response) => {
-        setHizmets(response.data.data);
-        console.log(response.data.data)
-      })
-  }, [])
-  const setData = (hizmet) => {
-    let { hizmet_id, hizmet_ad } = hizmet;
-    localStorage.setItem('hizmet_id', hizmet_id);
-    localStorage.setItem('hizmet_ad', hizmet_ad);
-  }
-  const getData = () => {
-
-    const setData = (firma) => {
-      let { firma_id, yetkili_ad } = firma;
-      localStorage.setItem('firma_id', firma_id);
-      localStorage.setItem('yetkili_ad', yetkili_ad);
-      localStorage.setItem('domain_ad',firma_domain_ad)
-    }
-    const getData = () => {
-      axios.get(url)
-        .then((getData) => {
-          setHizmets(getData.data.data);
-        })
-
-
-    }
-  }
-  axios.get(urlFirma)
-    .then((getData) => {
-      setFirmas(getData.data.data);
-    })
-
   useEffect(() => {
     axios.get(urlFirma)
       .then((response) => {
         setFirmas(response.data.data);
-        console.log(response.data.data)
       })
   }, [])
 
 
+  const urlHizmet = "http://localhost:8080/api/hizmet/getall";
+  useEffect(() => {
+    axios.get(urlHizmet)
+      .then((response) => {
+        setHizmets(response.data.data);
+      })
+  }, [])
 
+  const urlDil = "http://localhost:8080/api/dil/getall";
+  useEffect(() => {
+    axios.get(urlDil)
+      .then((response) => {
+        setDils(response.data.data);
+      })
+  }, [])
+  const [dil, setDil] = useState([])
+  const [hizmet, setHizmet] = useState([])
 
+  const [hizmets, setHizmets] = useState([]);
+  const [dils, setDils] = useState([]);
+  const [firmas, setFirmas] = useState([]);
+  const [kdvsizFiyat, setKdvsizFiyat] = useState([]);
+  const [kapora, setKapora] = useState([]);
+  const [yillikYenilemeTutari, setYillikYenilemeTutari] = useState([]);
+  const [sozlesmeBaslangicTarihi, setSozlesmeBaslangicTarihi] = useState([]);
+  const [sozlesmeSonlandirmaTarihi, setSozlesmeSonlandirmaTarihi] = useState([]);
+  const [firma, setFirma] = useState([])
+  const postData = (e) => {
 
+    const firmaId = firma[0]
 
+    const dilId = dil[0]
+    const hizmetId = hizmet[0]
 
+    axios.post(`http://localhost:8080/api/sozlesme/add`, JSON.stringify({
 
+      dilId,
+      hizmetId,
+      kdvsizFiyat,
+      kapora,
+      firmaId,
+      yillikYenilemeTutari,
+      sozlesmeBaslangicTarihi,
+      sozlesmeSonlandirmaTarihi
+    }),
+      {
+        headers: { 'Content-Type': 'application/json' }
+      })
+    console.log(e.target.value)
+    console.log(
 
+      dilId,
+      hizmetId,
+      kdvsizFiyat,
+      kapora,
+      firmaId,
+      yillikYenilemeTutari,
+      sozlesmeBaslangicTarihi,
+      sozlesmeSonlandirmaTarihi
+    )
+
+  }
   return (
-    <CRow>
-      <CCol xs={12}>
-        <CCard className="mb-4">
-          <CCardHeader>
-            <strong>SATIŞ VE HİZMET SÖZLEŞMESİ</strong>
-          </CCardHeader>
-          <CCardBody>
-            <p className="text-medium-emphasis small">
-              Anlaşma içeriğinde kullanılacak olan yabancı dil çevirileri,
-              fotoğraf, video görüntüleri katılımcı firma tarafından sağlanır.
-              Ayrı bir sözleşme ile imza altına alınmadığı sürece yayıncıx
-              firmanın belirtilen hizmetlerin sağlanması ile ilgili herhangi
-              belirtilen sorumluluğu yoktur..
-            </p>{" "}
-            <hr></hr>
-            <h5>Sözleşme Gereksinimleri</h5>
-            <DocsExample
+    <CForm className="row mt-2 gx-3 gy-3 align-items-center">
+      <CCol md={12} sm={3} >
+        <h4> Firma Ad </h4>
+        <CFormSelect onChange={(e) => setFirma(e.target.value)}>
+          {
+            firmas.map((firma) => (
 
-              href="components/alert">
-              <form>
-                <br />
-                <br />
-                <div class="row">
-                  <div class="col">
-                    <CAlert color="dark">Firma Adı</CAlert>
+              <option
+                key={firma.firma_id}
 
-          
+              >
 
+                <span>
+                  {firma.firma_id + "  " + firma.yetkili_ad}
 
+                </span>
+              </option>
 
-
-                        <div class="col-md-11">
-                          <label for="validationCustom04" class="form-label">
-                           <i> Firma adı seçiniz</i>
-                          </label>
-                          <select
-                            class="form-select"
-                            id="validationCustom04"
-                            required
-                          >
-                            {firmas.map((firma) => {return(
-                            <option>
-                              {firma.yetkili_ad.toUpperCase()}
-
-                            </option>)})}
-                          </select>
-                          <div class="invalid-feedback">
-                            Please select a valid state.
-                          </div>
-                        </div>
-
-                    
-
-
-
-
-
-                    <br />
-                    <br />
-
-                    <CAlert color="dark">Hizmet Seçimi</CAlert>
-
-                    {hizmets.map((hizmet) => {
-                      return (
-                        <div class="form-check form-check-inline">
-
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            id="inlineCheckbox1"
-                            value="option1"
-                          ></input>
-                          <label class="form-check-label" for="inlineCheckbox1">
-
-                            <a>{hizmet.hizmet_ad.toUpperCase()}</a>
-                          </label>
-                        </div>
-
-                      )
-                    })}
-
-                  </div>
-                  <br />
-                  <br />
-
-                  <div class="col">
-                  <CAlert color="dark">Domain Adı Seçiniz</CAlert>
-
-                    
-
-<div class="col-md-11">
-  <label for="validationCustom04" class="form-label">
-<i>Domain Adı Seçiniz</i>  </label>
-  <select
-    class="form-select"
-    id="validationCustom04"
-    required
-  >
-    {firmas.map((firma) => {return(
-    <option>
-      {firma.firma_domain_ad.toUpperCase()}
-
-    </option>)})}
-  </select>
-  <div class="invalid-feedback">
-    Please select a valid state.
-  </div>
-</div>
-<br />
-
-                    <br />
-                    <CAlert color="dark">Dİl Seçimi</CAlert>
-
-                    <div class="form-check form-check-inline">
-                      <div class="col">
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"></input><label class="form-check-label" for="inlineCheckbox2">Türkçe</label></div>&nbsp;&nbsp;
-
-                        <div class="form-check form-check-inline">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            id="inlineCheckbox2"
-                            value="option2"
-                          ></input>
-                          <label class="form-check-label" for="inlineCheckbox2">
-                            İngilizce
-                          </label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            id="inlineCheckbox2"
-                            value="option2"
-                          ></input>
-                          <label class="form-check-label" for="inlineCheckbox2">
-                            Almanca
-                          </label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            id="inlineCheckbox2"
-                            value="option2"
-                          ></input>
-                          <label class="form-check-label" for="inlineCheckbox2">
-                            Fransızca
-                          </label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            id="inlineCheckbox2"
-                            value="option2"
-                          ></input>
-                          <label class="form-check-label" for="inlineCheckbox2">
-                            İtalyanca
-                          </label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            id="inlineCheckbox2"
-                            value="option2"
-                          ></input>
-                          <label class="form-check-label" for="inlineCheckbox2">Japonca
-                          </label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            id="inlineCheckbox2"
-                            value="option2"
-                          ></input>
-                          <label class="form-check-label" for="inlineCheckbox2">
-                            Rusça
-                          </label>
-                        </div>&nbsp;&nbsp;&nbsp;
-
-                        <div class="form-check form-check-inline">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            id="inlineCheckbox2"
-                            value="option2"
-                          ></input>
-                          <label class="form-check-label" for="inlineCheckbox2">
-                            Azerice
-                          </label>
-                        </div>
-                        &nbsp;&nbsp;
-                        <div class="form-check form-check-inline">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            id="inlineCheckbox2"
-                            value="option2"
-                          ></input>
-                          <label class="form-check-label" for="inlineCheckbox2">
-                            Arapça
-                          </label>
-                        </div>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <div class="form-check form-check-inline">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            id="inlineCheckbox2"
-                            value="option2"
-                          ></input>
-                          <label class="form-check-label" for="inlineCheckbox2">
-                            Danca
-                          </label>
-                        </div>
-
-                        <br></br>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <br />
-                <br />
-                <div class="row">
-                  <div class="col">
-                    <CAlert color="dark">KDV'siz Fiyat</CAlert>
-                    <div class="col-md-3">
-                      <label for="kdvsiz" class="form-label">
-                        Para Türü
-                      </label>
-                      <select
-                        class="form-select"
-                        id="kdvsiz"
-                        required
-                      >
-                        <option>₺</option>
-                        <option>$</option>
-                        <option>€</option>
-                      </select>
-                      <div class="invalid-feedback">
-                        Please select a valid state.
-                      </div>
-                    </div>
-
-                    <br />
-                    <input
-                      class="form-control"
-                      placeholder="KDV'siz fiyatı giriniz"
-                      type="text"
-                      name="firmaadi :"
-                      id ="kdvsiz"
-                    />
-                  </div>
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <div class="col">
-                    <CAlert color="dark">Kapora</CAlert>
-                    <div class="col-md-3">
-                      <label for="kapora" class="form-label">
-                        Para Türü
-                      </label>
-                      <select
-                        class="form-select"
-                        id="kapora"
-                        required
-                      >
-                        <option>₺</option>
-                        <option>$</option>
-                        <option>€</option>
-                      </select>
-                      <div class="invalid-feedback">
-                        Please select a valid state.
-                      </div>
-                    </div>
-                    <br />
-                    <input
-                      class="form-control"
-                      placeholder="Kapora miktarını giriniz"
-                      type="text"
-                      name="firmaadi :"
-                      id="kapora"
-                    />
-                  </div>
-                  <br />
-                  <br />
-                  <div class="col">
-                    <CAlert color="dark">Yıllık Yenileme Tutarı</CAlert>
-                    <div class="col-md-3">
-                      <label for="yıllık" class="form-label">
-                        Para Türü
-                      </label>
-                      <select
-                        class="form-select"
-                        id="yıllık"
-                        required
-                      >
-                        <option>₺</option>
-                        <option>$</option>
-                        <option>€</option>
-                      </select>
-                      <div class="invalid-feedback">
-                        Please select a valid state.
-                      </div>
-                    </div>
-                    <div class="col">
-                      <br />
-                      <input
-                        class="form-control"
-                        placeholder="Yıllık yenileme tutarını giriniz"
-                        type="text"
-                        name="firmaadi :"
-                        id="yıllık"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <br />
-                <br />
-                <div class="row">
-                  <div class="col">
-                    <div class="row">
-                      <CAlert color="dark">Sözleşme Tarihi</CAlert>
-                      <div class="col">
-                        <label for="birthday">Başlangıç Tarihi:</label>
-                        <input
-                          class="form-control"
-                          type="date"
-                          id="baştar"
-                          name="birthday"
-                        ></input>
-                      </div>
-                      &nbsp;&nbsp;
-                      <div class="col">
-                        <label for="birthday">Bitiş Tarihi:</label>
-                        <input
-                          class="form-control"
-                          type="date"
-                          id="bittar"
-                          name="birthday"
-                        ></input>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <CAlert color="dark">Sözleşme Dosyası Yükleme</CAlert>
-                    <br />
-                    <input class="form-control" type="file" name="dosya" />
-                  </div>
-                </div>{" "}
-                <br />
-                <input class="form-control" type="button" value="ONAYLA" />
-                <br />
-                <input class="form-control" type="button" value="YENİLE" />
-              </form>
-              <br />
-              <br />
-              <CAlert color="success"></CAlert>
-
-            </DocsExample>
-          </CCardBody>
-        </CCard>
+            ))
+          }
+        </CFormSelect >
       </CCol>
-    </CRow>
+
+      <CCol md={6} sm={3} >
+        <h4 >Hizmet AD </h4>
+
+        <CFormSelect onChange={(e) => setHizmet(e.target.value)}>
+          {
+            hizmets.map((hizmet) => (
+              <option key={hizmet.hizmet_id}>
+                {hizmet.hizmet_id + " " + hizmet.hizmet_ad}
+              </option>
+            ))
+          }
+        </CFormSelect>
+      </CCol>
+      <CCol md={6} sm={3} >
+        <h5 > Dil Ad </h5>
+
+        <CFormSelect onChange={(e) => setDil(e.target.value)}>
+          {
+            dils.map((dil) => (
+              <option key={dil.dil_id}>
+                {dil.dil_id + " " + dil.dil_ad}
+              </option>
+            ))
+          }
+        </CFormSelect>
+      </CCol>
+      <br />
+      <CCol md={4} sm={3}   >
+
+        <h5 > Kdvsiz Fiyat </h5>
+
+        <CFormInput id="specificSizeInputName" placeholder="kdvsiz" onChange={(e) => setKdvsizFiyat(e.target.value)} />
+      </CCol>
+
+      <CCol md={4} sm={3}  >
+        <h5 > Kapora </h5>
+
+        <CFormInput id="specificSizeInputName" placeholder="kapora " onChange={(e) => setKapora(e.target.value)} />
+      </CCol>
+      <CCol md={4} sm={3}  >
+        <h5 > Yillik Yenileme Tutari </h5>
+        <CFormInput id="specificSizeInputName" placeholder="yillik yenileme" onChange={(e) => setYillikYenilemeTutari(e.target.value)} />
+      </CCol>
+
+      <CCol md={6} sm={3}  >
+        <h5 > Sozlesme Baslangic Tarihi </h5>
+        <CFormInput id="specificSizeInputName" placeholder="sozlesme baslangic tarihi" onChange={(e) => setSozlesmeBaslangicTarihi(e.target.value)} />
+      </CCol>
+      <CCol md={6} sm={3}  >
+        <h5 > Sozlesme Sonlandirma Tarihi</h5>
+        <CFormInput id="specificSizeInputName" placeholder="sozlesme sonlandirma  tarihi" onChange={(e) => setSozlesmeSonlandirmaTarihi(e.target.value)} />
+      </CCol>
+      <br />
+      <CCol xs="auto">
+        <CButton type="submit" onClick={postData}>Submit</CButton>
+      </CCol>
+ 
+    </CForm>
   );
 };
 
